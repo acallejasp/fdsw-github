@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de página escrita en HTML</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <section id="MPrincipal"></section>
-        <h1>Página en HTML curso de FullStack Python</h1>
+        <h1 id="aqui">Página en HTML curso de FullStack Python</h1>
         <h2>Practicando las distintas etiquetas</h2>
         <h3>Primera clase usando el lenguaje de HyperVínculos</h3>
         
@@ -19,6 +20,7 @@
                         <li><a href="#listas">Listas</a></li>
                         <li><a href="#tablas">Tablas</a></li>
                         <li><a href="#formularios">Formularios</a></li>
+                        <li><a href="#videos">Videos</a></li>
                     
                 </ul>
             </nav>
@@ -44,7 +46,7 @@
     <section id="listas">
         <h2>Listas</h2>
         <h3>Lista No Ordenada</h3>
-        <ul>
+        <ul style="list-style-type: square;">
             <li>Elemento 1</li>
             <li>Elemento 2</li>
             <li>Elemento 3</li>
@@ -82,6 +84,18 @@
         </form>
         <li><a href="#MPrincipal">Menú Principal</a></li>
     </section>
+
+    <section id="Videos">
+        <h2>Videos</h2>
+        <table border="1">
+            <tr><th></th>
+                <th><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SkWtcVQanwQ?si=sq3H7t-4UQDr8zsk&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></th>
+                <th></th>
+            </tr>
+        </table>
+        <li><a href="#MPrincipal">Menú Principal</a></li>
+    </section>
+
 
     <footer>
         <p>Este es el pie de página</p>
