@@ -650,7 +650,7 @@ Add `.active` to items in the dropdown to **style them as active**. To convey th
 <ul class="dropdown-menu">
   <li><a class="dropdown-item" href="#">Regular link</a></li>
   <li><a class="dropdown-item active" href="#" aria-current="true">Active link</a></li>
-  <li><a class="dropdown-item" href="#">Another link</a></li>
+  <li><a class="dropdown-item" href="#">Comprar</a></li>
 </ul>
 {{< /example >}}
 
@@ -662,7 +662,7 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
 <ul class="dropdown-menu">
   <li><a class="dropdown-item" href="#">Regular link</a></li>
   <li><a class="dropdown-item disabled" aria-disabled="true">Disabled link</a></li>
-  <li><a class="dropdown-item" href="#">Another link</a></li>
+  <li><a class="dropdown-item" href="#">Comprar</a></li>
 </ul>
 {{< /example >}}
 

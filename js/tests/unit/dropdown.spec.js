@@ -1658,7 +1658,7 @@ describe('Dropdown', () => {
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item disabled" href="#sub1">Submenu 1</a>',
           '    <button class="dropdown-item" type="button" disabled>Disabled button</button>',
-          '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+          '    <a id="item1" class="dropdown-item" href="#">Comprar</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1695,7 +1695,7 @@ describe('Dropdown', () => {
           '    <button class="dropdown-item d-none" type="button">Hidden button by class</button>',
           '    <a class="dropdown-item" href="#sub1" style="display: none">Hidden link</a>',
           '    <a class="dropdown-item" href="#sub1" style="visibility: hidden">Hidden link</a>',
-          '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+          '    <a id="item1" class="dropdown-item" href="#">Comprar</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1726,7 +1726,7 @@ describe('Dropdown', () => {
           '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '    <a id="item2" class="dropdown-item" href="#">Comprar</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1765,7 +1765,7 @@ describe('Dropdown', () => {
           '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '    <a id="item2" class="dropdown-item" href="#">Comprar</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1793,7 +1793,7 @@ describe('Dropdown', () => {
           '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a id="item1" class="dropdown-item" href="#">A link</a>',
-          '    <a id="item2" class="dropdown-item" href="#">Another link</a>',
+          '    <a id="item2" class="dropdown-item" href="#">Comprar</a>',
           '  </div>',
           '</div>'
         ].join('')
@@ -1965,7 +1965,7 @@ describe('Dropdown', () => {
           '      <a class="dropdown-item" href="#">Secondary link</a>',
           '      <a class="dropdown-item" href="#">Something else here</a>',
           '      <div class="divider"></div>',
-          '      <a class="dropdown-item" href="#">Another link</a>',
+          '      <a class="dropdown-item" href="#">Comprar</a>',
           '    </div>',
           '  </div>',
           '</div>'
@@ -2338,7 +2338,7 @@ describe('Dropdown', () => {
         '  <div class="dropdown-menu">',
         '    <a class="dropdown-item disabled" href="#sub1">Submenu 1</a>',
         '    <button class="dropdown-item" type="button" disabled>Disabled button</button>',
-        '    <a id="item1" class="dropdown-item" href="#">Another link</a>',
+        '    <a id="item1" class="dropdown-item" href="#">Comprar</a>',
         '  </div>',
         '</div>'
       ].join('')
