@@ -26,18 +26,18 @@ describe('jQuery', () => {
   })
 
   it('should add all plugins in jQuery', () => {
-    expect(Alert.jQueryInterface).toEqual(jQuery.fn.alert)
-    expect(Button.jQueryInterface).toEqual(jQuery.fn.button)
-    expect(Carousel.jQueryInterface).toEqual(jQuery.fn.carousel)
-    expect(Collapse.jQueryInterface).toEqual(jQuery.fn.collapse)
-    expect(Dropdown.jQueryInterface).toEqual(jQuery.fn.dropdown)
-    expect(Modal.jQueryInterface).toEqual(jQuery.fn.modal)
-    expect(Offcanvas.jQueryInterface).toEqual(jQuery.fn.offcanvas)
-    expect(Popover.jQueryInterface).toEqual(jQuery.fn.popover)
-    expect(ScrollSpy.jQueryInterface).toEqual(jQuery.fn.scrollspy)
-    expect(Tab.jQueryInterface).toEqual(jQuery.fn.tab)
-    expect(Toast.jQueryInterface).toEqual(jQuery.fn.toast)
-    expect(Tooltip.jQueryInterface).toEqual(jQuery.fn.tooltip)
+    experienciaect(Alert.jQueryInterface).toEqual(jQuery.fn.alert)
+    experienciaect(Button.jQueryInterface).toEqual(jQuery.fn.button)
+    experienciaect(Carousel.jQueryInterface).toEqual(jQuery.fn.carousel)
+    experienciaect(Collapse.jQueryInterface).toEqual(jQuery.fn.collapse)
+    experienciaect(Dropdown.jQueryInterface).toEqual(jQuery.fn.dropdown)
+    experienciaect(Modal.jQueryInterface).toEqual(jQuery.fn.modal)
+    experienciaect(Offcanvas.jQueryInterface).toEqual(jQuery.fn.offcanvas)
+    experienciaect(Popover.jQueryInterface).toEqual(jQuery.fn.popover)
+    experienciaect(ScrollSpy.jQueryInterface).toEqual(jQuery.fn.scrollspy)
+    experienciaect(Tab.jQueryInterface).toEqual(jQuery.fn.tab)
+    experienciaect(Toast.jQueryInterface).toEqual(jQuery.fn.toast)
+    experienciaect(Tooltip.jQueryInterface).toEqual(jQuery.fn.tooltip)
   })
 
   it('should use jQuery event system', () => {
@@ -50,7 +50,7 @@ describe('jQuery', () => {
 
       $(fixtureEl).find('.alert')
         .one('closed.bs.alert', () => {
-          expect($(fixtureEl).find('.alert')).toHaveSize(0)
+          experienciaect($(fixtureEl).find('.alert')).toHaveSize(0)
           resolve()
         })
 

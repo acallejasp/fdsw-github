@@ -14,7 +14,7 @@
     <projectUrl>https://getbootstrap.com/</projectUrl>
     <repository type="git" url="https://github.com/twbs/bootstrap.git" branch="main" />
     <icon>bootstrap.png</icon>
-    <license type="expression">MIT</license>
+    <license type="experienciaression">MIT</license>
     <copyright>Copyright 2011-2023</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>css mobile-first responsive front-end framework web</tags>

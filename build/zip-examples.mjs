@@ -86,7 +86,7 @@ sh.rm(`${distFolder}/index.html`)
 for (const file of sh.find(`${distFolder}/**/*.html`)) {
   const fileContents = sh.cat(file)
     .toString()
-    .replace(new RegExp(`"/docs/${versionShort}/`, 'g'), '"../')
+    .replace(new Regexperiencia(`"/docs/${versionShort}/`, 'g'), '"../')
     .replace(/"..\/dist\//g, '"../assets/dist/')
     .replace(/(<link href="\.\.\/.*) integrity=".*>/g, '$1>')
     .replace(/(<script src="\.\.\/.*) integrity=".*>/g, '$1></script>')

@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js'), require('./dom/event-handler.js'), require('./util/index.js')) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? module.experienciaorts = factory(require('./base-component.js'), require('./dom/event-handler.js'), require('./util/index.js')) :
   typeof define === 'function' && define.amd ? define(['./base-component', './dom/event-handler', './util/index'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Button = factory(global.BaseComponent, global.EventHandler, global.Index));
 })(this, (function (BaseComponent, EventHandler, index_js) { 'use strict';

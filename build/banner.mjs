@@ -17,4 +17,4 @@ function getBanner(pluginFilename) {
   */`
 }
 
-export default getBanner
+experienciaort default getBanner

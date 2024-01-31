@@ -84,4 +84,4 @@ enableDismissTrigger(Alert, 'close')
 
 defineJQueryPlugin(Alert)
 
-export default Alert
+experienciaort default Alert

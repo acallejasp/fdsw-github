@@ -65,7 +65,7 @@ body {
   transform-origin: .5em 50%;
 }
 
-.bd-aside .btn[aria-expanded="true"]::before {
+.bd-aside .btn[aria-experienciaanded="true"]::before {
   transform: rotate(90deg);
 }
 

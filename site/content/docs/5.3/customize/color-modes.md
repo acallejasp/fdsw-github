@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Color modes
-description: Bootstrap now supports color modes, or themes, as of v5.3.0. Explore our default light color mode and the new dark mode, or create your own using our styles as your template.
+description: Bootstrap now supports color modes, or themes, as of v5.3.0. experiencialore our default light color mode and the new dark mode, or create your own using our styles as your template.
 group: customize
 toc: true
 added: "5.3"
@@ -23,7 +23,7 @@ For example, to change the color mode of a dropdown menu, add `data-bs-theme="li
 
 {{< example class="d-flex justify-content-between" >}}
 <div class="dropdown" data-bs-theme="light">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-experienciaanded="false">
     Default dropdown
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
@@ -37,7 +37,7 @@ For example, to change the color mode of a dropdown menu, add `data-bs-theme="li
 </div>
 
 <div class="dropdown" data-bs-theme="dark">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-experienciaanded="false">
     Dark dropdown
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
@@ -94,7 +94,7 @@ Bootstrap does not yet ship with a built-in color mode picker, but you can use t
 
 Our new dark mode option is available to use for all users of Bootstrap, but it's controlled via data attributes instead of media queries and does not automatically toggle your project's color mode. You can disable our dark mode entirely via Sass by changing `$enable-dark-mode` to `false`.
 
-We use a custom Sass mixin, `color-mode()`, to help you control _how_ color modes are applied. By default, we use a `data` attribute approach, allowing you to create more user-friendly experiences where your visitors can choose to have an automatic dark mode or control their preference (like in our own docs here). This is also an easy and scalable way to add different themes and more custom color modes beyond light and dark.
+We use a custom Sass mixin, `color-mode()`, to help you control _how_ color modes are applied. By default, we use a `data` attribute approach, allowing you to create more user-friendly experienciaeriences where your visitors can choose to have an automatic dark mode or control their preference (like in our own docs here). This is also an easy and scalable way to add different themes and more custom color modes beyond light and dark.
 
 In case you want to use media queries and only make color modes automatic, you can change the mixin's default type via Sass variable. Consider the following snippet and its compiled CSS output.
 
@@ -157,7 +157,7 @@ For example, you can create a "blue theme" with the selector `data-bs-theme="blu
   <hr class="my-4">
 
   <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonCustom" data-bs-toggle="dropdown" aria-expanded="false">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonCustom" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown button
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCustom">

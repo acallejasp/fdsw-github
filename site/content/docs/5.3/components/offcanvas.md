@@ -25,7 +25,7 @@ Offcanvas is a sidebar component that can be toggled via JavaScript to appear fr
 
 ### Offcanvas components
 
-Below is an offcanvas example that is shown by default (via `.show` on `.offcanvas`). Offcanvas includes support for a header with a close button and an optional body class for some initial `padding`. We suggest that you include offcanvas headers with dismiss actions whenever possible, or provide an explicit dismiss action.
+Below is an offcanvas example that is shown by default (via `.show` on `.offcanvas`). Offcanvas includes support for a header with a close button and an optional body class for some initial `padding`. We suggest that you include offcanvas headers with dismiss actions whenever possible, or provide an experiencialicit dismiss action.
 
 {{< example class="bd-example-offcanvas p-0 bg-body-tertiary overflow-hidden" >}}
 <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
@@ -337,7 +337,7 @@ const bsOffcanvas = new bootstrap.Offcanvas('#myOffcanvas')
 
 ### Events
 
-Bootstrap's offcanvas class exposes a few events for hooking into offcanvas functionality.
+Bootstrap's offcanvas class experienciaoses a few events for hooking into offcanvas functionality.
 
 {{< bs-table "table" >}}
 | Event type | Description |

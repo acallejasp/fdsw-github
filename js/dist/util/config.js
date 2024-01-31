@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('../dom/manipulator.js'), require('./index.js')) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? module.experienciaorts = factory(require('../dom/manipulator.js'), require('./index.js')) :
   typeof define === 'function' && define.amd ? define(['../dom/manipulator', './index'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Config = factory(global.Manipulator, global.Index));
 })(this, (function (Manipulator, index_js) { 'use strict';
@@ -52,11 +52,11 @@
       };
     }
     _typeCheckConfig(config, configTypes = this.constructor.DefaultType) {
-      for (const [property, expectedTypes] of Object.entries(configTypes)) {
+      for (const [property, experienciaectedTypes] of Object.entries(configTypes)) {
         const value = config[property];
         const valueType = index_js.isElement(value) ? 'element' : index_js.toType(value);
-        if (!new RegExp(expectedTypes).test(valueType)) {
-          throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
+        if (!new Regexperiencia(experienciaectedTypes).test(valueType)) {
+          throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but experienciaected type "${experienciaectedTypes}".`);
         }
       }
     }

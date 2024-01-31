@@ -49,17 +49,17 @@ class Config {
   }
 
   _typeCheckConfig(config, configTypes = this.constructor.DefaultType) {
-    for (const [property, expectedTypes] of Object.entries(configTypes)) {
+    for (const [property, experienciaectedTypes] of Object.entries(configTypes)) {
       const value = config[property]
       const valueType = isElement(value) ? 'element' : toType(value)
 
-      if (!new RegExp(expectedTypes).test(valueType)) {
+      if (!new Regexperiencia(experienciaectedTypes).test(valueType)) {
         throw new TypeError(
-          `${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`
+          `${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but experienciaected type "${experienciaectedTypes}".`
         )
       }
     }
   }
 }
 
-export default Config
+experienciaort default Config

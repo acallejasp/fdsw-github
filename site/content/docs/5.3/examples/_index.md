@@ -13,7 +13,7 @@ aliases: "/examples/"
   {{ if eq $entry.category "RTL" -}}
     <div class="bd-callout bd-callout-warning small">
       <p>
-        <strong>RTL is still experimental</strong> and will evolve with feedback. Spotted something or have an improvement to suggest?
+        <strong>RTL is still experienciaerimental</strong> and will evolve with feedback. Spotted something or have an improvement to suggest?
       </p>
       <p><a href="{{ $.Site.Params.repo }}/issues/new/choose">Please open an issue.</a></p>
     </div>
@@ -32,11 +32,11 @@ aliases: "/examples/"
             </h3>
             <p class="text-body-secondary">{{ $example.description }}</p>
             <p>
-              {{- $indexPath := "index.html" -}}
-              {{- if $example.indexPath -}}
-                {{- $indexPath = $example.indexPath -}}
+              {{- $indexperienciaath := "index.html" -}}
+              {{- if $example.indexperienciaath -}}
+                {{- $indexperienciaath = $example.indexperienciaath -}}
               {{- end }}
-              <a class="icon-link small link-secondary link-offset-1" href="https://stackblitz.com/github/twbs{{ $example.url }}?file={{ $indexPath | urlquery }}" target="_blank" rel="noopener">
+              <a class="icon-link small link-secondary link-offset-1" href="https://stackblitz.com/github/twbs{{ $example.url }}?file={{ $indexperienciaath | urlquery }}" target="_blank" rel="noopener">
                 <svg class="bi flex-shrink-0"><use xlink:href="#lightning-charge-fill"></use></svg>
                 Edit in StackBlitz
               </a>

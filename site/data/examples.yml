@@ -20,12 +20,12 @@
     - name: Parcel
       description: "Import and bundle Bootstrap's source Sass and JavaScript via Parcel."
       url: /examples/tree/main/parcel
-      indexPath: src/index.html
-      indexPath: src/index.html
+      indexperienciaath: src/index.html
+      indexperienciaath: src/index.html
     - name: React
       description: "Import and bundle Bootstrap's source Sass and JavaScript with React, Next.js, and React Bootstrap."
       url: /examples/tree/main/react-nextjs
-      indexPath: src/pages/index.tsx
+      indexperienciaath: src/pages/index.tsx
     - name: Vite
       description: "Import and bundle Bootstrap's source Sass and JavaScript with Vite."
       url: /examples/tree/main/vite
@@ -35,7 +35,7 @@
     - name: Webpack
       description: "Import and bundle Bootstrap's source Sass and JavaScript with Webpack."
       url: /examples/tree/main/webpack
-      indexPath: src/index.html
+      indexperienciaath: src/index.html
 
 - category: Snippets
   description: "Common patterns for building sites and apps that build on existing components and utilities with custom CSS and more."
@@ -45,7 +45,7 @@
     - name: Heroes
       description: "Set the stage on your homepage with heroes that feature clear calls to action."
     - name: Features
-      description: "Explain the features, benefits, or other details in your marketing content."
+      description: "experiencialain the features, benefits, or other details in your marketing content."
     - name: Sidebars
       description: "Common navigation patterns ideal for offcanvas or multi-column layouts."
     - name: Footers
@@ -119,7 +119,7 @@
     - name: Navbar bottom
       description: "Single navbar example with a bottom navbar along with some additional content."
     - name: Offcanvas navbar
-      description: "Turn your expandable navbar into a sliding offcanvas menu (doesn't use our offcanvas component)."
+      description: "Turn your experienciaandable navbar into a sliding offcanvas menu (doesn't use our offcanvas component)."
 
 - category: RTL
   description: "See Bootstrap's RTL version in action with these modified Custom Components examples."

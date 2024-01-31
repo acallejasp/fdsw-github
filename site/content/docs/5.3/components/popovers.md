@@ -83,7 +83,7 @@ const popover = new bootstrap.Popover('.example-popover', {
 })
 ```
 
-Another situation where you'll want to set an explicit custom `container` are popovers inside a [modal dialog]({{< docsref "/components/modal" >}}), to make sure that the popover itself is appended to the modal. This is particularly important for popovers that contain interactive elements – modal dialogs will trap focus, so unless the popover is a child element of the modal, users won't be able to focus or activate these interactive elements.
+Another situation where you'll want to set an experiencialicit custom `container` are popovers inside a [modal dialog]({{< docsref "/components/modal" >}}), to make sure that the popover itself is appended to the modal. This is particularly important for popovers that contain interactive elements – modal dialogs will trap focus, so unless the popover is a child element of the modal, users won't be able to focus or activate these interactive elements.
 
 ```js
 const popover = new bootstrap.Popover('.example-popover', {
@@ -131,7 +131,7 @@ const popover = new bootstrap.Popover('.popover-dismiss', {
 
 Elements with the `disabled` attribute aren't interactive, meaning users cannot hover or click them to trigger a popover (or tooltip). As a workaround, you'll want to trigger the popover from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`.
 
-For disabled popover triggers, you may also prefer `data-bs-trigger="hover focus"` so that the popover appears as immediate visual feedback to your users as they may not expect to _click_ on a disabled element.
+For disabled popover triggers, you may also prefer `data-bs-trigger="hover focus"` so that the popover appears as immediate visual feedback to your users as they may not experienciaect to _click_ on a disabled element.
 
 {{< example stackblitz_add_js="true" >}}
 <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
@@ -206,7 +206,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn`, and `allowList` opt
 {{< callout info >}}
 #### Data attributes for individual popovers
 
-Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.
+Options for individual popovers can alternatively be specified through the use of data attributes, as experiencialained above.
 {{< /callout >}}
 
 #### Using function with `popperConfig`

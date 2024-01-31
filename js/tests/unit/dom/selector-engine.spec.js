@@ -18,7 +18,7 @@ describe('SelectorEngine', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(SelectorEngine.find('div', fixtureEl)).toEqual([div])
+      experienciaect(SelectorEngine.find('div', fixtureEl)).toEqual([div])
     })
 
     it('should find elements globally', () => {
@@ -26,7 +26,7 @@ describe('SelectorEngine', () => {
 
       const div = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.find('#test')).toEqual([div])
+      experienciaect(SelectorEngine.find('#test')).toEqual([div])
     })
 
     it('should handle :scope selectors', () => {
@@ -43,7 +43,7 @@ describe('SelectorEngine', () => {
       const listEl = fixtureEl.querySelector('ul')
       const aActive = fixtureEl.querySelector('.active')
 
-      expect(SelectorEngine.find(':scope > li > .active', listEl)).toEqual([aActive])
+      experienciaect(SelectorEngine.find(':scope > li > .active', listEl)).toEqual([aActive])
     })
   })
 
@@ -53,7 +53,7 @@ describe('SelectorEngine', () => {
 
       const div = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.findOne('#test')).toEqual(div)
+      experienciaect(SelectorEngine.findOne('#test')).toEqual(div)
     })
   })
 
@@ -71,13 +71,13 @@ describe('SelectorEngine', () => {
       const liList = [].concat(...fixtureEl.querySelectorAll('li'))
       const result = SelectorEngine.children(list, 'li')
 
-      expect(result).toEqual(liList)
+      experienciaect(result).toEqual(liList)
     })
   })
 
   describe('parents', () => {
     it('should return parents', () => {
-      expect(SelectorEngine.parents(fixtureEl, 'body')).toHaveSize(1)
+      experienciaect(SelectorEngine.parents(fixtureEl, 'body')).toHaveSize(1)
     })
   })
 
@@ -88,7 +88,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
 
-      expect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
+      experienciaect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
     })
 
     it('should return previous element with an extra element between', () => {
@@ -101,7 +101,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
 
-      expect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
+      experienciaect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
     })
 
     it('should return previous element with comments or text nodes between', () => {
@@ -116,7 +116,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelectorAll('.test')[1]
 
-      expect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
+      experienciaect(SelectorEngine.prev(btn, '.test')).toEqual([divTest])
     })
   })
 
@@ -127,7 +127,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
 
-      expect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
+      experienciaect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
     })
 
     it('should return next element with an extra element between', () => {
@@ -140,7 +140,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
 
-      expect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
+      experienciaect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
     })
 
     it('should return next element with comments or text nodes between', () => {
@@ -155,7 +155,7 @@ describe('SelectorEngine', () => {
       const btn = fixtureEl.querySelector('.btn')
       const divTest = fixtureEl.querySelector('.test')
 
-      expect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
+      experienciaect(SelectorEngine.next(divTest, '.btn')).toEqual([btn])
     })
   })
 
@@ -172,7 +172,7 @@ describe('SelectorEngine', () => {
         '<details>lorem</details>'
       ].join('')
 
-      const expectedElements = [
+      const experienciaectedElements = [
         fixtureEl.querySelector('a'),
         fixtureEl.querySelector('button'),
         fixtureEl.querySelector('input'),
@@ -181,7 +181,7 @@ describe('SelectorEngine', () => {
         fixtureEl.querySelector('details')
       ]
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
 
     it('should return any element with non negative tab index', () => {
@@ -191,45 +191,45 @@ describe('SelectorEngine', () => {
         '<div tabindex="10">lorem</div>'
       ].join('')
 
-      const expectedElements = [
+      const experienciaectedElements = [
         fixtureEl.querySelector('[tabindex]'),
         fixtureEl.querySelector('[tabindex="0"]'),
         fixtureEl.querySelector('[tabindex="10"]')
       ]
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
 
     it('should return not return elements with negative tab index', () => {
       fixtureEl.innerHTML = '<button tabindex="-1">lorem</button>'
 
-      const expectedElements = []
+      const experienciaectedElements = []
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
 
     it('should return contenteditable elements', () => {
       fixtureEl.innerHTML = '<div contenteditable="true">lorem</div>'
 
-      const expectedElements = [fixtureEl.querySelector('[contenteditable="true"]')]
+      const experienciaectedElements = [fixtureEl.querySelector('[contenteditable="true"]')]
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
 
     it('should not return disabled elements', () => {
       fixtureEl.innerHTML = '<button disabled="true">lorem</button>'
 
-      const expectedElements = []
+      const experienciaectedElements = []
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
 
     it('should not return invisible elements', () => {
       fixtureEl.innerHTML = '<button style="display:none;">lorem</button>'
 
-      const expectedElements = []
+      const experienciaectedElements = []
 
-      expect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(expectedElements)
+      experienciaect(SelectorEngine.focusableChildren(fixtureEl)).toEqual(experienciaectedElements)
     })
   })
 
@@ -242,7 +242,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
     })
 
     it('should get selector from href if no data-bs-target set', () => {
@@ -253,7 +253,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
     })
 
     it('should get selector from href if data-bs-target equal to #', () => {
@@ -264,7 +264,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('.target')
     })
 
     it('should return null if a selector from a href is a url without an anchor', () => {
@@ -275,7 +275,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
     })
 
     it('should return the anchor if a selector from a href is a url', () => {
@@ -286,7 +286,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('#target')
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toEqual('#target')
     })
 
     it('should return null if selector not found', () => {
@@ -294,7 +294,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
     })
 
     it('should return null if no selector', () => {
@@ -302,7 +302,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('div')
 
-      expect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
+      experienciaect(SelectorEngine.getSelectorFromElement(testEl)).toBeNull()
     })
   })
 
@@ -315,7 +315,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getElementFromSelector(testEl)).toEqual(fixtureEl.querySelector('.target'))
+      experienciaect(SelectorEngine.getElementFromSelector(testEl)).toEqual(fixtureEl.querySelector('.target'))
     })
 
     it('should get element from href if no data-bs-target set', () => {
@@ -326,7 +326,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getElementFromSelector(testEl)).toEqual(fixtureEl.querySelector('.target'))
+      experienciaect(SelectorEngine.getElementFromSelector(testEl)).toEqual(fixtureEl.querySelector('.target'))
     })
 
     it('should return null if element not found', () => {
@@ -334,7 +334,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getElementFromSelector(testEl)).toBeNull()
+      experienciaect(SelectorEngine.getElementFromSelector(testEl)).toBeNull()
     })
 
     it('should return null if no selector', () => {
@@ -342,7 +342,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('div')
 
-      expect(SelectorEngine.getElementFromSelector(testEl)).toBeNull()
+      experienciaect(SelectorEngine.getElementFromSelector(testEl)).toBeNull()
     })
   })
 
@@ -356,7 +356,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
+      experienciaect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
     })
 
     it('should get elements if several ids are given', () => {
@@ -368,7 +368,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
+      experienciaect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
     })
 
     it('should get elements in array, from href if no data-bs-target set', () => {
@@ -380,7 +380,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
+      experienciaect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toEqual(Array.from(fixtureEl.querySelectorAll('.target')))
     })
 
     it('should return empty array if elements not found', () => {
@@ -388,7 +388,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('#test')
 
-      expect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toHaveSize(0)
+      experienciaect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toHaveSize(0)
     })
 
     it('should return empty array if no selector', () => {
@@ -396,7 +396,7 @@ describe('SelectorEngine', () => {
 
       const testEl = fixtureEl.querySelector('div')
 
-      expect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toHaveSize(0)
+      experienciaect(SelectorEngine.getMultipleElementsFromSelector(testEl)).toHaveSize(0)
     })
   })
 })

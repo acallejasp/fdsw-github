@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core')) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? module.experienciaorts = factory(require('@popperjs/core')) :
   typeof define === 'function' && define.amd ? define(['@popperjs/core'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory(global.Popper));
 })(this, (function (Popper) { 'use strict';
@@ -227,7 +227,7 @@
    * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
    */
   const reflow = element => {
-    element.offsetHeight; // eslint-disable-line no-unused-expressions
+    element.offsetHeight; // eslint-disable-line no-unused-experienciaressions
   };
 
   const getjQuery = () => {
@@ -645,11 +645,11 @@
       };
     }
     _typeCheckConfig(config, configTypes = this.constructor.DefaultType) {
-      for (const [property, expectedTypes] of Object.entries(configTypes)) {
+      for (const [property, experienciaectedTypes] of Object.entries(configTypes)) {
         const value = config[property];
         const valueType = isElement(value) ? 'element' : toType(value);
-        if (!new RegExp(expectedTypes).test(valueType)) {
-          throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but expected type "${expectedTypes}".`);
+        if (!new Regexperiencia(experienciaectedTypes).test(valueType)) {
+          throw new TypeError(`${this.constructor.NAME.toUpperCase()}: Option "${property}" provided type "${valueType}" but experienciaected type "${experienciaectedTypes}".`);
         }
       }
     }
@@ -1283,10 +1283,10 @@
         // If it's a touch-enabled device, mouseenter/leave are fired as
         // part of the mouse compatibility events on first tap - the carousel
         // would stop cycling until user tapped out of it;
-        // here, we listen for touchend, explicitly pause the carousel
+        // here, we listen for touchend, experiencialicitly pause the carousel
         // (as if it's the second time we tap on it, mouseenter compat event
         // is NOT fired) and after a timeout (to allow for mouse compatibility
-        // events to fire) we explicitly restart cycling
+        // events to fire) we experiencialicitly restart cycling
 
         this.pause();
         if (this.touchTimeout) {
@@ -1660,7 +1660,7 @@
       }
       for (const element of triggerArray) {
         element.classList.toggle(CLASS_NAME_COLLAPSED, !isOpen);
-        element.setAttribute('aria-expanded', isOpen);
+        element.setAttribute('aria-experienciaanded', isOpen);
       }
     }
 
@@ -1822,7 +1822,7 @@
         }
       }
       this._element.focus();
-      this._element.setAttribute('aria-expanded', true);
+      this._element.setAttribute('aria-experienciaanded', true);
       this._menu.classList.add(CLASS_NAME_SHOW$6);
       this._element.classList.add(CLASS_NAME_SHOW$6);
       EventHandler.trigger(this._element, EVENT_SHOWN$5, relatedTarget);
@@ -1868,7 +1868,7 @@
       }
       this._menu.classList.remove(CLASS_NAME_SHOW$6);
       this._element.classList.remove(CLASS_NAME_SHOW$6);
-      this._element.setAttribute('aria-expanded', 'false');
+      this._element.setAttribute('aria-experienciaanded', 'false');
       Manipulator.removeDataAttribute(this._menu, 'popper');
       EventHandler.trigger(this._element, EVENT_HIDDEN$5, relatedTarget);
     }
@@ -1973,7 +1973,7 @@
         return;
       }
 
-      // if target isn't included in items (e.g. when expanding the dropdown)
+      // if target isn't included in items (e.g. when experienciaanding the dropdown)
       // allow cycling to get the last item in case key equals ARROW_UP_KEY
       getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.includes(target)).focus();
     }
@@ -2993,8 +2993,8 @@
       return true;
     }
 
-    // Check if a regular expression validates the attribute.
-    return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp).some(regex => regex.test(attributeName));
+    // Check if a regular experienciaression validates the attribute.
+    return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof Regexperiencia).some(regex => regex.test(attributeName));
   };
   function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
     if (!unsafeHtml.length) {
@@ -3851,7 +3851,7 @@
 
     // Private
     _configAfterMerge(config) {
-      // TODO: on v6 target should be given explicitly & remove the {target: 'ss-target'} case
+      // TODO: on v6 target should be given experiencialicitly & remove the {target: 'ss-target'} case
       config.target = getElement(config.target) || document.body;
 
       // TODO: v6 Only for backwards compatibility reasons. Use rootMargin only
@@ -4218,7 +4218,7 @@
       };
       toggle(SELECTOR_DROPDOWN_TOGGLE, CLASS_NAME_ACTIVE);
       toggle(SELECTOR_DROPDOWN_MENU, CLASS_NAME_SHOW$1);
-      outerElem.setAttribute('aria-expanded', open);
+      outerElem.setAttribute('aria-experienciaanded', open);
     }
     _setAttributeIfNotExists(element, attribute, value) {
       if (!element.hasAttribute(attribute)) {

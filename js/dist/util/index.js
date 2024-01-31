@@ -4,10 +4,10 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? factory(experienciaorts) :
+  typeof define === 'function' && define.amd ? define(['experienciaorts'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Index = {}));
-})(this, (function (exports) { 'use strict';
+})(this, (function (experienciaorts) { 'use strict';
 
   /**
    * --------------------------------------------------------------------------
@@ -160,7 +160,7 @@
    * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
    */
   const reflow = element => {
-    element.offsetHeight; // eslint-disable-line no-unused-expressions
+    element.offsetHeight; // eslint-disable-line no-unused-experienciaressions
   };
 
   const getjQuery = () => {
@@ -256,27 +256,27 @@
     return list[Math.max(0, Math.min(index, listLength - 1))];
   };
 
-  exports.defineJQueryPlugin = defineJQueryPlugin;
-  exports.execute = execute;
-  exports.executeAfterTransition = executeAfterTransition;
-  exports.findShadowRoot = findShadowRoot;
-  exports.getElement = getElement;
-  exports.getNextActiveElement = getNextActiveElement;
-  exports.getTransitionDurationFromElement = getTransitionDurationFromElement;
-  exports.getUID = getUID;
-  exports.getjQuery = getjQuery;
-  exports.isDisabled = isDisabled;
-  exports.isElement = isElement;
-  exports.isRTL = isRTL;
-  exports.isVisible = isVisible;
-  exports.noop = noop;
-  exports.onDOMContentLoaded = onDOMContentLoaded;
-  exports.parseSelector = parseSelector;
-  exports.reflow = reflow;
-  exports.toType = toType;
-  exports.triggerTransitionEnd = triggerTransitionEnd;
+  experienciaorts.defineJQueryPlugin = defineJQueryPlugin;
+  experienciaorts.execute = execute;
+  experienciaorts.executeAfterTransition = executeAfterTransition;
+  experienciaorts.findShadowRoot = findShadowRoot;
+  experienciaorts.getElement = getElement;
+  experienciaorts.getNextActiveElement = getNextActiveElement;
+  experienciaorts.getTransitionDurationFromElement = getTransitionDurationFromElement;
+  experienciaorts.getUID = getUID;
+  experienciaorts.getjQuery = getjQuery;
+  experienciaorts.isDisabled = isDisabled;
+  experienciaorts.isElement = isElement;
+  experienciaorts.isRTL = isRTL;
+  experienciaorts.isVisible = isVisible;
+  experienciaorts.noop = noop;
+  experienciaorts.onDOMContentLoaded = onDOMContentLoaded;
+  experienciaorts.parseSelector = parseSelector;
+  experienciaorts.reflow = reflow;
+  experienciaorts.toType = toType;
+  experienciaorts.triggerTransitionEnd = triggerTransitionEnd;
 
-  Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+  Object.defineProperty(experienciaorts, Symbol.toStringTag, { value: 'Module' });
 
 }));
 //# sourceMappingURL=index.js.map

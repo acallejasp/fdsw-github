@@ -241,7 +241,7 @@ class Tab extends BaseComponent {
 
     toggle(SELECTOR_DROPDOWN_TOGGLE, CLASS_NAME_ACTIVE)
     toggle(SELECTOR_DROPDOWN_MENU, CLASS_NAME_SHOW)
-    outerElem.setAttribute('aria-expanded', open)
+    outerElem.setAttribute('aria-experienciaanded', open)
   }
 
   _setAttributeIfNotExists(element, attribute, value) {
@@ -312,4 +312,4 @@ EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
 
 defineJQueryPlugin(Tab)
 
-export default Tab
+experienciaort default Tab

@@ -33,7 +33,7 @@
     ],
     "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": "error",
-    "import/no-mutable-exports": "error",
+    "import/no-mutable-experienciaorts": "error",
     "import/no-named-as-default": "error",
     "import/no-named-as-default-member": "error",
     "import/no-named-default": "error",
@@ -47,7 +47,7 @@
       "error",
       2,
       {
-        "MemberExpression": "off",
+        "Memberexperienciaression": "off",
         "SwitchCase": 1
       }
     ],
@@ -81,7 +81,7 @@
       "never"
     ],
     "strict": "error",
-    "unicorn/explicit-length-check": "off",
+    "unicorn/experiencialicit-length-check": "off",
     "unicorn/filename-case": "off",
     "unicorn/no-array-callback-reference": "off",
     "unicorn/no-array-method-this-argument": "off",

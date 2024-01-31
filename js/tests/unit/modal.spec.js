@@ -26,19 +26,19 @@ describe('Modal', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Modal.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Modal.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(Modal.Default).toEqual(jasmine.any(Object))
+      experienciaect(Modal.Default).toEqual(jasmine.any(Object))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Modal.DATA_KEY).toEqual('bs.modal')
+      experienciaect(Modal.DATA_KEY).toEqual('bs.modal')
     })
   })
 
@@ -50,8 +50,8 @@ describe('Modal', () => {
       const modalBySelector = new Modal('.modal')
       const modalByElement = new Modal(modalEl)
 
-      expect(modalBySelector._element).toEqual(modalEl)
-      expect(modalByElement._element).toEqual(modalEl)
+      experienciaect(modalBySelector._element).toEqual(modalEl)
+      experienciaect(modalByElement._element).toEqual(modalEl)
     })
   })
 
@@ -66,12 +66,12 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(spyHide).toHaveBeenCalled()
+          experienciaect(spyHide).toHaveBeenCalled()
           modal.toggle()
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spyReset).toHaveBeenCalled()
+          experienciaect(spyReset).toHaveBeenCalled()
           resolve()
         })
 
@@ -89,15 +89,15 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
 
         modalEl.addEventListener('show.bs.modal', event => {
-          expect(event).toBeDefined()
+          experienciaect(event).toBeDefined()
         })
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toEqual('true')
-          expect(modalEl.getAttribute('role')).toEqual('dialog')
-          expect(modalEl.getAttribute('aria-hidden')).toBeNull()
-          expect(modalEl.style.display).toEqual('block')
-          expect(document.querySelector('.modal-backdrop')).not.toBeNull()
+          experienciaect(modalEl.getAttribute('aria-modal')).toEqual('true')
+          experienciaect(modalEl.getAttribute('role')).toEqual('dialog')
+          experienciaect(modalEl.getAttribute('aria-hidden')).toBeNull()
+          experienciaect(modalEl.style.display).toEqual('block')
+          experienciaect(document.querySelector('.modal-backdrop')).not.toBeNull()
           resolve()
         })
 
@@ -115,15 +115,15 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('show.bs.modal', event => {
-          expect(event).toBeDefined()
+          experienciaect(event).toBeDefined()
         })
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toEqual('true')
-          expect(modalEl.getAttribute('role')).toEqual('dialog')
-          expect(modalEl.getAttribute('aria-hidden')).toBeNull()
-          expect(modalEl.style.display).toEqual('block')
-          expect(document.querySelector('.modal-backdrop')).toBeNull()
+          experienciaect(modalEl.getAttribute('aria-modal')).toEqual('true')
+          experienciaect(modalEl.getAttribute('role')).toEqual('dialog')
+          experienciaect(modalEl.getAttribute('aria-hidden')).toBeNull()
+          experienciaect(modalEl.style.display).toEqual('block')
+          experienciaect(document.querySelector('.modal-backdrop')).toBeNull()
           resolve()
         })
 
@@ -144,7 +144,7 @@ describe('Modal', () => {
 
         modalEl.addEventListener('shown.bs.modal', () => {
           const dynamicModal = document.getElementById(id)
-          expect(dynamicModal).not.toBeNull()
+          experienciaect(dynamicModal).not.toBeNull()
           dynamicModal.remove()
           resolve()
         })
@@ -164,7 +164,7 @@ describe('Modal', () => {
 
       modal.show()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should do nothing if a modal is transitioning', () => {
@@ -178,7 +178,7 @@ describe('Modal', () => {
 
       modal.show()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should not fire shown event when show is prevented', () => {
@@ -191,12 +191,12 @@ describe('Modal', () => {
         modalEl.addEventListener('show.bs.modal', event => {
           event.preventDefault()
 
-          const expectedDone = () => {
-            expect().nothing()
+          const experienciaectedDone = () => {
+            experienciaect().nothing()
             resolve()
           }
 
-          setTimeout(expectedDone, 10)
+          setTimeout(experienciaectedDone, 10)
         })
 
         modalEl.addEventListener('shown.bs.modal', () => {
@@ -227,8 +227,8 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(prevented).toBeTrue()
-          expect(modal._isAnimated()).toBeTrue()
+          experienciaect(prevented).toBeTrue()
+          experienciaect(modal._isAnimated()).toBeTrue()
           resolve()
         })
 
@@ -244,12 +244,12 @@ describe('Modal', () => {
 
         modalEl.addEventListener('show.bs.modal', () => {
           setTimeout(() => {
-            expect(modal._isTransitioning).toBeTrue()
+            experienciaect(modal._isTransitioning).toBeTrue()
           })
         })
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modal._isTransitioning).toBeFalse()
+          experienciaect(modal._isTransitioning).toBeFalse()
           resolve()
         })
 
@@ -280,7 +280,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -308,7 +308,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -328,7 +328,7 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalEl.scrollTop).toEqual(0)
+          experienciaect(modalEl.scrollTop).toEqual(0)
           resolve()
         })
 
@@ -351,7 +351,7 @@ describe('Modal', () => {
         const modal = new Modal(modalEl)
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalBody.scrollTop).toEqual(0)
+          experienciaect(modalBody.scrollTop).toEqual(0)
           resolve()
         })
 
@@ -371,7 +371,7 @@ describe('Modal', () => {
         const spy = spyOn(modal._focustrap, 'activate').and.callThrough()
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(spy).not.toHaveBeenCalled()
+          experienciaect(spy).not.toHaveBeenCalled()
           resolve()
         })
 
@@ -396,7 +396,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -413,8 +413,8 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, 'hide')
 
-        const expectDone = () => {
-          expect(spy).not.toHaveBeenCalled()
+        const experienciaectDone = () => {
+          experienciaect(spy).not.toHaveBeenCalled()
 
           resolve()
         }
@@ -424,7 +424,7 @@ describe('Modal', () => {
           keydownTab.key = 'Tab'
 
           modalEl.dispatchEvent(keydownTab)
-          setTimeout(expectDone, 30)
+          setTimeout(experienciaectDone, 30)
         })
 
         modal.show()
@@ -440,8 +440,8 @@ describe('Modal', () => {
 
         const spy = spyOn(modal, '_adjustDialog').and.callThrough()
 
-        const expectDone = () => {
-          expect(spy).toHaveBeenCalled()
+        const experienciaectDone = () => {
+          experienciaect(spy).toHaveBeenCalled()
 
           resolve()
         }
@@ -450,7 +450,7 @@ describe('Modal', () => {
           const resizeEvent = createEvent('resize')
 
           window.dispatchEvent(resizeEvent)
-          setTimeout(expectDone, 10)
+          setTimeout(experienciaectDone, 10)
         })
 
         modal.show()
@@ -472,7 +472,7 @@ describe('Modal', () => {
 
         const shownCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toEqual(true)
+            experienciaect(modal._isShown).toEqual(true)
             resolve()
           }, 10)
         }
@@ -502,7 +502,7 @@ describe('Modal', () => {
 
         const shownCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toBeTrue()
+            experienciaect(modal._isShown).toBeTrue()
             resolve()
           }, 10)
         }
@@ -531,7 +531,7 @@ describe('Modal', () => {
 
         const shownCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toBeTrue()
+            experienciaect(modal._isShown).toBeTrue()
             resolve()
           }, 10)
         }
@@ -560,7 +560,7 @@ describe('Modal', () => {
 
         const shownCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toBeFalse()
+            experienciaect(modal._isShown).toBeFalse()
             resolve()
           }, 10)
         }
@@ -588,7 +588,7 @@ describe('Modal', () => {
 
         const shownCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toBeTrue()
+            experienciaect(modal._isShown).toBeTrue()
             resolve()
           }, 10)
         }
@@ -621,7 +621,7 @@ describe('Modal', () => {
         modalEl.addEventListener('shown.bs.modal', () => {
           modalEl.click()
           setTimeout(() => {
-            expect(modalEl.clientHeight).toEqual(modalEl.scrollHeight)
+            experienciaect(modalEl.clientHeight).toEqual(modalEl.scrollHeight)
             resolve()
           }, 20)
         })
@@ -649,7 +649,7 @@ describe('Modal', () => {
           modalEl.click()
 
           setTimeout(() => {
-            expect(spy).toHaveBeenCalledTimes(1)
+            experienciaect(spy).toHaveBeenCalledTimes(1)
             resolve()
           }, 20)
         })
@@ -668,7 +668,7 @@ describe('Modal', () => {
         const spy = spyOn(modal._focustrap, 'activate').and.callThrough()
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -691,15 +691,15 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hide.bs.modal', event => {
-          expect(event).toBeDefined()
+          experienciaect(event).toBeDefined()
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toBeNull()
-          expect(modalEl.getAttribute('role')).toBeNull()
-          expect(modalEl.getAttribute('aria-hidden')).toEqual('true')
-          expect(modalEl.style.display).toEqual('none')
-          expect(backdropSpy).toHaveBeenCalled()
+          experienciaect(modalEl.getAttribute('aria-modal')).toBeNull()
+          experienciaect(modalEl.getAttribute('role')).toBeNull()
+          experienciaect(modalEl.getAttribute('aria-hidden')).toEqual('true')
+          experienciaect(modalEl.style.display).toEqual('none')
+          experienciaect(backdropSpy).toHaveBeenCalled()
           resolve()
         })
 
@@ -722,11 +722,11 @@ describe('Modal', () => {
 
           dialogEl.dispatchEvent(mouseDown)
           modalEl.click()
-          expect(spy).not.toHaveBeenCalled()
+          experienciaect(spy).not.toHaveBeenCalled()
 
           modalEl.dispatchEvent(mouseDown)
           modalEl.click()
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -756,7 +756,7 @@ describe('Modal', () => {
         modalEl.addEventListener('shown.bs.modal', () => {
           modalEl.dispatchEvent(createEvent('mousedown'))
           buttonEl.click()
-          expect(spy).not.toHaveBeenCalled()
+          experienciaect(spy).not.toHaveBeenCalled()
           resolve()
         })
 
@@ -772,7 +772,7 @@ describe('Modal', () => {
 
       modal.hide()
 
-      expect().nothing()
+      experienciaect().nothing()
     })
 
     it('should do nothing is the modal is transitioning', () => {
@@ -784,7 +784,7 @@ describe('Modal', () => {
       modal._isTransitioning = true
       modal.hide()
 
-      expect().nothing()
+      experienciaect().nothing()
     })
 
     it('should not hide a modal if hide is prevented', () => {
@@ -800,7 +800,7 @@ describe('Modal', () => {
 
         const hideCallback = () => {
           setTimeout(() => {
-            expect(modal._isShown).toBeTrue()
+            experienciaect(modal._isShown).toBeTrue()
             resolve()
           }, 10)
         }
@@ -831,7 +831,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -849,15 +849,15 @@ describe('Modal', () => {
       const focustrap = modal._focustrap
       const spyDeactivate = spyOn(focustrap, 'deactivate').and.callThrough()
 
-      expect(Modal.getInstance(modalEl)).toEqual(modal)
+      experienciaect(Modal.getInstance(modalEl)).toEqual(modal)
 
       const spyOff = spyOn(EventHandler, 'off')
 
       modal.dispose()
 
-      expect(Modal.getInstance(modalEl)).toBeNull()
-      expect(spyOff).toHaveBeenCalledTimes(3)
-      expect(spyDeactivate).toHaveBeenCalled()
+      experienciaect(Modal.getInstance(modalEl)).toBeNull()
+      experienciaect(spyOff).toHaveBeenCalledTimes(3)
+      experienciaect(spyDeactivate).toHaveBeenCalled()
     })
   })
 
@@ -872,7 +872,7 @@ describe('Modal', () => {
 
       modal.handleUpdate()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -888,20 +888,20 @@ describe('Modal', () => {
         const trigger = fixtureEl.querySelector('[data-bs-toggle="modal"]')
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toEqual('true')
-          expect(modalEl.getAttribute('role')).toEqual('dialog')
-          expect(modalEl.getAttribute('aria-hidden')).toBeNull()
-          expect(modalEl.style.display).toEqual('block')
-          expect(document.querySelector('.modal-backdrop')).not.toBeNull()
+          experienciaect(modalEl.getAttribute('aria-modal')).toEqual('true')
+          experienciaect(modalEl.getAttribute('role')).toEqual('dialog')
+          experienciaect(modalEl.getAttribute('aria-hidden')).toBeNull()
+          experienciaect(modalEl.style.display).toEqual('block')
+          experienciaect(document.querySelector('.modal-backdrop')).not.toBeNull()
           setTimeout(() => trigger.click(), 10)
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toBeNull()
-          expect(modalEl.getAttribute('role')).toBeNull()
-          expect(modalEl.getAttribute('aria-hidden')).toEqual('true')
-          expect(modalEl.style.display).toEqual('none')
-          expect(document.querySelector('.modal-backdrop')).toBeNull()
+          experienciaect(modalEl.getAttribute('aria-modal')).toBeNull()
+          experienciaect(modalEl.getAttribute('role')).toBeNull()
+          experienciaect(modalEl.getAttribute('aria-hidden')).toEqual('true')
+          experienciaect(modalEl.style.display).toEqual('none')
+          experienciaect(document.querySelector('.modal-backdrop')).toBeNull()
           resolve()
         })
 
@@ -923,7 +923,7 @@ describe('Modal', () => {
         const spy = spyOn(modal, 'show').and.callThrough()
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -944,12 +944,12 @@ describe('Modal', () => {
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
         modalEl.addEventListener('shown.bs.modal', () => {
-          expect(modalEl.getAttribute('aria-modal')).toEqual('true')
-          expect(modalEl.getAttribute('role')).toEqual('dialog')
-          expect(modalEl.getAttribute('aria-hidden')).toBeNull()
-          expect(modalEl.style.display).toEqual('block')
-          expect(document.querySelector('.modal-backdrop')).not.toBeNull()
-          expect(spy).toHaveBeenCalled()
+          experienciaect(modalEl.getAttribute('aria-modal')).toEqual('true')
+          experienciaect(modalEl.getAttribute('role')).toEqual('dialog')
+          experienciaect(modalEl.getAttribute('aria-hidden')).toBeNull()
+          experienciaect(modalEl.style.display).toEqual('block')
+          experienciaect(document.querySelector('.modal-backdrop')).not.toBeNull()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -977,7 +977,7 @@ describe('Modal', () => {
 
         const hideListener = () => {
           setTimeout(() => {
-            expect(spy).toHaveBeenCalled()
+            experienciaect(spy).toHaveBeenCalled()
             resolve()
           }, 20)
         }
@@ -1010,7 +1010,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).not.toHaveBeenCalled()
+          experienciaect(spy).not.toHaveBeenCalled()
           resolve()
         })
 
@@ -1039,7 +1039,7 @@ describe('Modal', () => {
         })
 
         modalEl.addEventListener('hidden.bs.modal', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -1066,7 +1066,7 @@ describe('Modal', () => {
 
         const hideListener = () => {
           setTimeout(() => {
-            expect(spy).not.toHaveBeenCalled()
+            experienciaect(spy).not.toHaveBeenCalled()
             resolve()
           }, 20)
         }
@@ -1092,7 +1092,7 @@ describe('Modal', () => {
 
         const showListener = () => {
           setTimeout(() => {
-            expect(spy).not.toHaveBeenCalled()
+            experienciaect(spy).not.toHaveBeenCalled()
             resolve()
           }, 10)
         }
@@ -1123,8 +1123,8 @@ describe('Modal', () => {
           trigger2.click()
         })
         modalEl1.addEventListener('hidden.bs.modal', () => {
-          expect(Modal.getInstance(modalEl2)).not.toBeNull()
-          expect(modalEl2).toHaveClass('show')
+          experienciaect(Modal.getInstance(modalEl2)).not.toBeNull()
+          experienciaect(modalEl2).toHaveClass('show')
           resolve()
         })
         modal1.show()
@@ -1142,7 +1142,7 @@ describe('Modal', () => {
 
       jQueryMock.fn.modal.call(jQueryMock)
 
-      expect(Modal.getInstance(div)).not.toBeNull()
+      experienciaect(Modal.getInstance(div)).not.toBeNull()
     })
 
     it('should create a modal with given config', () => {
@@ -1155,11 +1155,11 @@ describe('Modal', () => {
 
       jQueryMock.fn.modal.call(jQueryMock, { keyboard: false })
       const spy = spyOn(Modal.prototype, 'constructor')
-      expect(spy).not.toHaveBeenCalledWith(div, { keyboard: false })
+      experienciaect(spy).not.toHaveBeenCalledWith(div, { keyboard: false })
 
       const modal = Modal.getInstance(div)
-      expect(modal).not.toBeNull()
-      expect(modal._config.keyboard).toBeFalse()
+      experienciaect(modal).not.toBeNull()
+      experienciaect(modal._config.keyboard).toBeFalse()
     })
 
     it('should not re create a modal', () => {
@@ -1173,7 +1173,7 @@ describe('Modal', () => {
 
       jQueryMock.fn.modal.call(jQueryMock)
 
-      expect(Modal.getInstance(div)).toEqual(modal)
+      experienciaect(Modal.getInstance(div)).toEqual(modal)
     })
 
     it('should throw error on undefined method', () => {
@@ -1185,7 +1185,7 @@ describe('Modal', () => {
       jQueryMock.fn.modal = Modal.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.modal.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -1203,7 +1203,7 @@ describe('Modal', () => {
 
       jQueryMock.fn.modal.call(jQueryMock, 'show')
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should not call show method', () => {
@@ -1218,7 +1218,7 @@ describe('Modal', () => {
 
       jQueryMock.fn.modal.call(jQueryMock)
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
   })
 
@@ -1229,8 +1229,8 @@ describe('Modal', () => {
       const div = fixtureEl.querySelector('div')
       const modal = new Modal(div)
 
-      expect(Modal.getInstance(div)).toEqual(modal)
-      expect(Modal.getInstance(div)).toBeInstanceOf(Modal)
+      experienciaect(Modal.getInstance(div)).toEqual(modal)
+      experienciaect(Modal.getInstance(div)).toBeInstanceOf(Modal)
     })
 
     it('should return null when there is no modal instance', () => {
@@ -1238,7 +1238,7 @@ describe('Modal', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Modal.getInstance(div)).toBeNull()
+      experienciaect(Modal.getInstance(div)).toBeNull()
     })
   })
 
@@ -1249,9 +1249,9 @@ describe('Modal', () => {
       const div = fixtureEl.querySelector('div')
       const modal = new Modal(div)
 
-      expect(Modal.getOrCreateInstance(div)).toEqual(modal)
-      expect(Modal.getInstance(div)).toEqual(Modal.getOrCreateInstance(div, {}))
-      expect(Modal.getOrCreateInstance(div)).toBeInstanceOf(Modal)
+      experienciaect(Modal.getOrCreateInstance(div)).toEqual(modal)
+      experienciaect(Modal.getInstance(div)).toEqual(Modal.getOrCreateInstance(div, {}))
+      experienciaect(Modal.getOrCreateInstance(div)).toBeInstanceOf(Modal)
     })
 
     it('should return new instance when there is no modal instance', () => {
@@ -1259,8 +1259,8 @@ describe('Modal', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Modal.getInstance(div)).toBeNull()
-      expect(Modal.getOrCreateInstance(div)).toBeInstanceOf(Modal)
+      experienciaect(Modal.getInstance(div)).toBeNull()
+      experienciaect(Modal.getOrCreateInstance(div)).toBeInstanceOf(Modal)
     })
 
     it('should return new instance when there is no modal instance with given configuration', () => {
@@ -1268,13 +1268,13 @@ describe('Modal', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Modal.getInstance(div)).toBeNull()
+      experienciaect(Modal.getInstance(div)).toBeNull()
       const modal = Modal.getOrCreateInstance(div, {
         backdrop: true
       })
-      expect(modal).toBeInstanceOf(Modal)
+      experienciaect(modal).toBeInstanceOf(Modal)
 
-      expect(modal._config.backdrop).toBeTrue()
+      experienciaect(modal._config.backdrop).toBeTrue()
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -1284,15 +1284,15 @@ describe('Modal', () => {
       const modal = new Modal(div, {
         backdrop: true
       })
-      expect(Modal.getInstance(div)).toEqual(modal)
+      experienciaect(Modal.getInstance(div)).toEqual(modal)
 
       const modal2 = Modal.getOrCreateInstance(div, {
         backdrop: false
       })
-      expect(modal).toBeInstanceOf(Modal)
-      expect(modal2).toEqual(modal)
+      experienciaect(modal).toBeInstanceOf(Modal)
+      experienciaect(modal2).toEqual(modal)
 
-      expect(modal2._config.backdrop).toBeTrue()
+      experienciaect(modal2._config.backdrop).toBeTrue()
     })
   })
 })

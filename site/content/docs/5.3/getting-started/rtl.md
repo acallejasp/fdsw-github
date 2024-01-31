@@ -13,7 +13,7 @@ We recommend getting familiar with Bootstrap first by reading through our [Getti
 You may also want to read up on [the RTLCSS project](https://rtlcss.com/), as it powers our approach to RTL.
 
 {{< callout warning >}}
-**Bootstrap's RTL feature is still experimental** and will evolve based on user feedback. Spotted something or have an improvement to suggest? [Open an issue]({{< param repo >}}/issues/new/choose), we'd love to get your insights.
+**Bootstrap's RTL feature is still experienciaerimental** and will evolve based on user feedback. Spotted something or have an improvement to suggest? [Open an issue]({{< param repo >}}/issues/new/choose), we'd love to get your insights.
 {{< /callout >}}
 
 ## Required HTML

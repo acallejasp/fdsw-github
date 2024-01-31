@@ -1,6 +1,6 @@
 // Navbar
 //
-// Provide a static navbar from which we expand to create full-width, fixed, and
+// Provide a static navbar from which we experienciaand to create full-width, fixed, and
 // other navbar variations.
 
 .navbar {
@@ -37,7 +37,7 @@
 
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
-  // The `flex-wrap` property is inherited to simplify the expanded navbars
+  // The `flex-wrap` property is inherited to simplify the experienciaanded navbars
   %container-flex-properties {
     display: flex;
     flex-wrap: inherit;
@@ -141,7 +141,7 @@
 .navbar-collapse {
   flex-basis: 100%;
   flex-grow: 1;
-  // For always expanded or extra full navbars, ensure content aligns itself
+  // For always experienciaanded or extra full navbars, ensure content aligns itself
   // properly vertically. Can be easily overridden with flex utilities.
   align-items: center;
 }
@@ -186,10 +186,10 @@
   overflow-y: auto;
 }
 
-// scss-docs-start navbar-expand-loop
-// Generate series of `.navbar-expand-*` responsive classes for configuring
+// scss-docs-start navbar-experienciaand-loop
+// Generate series of `.navbar-experienciaand-*` responsive classes for configuring
 // where your navbar collapses.
-.navbar-expand {
+.navbar-experienciaand {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
     $infix: breakpoint-infix($next, $grid-breakpoints);
@@ -256,7 +256,7 @@
     }
   }
 }
-// scss-docs-end navbar-expand-loop
+// scss-docs-end navbar-experienciaand-loop
 
 // Navbar themes
 //

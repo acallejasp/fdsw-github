@@ -18,7 +18,7 @@ describe('Util', () => {
       const uid = Util.getUID('bs')
       const uid2 = Util.getUID('bs')
 
-      expect(uid).not.toEqual(uid2)
+      experienciaect(uid).not.toEqual(uid2)
     })
   })
 
@@ -26,18 +26,18 @@ describe('Util', () => {
     it('should get transition from element', () => {
       fixtureEl.innerHTML = '<div style="transition: all 300ms ease-out;"></div>'
 
-      expect(Util.getTransitionDurationFromElement(fixtureEl.querySelector('div'))).toEqual(300)
+      experienciaect(Util.getTransitionDurationFromElement(fixtureEl.querySelector('div'))).toEqual(300)
     })
 
     it('should return 0 if the element is undefined or null', () => {
-      expect(Util.getTransitionDurationFromElement(null)).toEqual(0)
-      expect(Util.getTransitionDurationFromElement(undefined)).toEqual(0)
+      experienciaect(Util.getTransitionDurationFromElement(null)).toEqual(0)
+      experienciaect(Util.getTransitionDurationFromElement(undefined)).toEqual(0)
     })
 
     it('should return 0 if the element do not possess transition', () => {
       fixtureEl.innerHTML = '<div></div>'
 
-      expect(Util.getTransitionDurationFromElement(fixtureEl.querySelector('div'))).toEqual(0)
+      experienciaect(Util.getTransitionDurationFromElement(fixtureEl.querySelector('div'))).toEqual(0)
     })
   })
 
@@ -50,7 +50,7 @@ describe('Util', () => {
         const spy = spyOn(el, 'dispatchEvent').and.callThrough()
 
         el.addEventListener('transitionend', () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -68,9 +68,9 @@ describe('Util', () => {
 
       const el = fixtureEl.querySelector('#foo')
 
-      expect(Util.isElement(el)).toBeTrue()
-      expect(Util.isElement({})).toBeFalse()
-      expect(Util.isElement(fixtureEl.querySelectorAll('.test'))).toBeFalse()
+      experienciaect(Util.isElement(el)).toBeTrue()
+      experienciaect(Util.isElement({})).toBeFalse()
+      experienciaect(Util.isElement(fixtureEl.querySelectorAll('.test'))).toBeFalse()
     })
 
     it('should detect jQuery element', () => {
@@ -82,7 +82,7 @@ describe('Util', () => {
         jquery: 'foo'
       }
 
-      expect(Util.isElement(fakejQuery)).toBeTrue()
+      experienciaect(Util.isElement(fakejQuery)).toBeTrue()
     })
   })
 
@@ -95,32 +95,32 @@ describe('Util', () => {
 
       const el = fixtureEl.querySelector('div')
 
-      expect(Util.getElement(el)).toEqual(el)
-      expect(Util.getElement('#foo')).toEqual(el)
-      expect(Util.getElement('#fail')).toBeNull()
-      expect(Util.getElement({})).toBeNull()
-      expect(Util.getElement([])).toBeNull()
-      expect(Util.getElement()).toBeNull()
-      expect(Util.getElement(null)).toBeNull()
-      expect(Util.getElement(fixtureEl.querySelectorAll('.test'))).toBeNull()
+      experienciaect(Util.getElement(el)).toEqual(el)
+      experienciaect(Util.getElement('#foo')).toEqual(el)
+      experienciaect(Util.getElement('#fail')).toBeNull()
+      experienciaect(Util.getElement({})).toBeNull()
+      experienciaect(Util.getElement([])).toBeNull()
+      experienciaect(Util.getElement()).toBeNull()
+      experienciaect(Util.getElement(null)).toBeNull()
+      experienciaect(Util.getElement(fixtureEl.querySelectorAll('.test'))).toBeNull()
 
       const fakejQueryObject = {
         0: el,
         jquery: 'foo'
       }
 
-      expect(Util.getElement(fakejQueryObject)).toEqual(el)
+      experienciaect(Util.getElement(fakejQueryObject)).toEqual(el)
     })
   })
 
   describe('isVisible', () => {
     it('should return false if the element is not defined', () => {
-      expect(Util.isVisible(null)).toBeFalse()
-      expect(Util.isVisible(undefined)).toBeFalse()
+      experienciaect(Util.isVisible(null)).toBeFalse()
+      experienciaect(Util.isVisible(undefined)).toBeFalse()
     })
 
     it('should return false if the element provided is not a dom element', () => {
-      expect(Util.isVisible({})).toBeFalse()
+      experienciaect(Util.isVisible({})).toBeFalse()
     })
 
     it('should return false if the element is not visible with display none', () => {
@@ -128,7 +128,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Util.isVisible(div)).toBeFalse()
+      experienciaect(Util.isVisible(div)).toBeFalse()
     })
 
     it('should return false if the element is not visible with visibility hidden', () => {
@@ -136,7 +136,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Util.isVisible(div)).toBeFalse()
+      experienciaect(Util.isVisible(div)).toBeFalse()
     })
 
     it('should return false if an ancestor element is display none', () => {
@@ -152,7 +152,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('.content')
 
-      expect(Util.isVisible(div)).toBeFalse()
+      experienciaect(Util.isVisible(div)).toBeFalse()
     })
 
     it('should return false if an ancestor element is visibility hidden', () => {
@@ -168,7 +168,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('.content')
 
-      expect(Util.isVisible(div)).toBeFalse()
+      experienciaect(Util.isVisible(div)).toBeFalse()
     })
 
     it('should return true if an ancestor element is visibility hidden, but reverted', () => {
@@ -184,7 +184,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('.content')
 
-      expect(Util.isVisible(div)).toBeTrue()
+      experienciaect(Util.isVisible(div)).toBeTrue()
     })
 
     it('should return true if the element is visible', () => {
@@ -196,7 +196,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#element')
 
-      expect(Util.isVisible(div)).toBeTrue()
+      experienciaect(Util.isVisible(div)).toBeTrue()
     })
 
     it('should return false if the element is hidden, but not via display or visibility', () => {
@@ -208,7 +208,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#element')
 
-      expect(Util.isVisible(div)).toBeFalse()
+      experienciaect(Util.isVisible(div)).toBeFalse()
     })
 
     it('should return true if its a closed details element', () => {
@@ -216,7 +216,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#element')
 
-      expect(Util.isVisible(div)).toBeTrue()
+      experienciaect(Util.isVisible(div)).toBeTrue()
     })
 
     it('should return true if the element is visible inside an open details element', () => {
@@ -228,7 +228,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#element')
 
-      expect(Util.isVisible(div)).toBeTrue()
+      experienciaect(Util.isVisible(div)).toBeTrue()
     })
 
     it('should return true if the element is a visible summary in a closed details element', () => {
@@ -243,21 +243,21 @@ describe('Util', () => {
       const element1 = fixtureEl.querySelector('#element-1')
       const element2 = fixtureEl.querySelector('#element-2')
 
-      expect(Util.isVisible(element1)).toBeTrue()
-      expect(Util.isVisible(element2)).toBeTrue()
+      experienciaect(Util.isVisible(element1)).toBeTrue()
+      experienciaect(Util.isVisible(element2)).toBeTrue()
     })
   })
 
   describe('isDisabled', () => {
     it('should return true if the element is not defined', () => {
-      expect(Util.isDisabled(null)).toBeTrue()
-      expect(Util.isDisabled(undefined)).toBeTrue()
-      expect(Util.isDisabled()).toBeTrue()
+      experienciaect(Util.isDisabled(null)).toBeTrue()
+      experienciaect(Util.isDisabled(undefined)).toBeTrue()
+      experienciaect(Util.isDisabled()).toBeTrue()
     })
 
     it('should return true if the element provided is not a dom element', () => {
-      expect(Util.isDisabled({})).toBeTrue()
-      expect(Util.isDisabled('test')).toBeTrue()
+      experienciaect(Util.isDisabled({})).toBeTrue()
+      experienciaect(Util.isDisabled('test')).toBeTrue()
     })
 
     it('should return true if the element has disabled attribute', () => {
@@ -273,9 +273,9 @@ describe('Util', () => {
       const div1 = fixtureEl.querySelector('#element1')
       const div2 = fixtureEl.querySelector('#element2')
 
-      expect(Util.isDisabled(div)).toBeTrue()
-      expect(Util.isDisabled(div1)).toBeTrue()
-      expect(Util.isDisabled(div2)).toBeTrue()
+      experienciaect(Util.isDisabled(div)).toBeTrue()
+      experienciaect(Util.isDisabled(div1)).toBeTrue()
+      experienciaect(Util.isDisabled(div2)).toBeTrue()
     })
 
     it('should return false if the element has disabled attribute with "false" value, or doesn\'t have attribute', () => {
@@ -289,8 +289,8 @@ describe('Util', () => {
       const div = fixtureEl.querySelector('#element')
       const div1 = fixtureEl.querySelector('#element1')
 
-      expect(Util.isDisabled(div)).toBeFalse()
-      expect(Util.isDisabled(div1)).toBeFalse()
+      experienciaect(Util.isDisabled(div)).toBeFalse()
+      experienciaect(Util.isDisabled(div1)).toBeFalse()
     })
 
     it('should return false if the element is not disabled ', () => {
@@ -304,9 +304,9 @@ describe('Util', () => {
 
       const el = selector => fixtureEl.querySelector(selector)
 
-      expect(Util.isDisabled(el('#button'))).toBeFalse()
-      expect(Util.isDisabled(el('#select'))).toBeFalse()
-      expect(Util.isDisabled(el('#input'))).toBeFalse()
+      experienciaect(Util.isDisabled(el('#button'))).toBeFalse()
+      experienciaect(Util.isDisabled(el('#select'))).toBeFalse()
+      experienciaect(Util.isDisabled(el('#input'))).toBeFalse()
     })
 
     it('should return true if the element has disabled attribute', () => {
@@ -324,12 +324,12 @@ describe('Util', () => {
 
       const el = selector => fixtureEl.querySelector(selector)
 
-      expect(Util.isDisabled(el('#input'))).toBeTrue()
-      expect(Util.isDisabled(el('#input1'))).toBeTrue()
-      expect(Util.isDisabled(el('#button'))).toBeTrue()
-      expect(Util.isDisabled(el('#button1'))).toBeTrue()
-      expect(Util.isDisabled(el('#button2'))).toBeTrue()
-      expect(Util.isDisabled(el('#input'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#input'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#input1'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#button'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#button1'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#button2'))).toBeTrue()
+      experienciaect(Util.isDisabled(el('#input'))).toBeTrue()
     })
 
     it('should return true if the element has class "disabled"', () => {
@@ -341,7 +341,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#element')
 
-      expect(Util.isDisabled(div)).toBeTrue()
+      experienciaect(Util.isDisabled(div)).toBeTrue()
     })
 
     it('should return true if the element has class "disabled" but disabled attribute is false', () => {
@@ -353,7 +353,7 @@ describe('Util', () => {
 
       const div = fixtureEl.querySelector('#input')
 
-      expect(Util.isDisabled(div)).toBeTrue()
+      experienciaect(Util.isDisabled(div)).toBeTrue()
     })
   })
 
@@ -361,7 +361,7 @@ describe('Util', () => {
     it('should return null if shadow dom is not available', () => {
       // Only for newer browsers
       if (!document.documentElement.attachShadow) {
-        expect().nothing()
+        experienciaect().nothing()
         return
       }
 
@@ -371,25 +371,25 @@ describe('Util', () => {
 
       spyOn(document.documentElement, 'attachShadow').and.returnValue(null)
 
-      expect(Util.findShadowRoot(div)).toBeNull()
+      experienciaect(Util.findShadowRoot(div)).toBeNull()
     })
 
     it('should return null when we do not find a shadow root', () => {
       // Only for newer browsers
       if (!document.documentElement.attachShadow) {
-        expect().nothing()
+        experienciaect().nothing()
         return
       }
 
       spyOn(document, 'getRootNode').and.returnValue(undefined)
 
-      expect(Util.findShadowRoot(document)).toBeNull()
+      experienciaect(Util.findShadowRoot(document)).toBeNull()
     })
 
     it('should return the shadow root when found', () => {
       // Only for newer browsers
       if (!document.documentElement.attachShadow) {
-        expect().nothing()
+        experienciaect().nothing()
         return
       }
 
@@ -400,17 +400,17 @@ describe('Util', () => {
         mode: 'open'
       })
 
-      expect(Util.findShadowRoot(shadowRoot)).toEqual(shadowRoot)
+      experienciaect(Util.findShadowRoot(shadowRoot)).toEqual(shadowRoot)
 
       shadowRoot.innerHTML = '<button>Shadow Button</button>'
 
-      expect(Util.findShadowRoot(shadowRoot.firstChild)).toEqual(shadowRoot)
+      experienciaect(Util.findShadowRoot(shadowRoot.firstChild)).toEqual(shadowRoot)
     })
   })
 
   describe('noop', () => {
     it('should be a function', () => {
-      expect(Util.noop).toEqual(jasmine.any(Function))
+      experienciaect(Util.noop).toEqual(jasmine.any(Function))
     })
   })
 
@@ -421,7 +421,7 @@ describe('Util', () => {
       const div = fixtureEl.querySelector('div')
       const spy = spyOnProperty(div, 'offsetHeight')
       Util.reflow(div)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -440,21 +440,21 @@ describe('Util', () => {
     })
 
     it('should return jQuery object when present', () => {
-      expect(Util.getjQuery()).toEqual(fakejQuery)
+      experienciaect(Util.getjQuery()).toEqual(fakejQuery)
     })
 
     it('should not return jQuery object when present if data-bs-no-jquery', () => {
       document.body.setAttribute('data-bs-no-jquery', '')
 
-      expect(window.jQuery).toEqual(fakejQuery)
-      expect(Util.getjQuery()).toBeNull()
+      experienciaect(window.jQuery).toEqual(fakejQuery)
+      experienciaect(Util.getjQuery()).toBeNull()
 
       document.body.removeAttribute('data-bs-no-jquery')
     })
 
     it('should not return jQuery if not present', () => {
       window.jQuery = undefined
-      expect(Util.getjQuery()).toBeNull()
+      experienciaect(Util.getjQuery()).toBeNull()
     })
   })
 
@@ -474,15 +474,15 @@ describe('Util', () => {
         cancelable: true
       }))
 
-      expect(spy).toHaveBeenCalled()
-      expect(spy2).toHaveBeenCalled()
-      expect(spyAdd).toHaveBeenCalledTimes(1)
+      experienciaect(spy).toHaveBeenCalled()
+      experienciaect(spy2).toHaveBeenCalled()
+      experienciaect(spyAdd).toHaveBeenCalledTimes(1)
     })
 
     it('should execute callback if readyState is not "loading"', () => {
       const spy = jasmine.createSpy()
       Util.onDOMContentLoaded(spy)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -506,9 +506,9 @@ describe('Util', () => {
       pluginMock.jQueryInterface = Util.noop
 
       Util.defineJQueryPlugin(pluginMock)
-      expect(fakejQuery.fn.test).toEqual(pluginMock.jQueryInterface)
-      expect(fakejQuery.fn.test.Constructor).toEqual(pluginMock)
-      expect(fakejQuery.fn.test.noConflict).toEqual(jasmine.any(Function))
+      experienciaect(fakejQuery.fn.test).toEqual(pluginMock.jQueryInterface)
+      experienciaect(fakejQuery.fn.test.Constructor).toEqual(pluginMock)
+      experienciaect(fakejQuery.fn.test.noConflict).toEqual(jasmine.any(Function))
     })
   })
 
@@ -516,26 +516,26 @@ describe('Util', () => {
     it('should execute if arg is function', () => {
       const spy = jasmine.createSpy('spy')
       Util.execute(spy)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should execute if arg is function & return the result', () => {
       const functionFoo = (num1, num2 = 10) => num1 + num2
       const resultFoo = Util.execute(functionFoo, [4, 5])
-      expect(resultFoo).toBe(9)
+      experienciaect(resultFoo).toBe(9)
 
       const resultFoo1 = Util.execute(functionFoo, [4])
-      expect(resultFoo1).toBe(14)
+      experienciaect(resultFoo1).toBe(14)
 
       const functionBar = () => 'foo'
       const resultBar = Util.execute(functionBar)
-      expect(resultBar).toBe('foo')
+      experienciaect(resultBar).toBe('foo')
     })
 
     it('should not execute if arg is not function & return default argument', () => {
       const foo = 'bar'
-      expect(Util.execute(foo)).toBe('bar')
-      expect(Util.execute(foo, [], 4)).toBe(4)
+      experienciaect(Util.execute(foo)).toBe('bar')
+      experienciaect(Util.execute(foo, [], 4)).toBe(4)
     })
   })
 
@@ -547,8 +547,8 @@ describe('Util', () => {
 
       Util.executeAfterTransition(callbackSpy, el, false)
 
-      expect(callbackSpy).toHaveBeenCalled()
-      expect(eventListenerSpy).not.toHaveBeenCalled()
+      experienciaect(callbackSpy).toHaveBeenCalled()
+      experienciaect(eventListenerSpy).not.toHaveBeenCalled()
     })
 
     it('should execute a function when a transitionend event is dispatched', () => {
@@ -564,7 +564,7 @@ describe('Util', () => {
 
       el.dispatchEvent(new TransitionEvent('transitionend'))
 
-      expect(callbackSpy).toHaveBeenCalled()
+      experienciaect(callbackSpy).toHaveBeenCalled()
     })
 
     it('should execute a function after a computed CSS transition duration and there was no transitionend event dispatched', () => {
@@ -580,7 +580,7 @@ describe('Util', () => {
         Util.executeAfterTransition(callbackSpy, el)
 
         setTimeout(() => {
-          expect(callbackSpy).toHaveBeenCalled()
+          experienciaect(callbackSpy).toHaveBeenCalled()
           resolve()
         }, 70)
       })
@@ -603,7 +603,7 @@ describe('Util', () => {
         }, 50)
 
         setTimeout(() => {
-          expect(callbackSpy).toHaveBeenCalledTimes(1)
+          experienciaect(callbackSpy).toHaveBeenCalledTimes(1)
           resolve()
         }, 70)
       })
@@ -627,7 +627,7 @@ describe('Util', () => {
 
         setTimeout(() => {
           // setTimeout should not have triggered another transitionend event.
-          expect(dispatchSpy).not.toHaveBeenCalled()
+          experienciaect(dispatchSpy).not.toHaveBeenCalled()
           resolve()
         }, 70)
       })
@@ -657,11 +657,11 @@ describe('Util', () => {
         }))
 
         setTimeout(() => {
-          expect(callbackSpy).not.toHaveBeenCalled()
+          experienciaect(callbackSpy).not.toHaveBeenCalled()
         }, 20)
 
         setTimeout(() => {
-          expect(callbackSpy).toHaveBeenCalled()
+          experienciaect(callbackSpy).toHaveBeenCalled()
           resolve()
         }, 70)
       })
@@ -672,49 +672,49 @@ describe('Util', () => {
     it('should return first element if active not exists or not given and shouldGetNext is either true, or false with cycling being disabled', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, '', true, true)).toEqual('a')
-      expect(Util.getNextActiveElement(array, 'g', true, true)).toEqual('a')
-      expect(Util.getNextActiveElement(array, '', true, false)).toEqual('a')
-      expect(Util.getNextActiveElement(array, 'g', true, false)).toEqual('a')
-      expect(Util.getNextActiveElement(array, '', false, false)).toEqual('a')
-      expect(Util.getNextActiveElement(array, 'g', false, false)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, '', true, true)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'g', true, true)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, '', true, false)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'g', true, false)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, '', false, false)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'g', false, false)).toEqual('a')
     })
 
     it('should return last element if active not exists or not given and shouldGetNext is false but cycling is enabled', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, '', false, true)).toEqual('d')
-      expect(Util.getNextActiveElement(array, 'g', false, true)).toEqual('d')
+      experienciaect(Util.getNextActiveElement(array, '', false, true)).toEqual('d')
+      experienciaect(Util.getNextActiveElement(array, 'g', false, true)).toEqual('d')
     })
 
     it('should return next element or same if is last', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, 'a', true, true)).toEqual('b')
-      expect(Util.getNextActiveElement(array, 'b', true, true)).toEqual('c')
-      expect(Util.getNextActiveElement(array, 'd', true, false)).toEqual('d')
+      experienciaect(Util.getNextActiveElement(array, 'a', true, true)).toEqual('b')
+      experienciaect(Util.getNextActiveElement(array, 'b', true, true)).toEqual('c')
+      experienciaect(Util.getNextActiveElement(array, 'd', true, false)).toEqual('d')
     })
 
     it('should return next element or first, if is last and "isCycleAllowed = true"', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, 'c', true, true)).toEqual('d')
-      expect(Util.getNextActiveElement(array, 'd', true, true)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'c', true, true)).toEqual('d')
+      experienciaect(Util.getNextActiveElement(array, 'd', true, true)).toEqual('a')
     })
 
     it('should return previous element or same if is first', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, 'b', false, true)).toEqual('a')
-      expect(Util.getNextActiveElement(array, 'd', false, true)).toEqual('c')
-      expect(Util.getNextActiveElement(array, 'a', false, false)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'b', false, true)).toEqual('a')
+      experienciaect(Util.getNextActiveElement(array, 'd', false, true)).toEqual('c')
+      experienciaect(Util.getNextActiveElement(array, 'a', false, false)).toEqual('a')
     })
 
     it('should return next element or first, if is last and "isCycleAllowed = true"', () => {
       const array = ['a', 'b', 'c', 'd']
 
-      expect(Util.getNextActiveElement(array, 'd', false, true)).toEqual('c')
-      expect(Util.getNextActiveElement(array, 'a', false, true)).toEqual('d')
+      experienciaect(Util.getNextActiveElement(array, 'd', false, true)).toEqual('c')
+      experienciaect(Util.getNextActiveElement(array, 'a', false, true)).toEqual('d')
     })
   })
 })

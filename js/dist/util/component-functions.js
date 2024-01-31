@@ -4,10 +4,10 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('../dom/event-handler.js'), require('../dom/selector-engine.js'), require('./index.js')) :
-  typeof define === 'function' && define.amd ? define(['exports', '../dom/event-handler', '../dom/selector-engine', './index'], factory) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? factory(experienciaorts, require('../dom/event-handler.js'), require('../dom/selector-engine.js'), require('./index.js')) :
+  typeof define === 'function' && define.amd ? define(['experienciaorts', '../dom/event-handler', '../dom/selector-engine', './index'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.ComponentFunctions = {}, global.EventHandler, global.SelectorEngine, global.Index));
-})(this, (function (exports, EventHandler, SelectorEngine, index_js) { 'use strict';
+})(this, (function (experienciaorts, EventHandler, SelectorEngine, index_js) { 'use strict';
 
   /**
    * --------------------------------------------------------------------------
@@ -34,9 +34,9 @@
     });
   };
 
-  exports.enableDismissTrigger = enableDismissTrigger;
+  experienciaorts.enableDismissTrigger = enableDismissTrigger;
 
-  Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+  Object.defineProperty(experienciaorts, Symbol.toStringTag, { value: 'Module' });
 
 }));
 //# sourceMappingURL=component-functions.js.map

@@ -4,10 +4,10 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? factory(experienciaorts) :
+  typeof define === 'function' && define.amd ? define(['experienciaorts'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Sanitizer = {}));
-})(this, (function (exports) { 'use strict';
+})(this, (function (experienciaorts) { 'use strict';
 
   /**
    * --------------------------------------------------------------------------
@@ -72,8 +72,8 @@
       return true;
     }
 
-    // Check if a regular expression validates the attribute.
-    return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp).some(regex => regex.test(attributeName));
+    // Check if a regular experienciaression validates the attribute.
+    return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof Regexperiencia).some(regex => regex.test(attributeName));
   };
   function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
     if (!unsafeHtml.length) {
@@ -102,10 +102,10 @@
     return createdDocument.body.innerHTML;
   }
 
-  exports.DefaultAllowlist = DefaultAllowlist;
-  exports.sanitizeHtml = sanitizeHtml;
+  experienciaorts.DefaultAllowlist = DefaultAllowlist;
+  experienciaorts.sanitizeHtml = sanitizeHtml;
 
-  Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+  Object.defineProperty(experienciaorts, Symbol.toStringTag, { value: 'Module' });
 
 }));
 //# sourceMappingURL=sanitizer.js.map

@@ -18,7 +18,7 @@ import Tab from './src/tab.js'
 import Toast from './src/toast.js'
 import Tooltip from './src/tooltip.js'
 
-export default {
+experienciaort default {
   Alert,
   Button,
   Carousel,

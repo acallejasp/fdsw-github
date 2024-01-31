@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./base-component.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./dom/selector-engine.js'), require('./util/index.js'), require('./util/swipe.js')) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? module.experienciaorts = factory(require('./base-component.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./dom/selector-engine.js'), require('./util/index.js'), require('./util/swipe.js')) :
   typeof define === 'function' && define.amd ? define(['./base-component', './dom/event-handler', './dom/manipulator', './dom/selector-engine', './util/index', './util/swipe'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Carousel = factory(global.BaseComponent, global.EventHandler, global.Manipulator, global.SelectorEngine, global.Index, global.Swipe));
 })(this, (function (BaseComponent, EventHandler, Manipulator, SelectorEngine, index_js, Swipe) { 'use strict';
@@ -195,10 +195,10 @@
         // If it's a touch-enabled device, mouseenter/leave are fired as
         // part of the mouse compatibility events on first tap - the carousel
         // would stop cycling until user tapped out of it;
-        // here, we listen for touchend, explicitly pause the carousel
+        // here, we listen for touchend, experiencialicitly pause the carousel
         // (as if it's the second time we tap on it, mouseenter compat event
         // is NOT fired) and after a timeout (to allow for mouse compatibility
-        // events to fire) we explicitly restart cycling
+        // events to fire) we experiencialicitly restart cycling
 
         this.pause();
         if (this.touchTimeout) {

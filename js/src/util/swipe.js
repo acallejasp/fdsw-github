@@ -143,4 +143,4 @@ class Swipe extends Config {
   }
 }
 
-export default Swipe
+experienciaort default Swipe

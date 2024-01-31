@@ -14,7 +14,7 @@ describe('Tab', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Tab.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Tab.VERSION).toEqual(jasmine.any(String))
     })
   })
 
@@ -33,8 +33,8 @@ describe('Tab', () => {
       const tabBySelector = new Tab('[href="#home"]')
       const tabByElement = new Tab(tabEl)
 
-      expect(tabBySelector._element).toEqual(tabEl)
-      expect(tabByElement._element).toEqual(tabEl)
+      experienciaect(tabBySelector._element).toEqual(tabEl)
+      experienciaect(tabByElement._element).toEqual(tabEl)
     })
 
     it('Do not Throw exception if not parent', () => {
@@ -43,7 +43,7 @@ describe('Tab', () => {
       ].join('')
       const navEl = fixtureEl.querySelector('.nav-link')
 
-      expect(() => {
+      experienciaect(() => {
         new Tab(navEl) // eslint-disable-line no-new
       }).not.toThrowError(TypeError)
     })
@@ -67,8 +67,8 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
-          expect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
           resolve()
         })
 
@@ -93,8 +93,8 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
-          expect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(profileTriggerEl.getAttribute('aria-selected')).toEqual('true')
           resolve()
         })
 
@@ -119,7 +119,7 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
 
@@ -144,7 +144,7 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
 
@@ -169,7 +169,7 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
 
@@ -207,7 +207,7 @@ describe('Tab', () => {
       const tab = new Tab(profileTriggerEl)
 
       profileTriggerEl.addEventListener('shown.bs.tab', () => {
-        expect(fixtureEl.querySelector(`#${CSS.escape('2')}`)).toHaveClass('active')
+        experienciaect(fixtureEl.querySelector(`#${CSS.escape('2')}`)).toHaveClass('active')
         done()
       })
 
@@ -220,16 +220,16 @@ describe('Tab', () => {
 
         const navEl = fixtureEl.querySelector('.nav > div')
         const tab = new Tab(navEl)
-        const expectDone = () => {
+        const experienciaectDone = () => {
           setTimeout(() => {
-            expect().nothing()
+            experienciaect().nothing()
             resolve()
           }, 30)
         }
 
         navEl.addEventListener('show.bs.tab', ev => {
           ev.preventDefault()
-          expectDone()
+          experienciaectDone()
         })
 
         navEl.addEventListener('shown.bs.tab', () => {
@@ -262,7 +262,7 @@ describe('Tab', () => {
 
         tab.show()
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 30)
       })
@@ -285,13 +285,13 @@ describe('Tab', () => {
         const secondTab = new Tab(secondTabTrigger)
 
         secondTabTrigger.addEventListener('show.bs.tab', ev => {
-          expect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#home')
+          experienciaect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#home')
         })
 
         secondTabTrigger.addEventListener('shown.bs.tab', ev => {
-          expect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#home')
-          expect(secondTabTrigger.getAttribute('aria-selected')).toEqual('true')
-          expect(fixtureEl.querySelector('button:not(.active)').getAttribute('aria-selected')).toEqual('false')
+          experienciaect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#home')
+          experienciaect(secondTabTrigger.getAttribute('aria-selected')).toEqual('true')
+          experienciaect(fixtureEl.querySelector('button:not(.active)').getAttribute('aria-selected')).toEqual('false')
           resolve()
         })
 
@@ -319,12 +319,12 @@ describe('Tab', () => {
 
         triggerList[0].addEventListener('hide.bs.tab', ev => {
           hideCalled = true
-          expect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#profile')
+          experienciaect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#profile')
         })
 
         triggerList[0].addEventListener('hidden.bs.tab', ev => {
-          expect(hideCalled).toBeTrue()
-          expect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#profile')
+          experienciaect(hideCalled).toBeTrue()
+          experienciaect(ev.relatedTarget.getAttribute('data-bs-target')).toEqual('#profile')
           resolve()
         })
 
@@ -344,9 +344,9 @@ describe('Tab', () => {
         const triggerList = fixtureEl.querySelectorAll('button')
         const firstTab = new Tab(triggerList[0])
         const secondTab = new Tab(triggerList[1])
-        const expectDone = () => {
+        const experienciaectDone = () => {
           setTimeout(() => {
-            expect().nothing()
+            experienciaect().nothing()
             resolve()
           }, 30)
         }
@@ -357,7 +357,7 @@ describe('Tab', () => {
 
         triggerList[0].addEventListener('hide.bs.tab', ev => {
           ev.preventDefault()
-          expectDone()
+          experienciaectDone()
         })
 
         triggerList[0].addEventListener('hidden.bs.tab', () => {
@@ -400,7 +400,7 @@ describe('Tab', () => {
         const secondNavTab = new Tab(secondNavEl)
 
         secondNavEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelectorAll('.nav-tab')).toHaveSize(2)
+          experienciaect(fixtureEl.querySelectorAll('.nav-tab')).toHaveSize(2)
           resolve()
         })
 
@@ -439,8 +439,8 @@ describe('Tab', () => {
         const tab = new Tab(profileTriggerEl)
 
         profileTriggerEl.addEventListener('shown.bs.tab', () => {
-          expect(document.activeElement).toBe(firstTab)
-          expect(document.activeElement).not.toBe(profileTriggerEl)
+          experienciaect(document.activeElement).toBe(firstTab)
+          experienciaect(document.activeElement).not.toBe(profileTriggerEl)
           resolve()
         })
 
@@ -456,11 +456,11 @@ describe('Tab', () => {
       const el = fixtureEl.querySelector('.nav > div')
       const tab = new Tab(fixtureEl.querySelector('.nav > div'))
 
-      expect(Tab.getInstance(el)).not.toBeNull()
+      experienciaect(Tab.getInstance(el)).not.toBeNull()
 
       tab.dispose()
 
-      expect(Tab.getInstance(el)).toBeNull()
+      experienciaect(Tab.getInstance(el)).toBeNull()
     })
   })
 
@@ -478,8 +478,8 @@ describe('Tab', () => {
 
       const spyQueue = spyOn(tab, '_queueCallback')
       tab._activate(null, spy)
-      expect(spyQueue).not.toHaveBeenCalled()
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spyQueue).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
   })
 
@@ -500,22 +500,22 @@ describe('Tab', () => {
       const tabPanel = fixtureEl.querySelector('#panel')
       const tabPanel2 = fixtureEl.querySelector('#panel2')
 
-      expect(parent.getAttribute('role')).toEqual(null)
-      expect(tabEl.getAttribute('role')).toEqual(null)
-      expect(tabPanel.getAttribute('role')).toEqual(null)
+      experienciaect(parent.getAttribute('role')).toEqual(null)
+      experienciaect(tabEl.getAttribute('role')).toEqual(null)
+      experienciaect(tabPanel.getAttribute('role')).toEqual(null)
       const tab = new Tab(tabEl)
       tab._setInitialAttributes(parent, children)
 
-      expect(parent.getAttribute('role')).toEqual('tablist')
-      expect(tabEl.getAttribute('role')).toEqual('tab')
+      experienciaect(parent.getAttribute('role')).toEqual('tablist')
+      experienciaect(tabEl.getAttribute('role')).toEqual('tab')
 
-      expect(tabPanel.getAttribute('role')).toEqual('tabpanel')
-      expect(tabPanel2.getAttribute('role')).toEqual('tabpanel')
-      expect(tabPanel.hasAttribute('tabindex')).toBeFalse()
-      expect(tabPanel.hasAttribute('tabindex2')).toBeFalse()
+      experienciaect(tabPanel.getAttribute('role')).toEqual('tabpanel')
+      experienciaect(tabPanel2.getAttribute('role')).toEqual('tabpanel')
+      experienciaect(tabPanel.hasAttribute('tabindex')).toBeFalse()
+      experienciaect(tabPanel.hasAttribute('tabindex2')).toBeFalse()
 
-      expect(tabPanel.getAttribute('aria-labelledby')).toEqual('foo')
-      expect(tabPanel2.hasAttribute('aria-labelledby')).toBeFalse()
+      experienciaect(tabPanel.getAttribute('aria-labelledby')).toEqual('foo')
+      experienciaect(tabPanel2.hasAttribute('aria-labelledby')).toBeFalse()
     })
   })
 
@@ -538,11 +538,11 @@ describe('Tab', () => {
       const spyGet = spyOn(tab, '_getChildren')
 
       tabEl.dispatchEvent(keydown)
-      expect(spyKeydown).toHaveBeenCalled()
-      expect(spyGet).not.toHaveBeenCalled()
+      experienciaect(spyKeydown).toHaveBeenCalled()
+      experienciaect(spyGet).not.toHaveBeenCalled()
 
-      expect(spyStop).not.toHaveBeenCalled()
-      expect(spyPrevent).not.toHaveBeenCalled()
+      experienciaect(spyStop).not.toHaveBeenCalled()
+      experienciaect(spyPrevent).not.toHaveBeenCalled()
     })
 
     it('if keydown event is right/down arrow, handle it', () => {
@@ -574,22 +574,22 @@ describe('Tab', () => {
       keydown.key = 'ArrowRight'
 
       tabEl1.dispatchEvent(keydown)
-      expect(spyShow2).toHaveBeenCalled()
-      expect(spyFocus2).toHaveBeenCalled()
+      experienciaect(spyShow2).toHaveBeenCalled()
+      experienciaect(spyFocus2).toHaveBeenCalled()
 
       keydown = createEvent('keydown')
       keydown.key = 'ArrowDown'
 
       tabEl2.dispatchEvent(keydown)
-      expect(spyShow3).toHaveBeenCalled()
-      expect(spyFocus3).toHaveBeenCalled()
+      experienciaect(spyShow3).toHaveBeenCalled()
+      experienciaect(spyFocus3).toHaveBeenCalled()
 
       tabEl3.dispatchEvent(keydown)
-      expect(spyShow1).toHaveBeenCalled()
-      expect(spyFocus1).toHaveBeenCalled()
+      experienciaect(spyShow1).toHaveBeenCalled()
+      experienciaect(spyFocus1).toHaveBeenCalled()
 
-      expect(spyStop).toHaveBeenCalledTimes(3)
-      expect(spyPrevent).toHaveBeenCalledTimes(3)
+      experienciaect(spyStop).toHaveBeenCalledTimes(3)
+      experienciaect(spyPrevent).toHaveBeenCalledTimes(3)
     })
 
     it('if keydown event is left arrow, handle it', () => {
@@ -616,18 +616,18 @@ describe('Tab', () => {
       keydown.key = 'ArrowLeft'
 
       tabEl2.dispatchEvent(keydown)
-      expect(spyShow1).toHaveBeenCalled()
-      expect(spyFocus1).toHaveBeenCalled()
+      experienciaect(spyShow1).toHaveBeenCalled()
+      experienciaect(spyFocus1).toHaveBeenCalled()
 
       keydown = createEvent('keydown')
       keydown.key = 'ArrowUp'
 
       tabEl1.dispatchEvent(keydown)
-      expect(spyShow2).toHaveBeenCalled()
-      expect(spyFocus2).toHaveBeenCalled()
+      experienciaect(spyShow2).toHaveBeenCalled()
+      experienciaect(spyFocus2).toHaveBeenCalled()
 
-      expect(spyStop).toHaveBeenCalledTimes(2)
-      expect(spyPrevent).toHaveBeenCalledTimes(2)
+      experienciaect(spyStop).toHaveBeenCalledTimes(2)
+      experienciaect(spyPrevent).toHaveBeenCalledTimes(2)
     })
 
     it('if keydown event is Home, handle it', () => {
@@ -653,7 +653,7 @@ describe('Tab', () => {
 
       tabEl3.dispatchEvent(keydown)
 
-      expect(spyShown).toHaveBeenCalled()
+      experienciaect(spyShown).toHaveBeenCalled()
     })
 
     it('if keydown event is End, handle it', () => {
@@ -679,7 +679,7 @@ describe('Tab', () => {
 
       tabEl1.dispatchEvent(keydown)
 
-      expect(spyShown).toHaveBeenCalled()
+      experienciaect(spyShown).toHaveBeenCalled()
     })
 
     it('if keydown event is right arrow and next element is disabled', () => {
@@ -713,14 +713,14 @@ describe('Tab', () => {
       keydown.key = 'ArrowRight'
 
       tabEl1.dispatchEvent(keydown)
-      expect(spy1).not.toHaveBeenCalled()
-      expect(spy2).not.toHaveBeenCalled()
-      expect(spy3).not.toHaveBeenCalled()
-      expect(spy4).toHaveBeenCalledTimes(1)
-      expect(spyFocus1).not.toHaveBeenCalled()
-      expect(spyFocus2).not.toHaveBeenCalled()
-      expect(spyFocus3).not.toHaveBeenCalled()
-      expect(spyFocus4).toHaveBeenCalledTimes(1)
+      experienciaect(spy1).not.toHaveBeenCalled()
+      experienciaect(spy2).not.toHaveBeenCalled()
+      experienciaect(spy3).not.toHaveBeenCalled()
+      experienciaect(spy4).toHaveBeenCalledTimes(1)
+      experienciaect(spyFocus1).not.toHaveBeenCalled()
+      experienciaect(spyFocus2).not.toHaveBeenCalled()
+      experienciaect(spyFocus3).not.toHaveBeenCalled()
+      experienciaect(spyFocus4).toHaveBeenCalledTimes(1)
     })
 
     it('if keydown event is left arrow and next element is disabled', () => {
@@ -754,14 +754,14 @@ describe('Tab', () => {
       keydown.key = 'ArrowLeft'
 
       tabEl4.dispatchEvent(keydown)
-      expect(spy4).not.toHaveBeenCalled()
-      expect(spy3).not.toHaveBeenCalled()
-      expect(spy2).not.toHaveBeenCalled()
-      expect(spy1).toHaveBeenCalledTimes(1)
-      expect(spyFocus4).not.toHaveBeenCalled()
-      expect(spyFocus3).not.toHaveBeenCalled()
-      expect(spyFocus2).not.toHaveBeenCalled()
-      expect(spyFocus1).toHaveBeenCalledTimes(1)
+      experienciaect(spy4).not.toHaveBeenCalled()
+      experienciaect(spy3).not.toHaveBeenCalled()
+      experienciaect(spy2).not.toHaveBeenCalled()
+      experienciaect(spy1).toHaveBeenCalledTimes(1)
+      experienciaect(spyFocus4).not.toHaveBeenCalled()
+      experienciaect(spyFocus3).not.toHaveBeenCalled()
+      experienciaect(spyFocus2).not.toHaveBeenCalled()
+      experienciaect(spyFocus1).toHaveBeenCalledTimes(1)
     })
 
     it('if keydown event is Home and first element is disabled', () => {
@@ -790,8 +790,8 @@ describe('Tab', () => {
 
       tabEl3.dispatchEvent(keydown)
 
-      expect(spyShown1).not.toHaveBeenCalled()
-      expect(spyShown2).toHaveBeenCalled()
+      experienciaect(spyShown1).not.toHaveBeenCalled()
+      experienciaect(spyShown2).toHaveBeenCalled()
     })
 
     it('if keydown event is End and last element is disabled', () => {
@@ -820,8 +820,8 @@ describe('Tab', () => {
 
       tabEl1.dispatchEvent(keydown)
 
-      expect(spyShown3).not.toHaveBeenCalled()
-      expect(spyShown2).toHaveBeenCalled()
+      experienciaect(spyShown3).not.toHaveBeenCalled()
+      experienciaect(spyShown2).toHaveBeenCalled()
     })
   })
 
@@ -836,7 +836,7 @@ describe('Tab', () => {
 
       jQueryMock.fn.tab.call(jQueryMock)
 
-      expect(Tab.getInstance(div)).not.toBeNull()
+      experienciaect(Tab.getInstance(div)).not.toBeNull()
     })
 
     it('should not re create a tab', () => {
@@ -850,7 +850,7 @@ describe('Tab', () => {
 
       jQueryMock.fn.tab.call(jQueryMock)
 
-      expect(Tab.getInstance(div)).toEqual(tab)
+      experienciaect(Tab.getInstance(div)).toEqual(tab)
     })
 
     it('should call a tab method', () => {
@@ -866,8 +866,8 @@ describe('Tab', () => {
 
       jQueryMock.fn.tab.call(jQueryMock, 'show')
 
-      expect(Tab.getInstance(div)).toEqual(tab)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(Tab.getInstance(div)).toEqual(tab)
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should throw error on undefined method', () => {
@@ -879,7 +879,7 @@ describe('Tab', () => {
       jQueryMock.fn.tab = Tab.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.tab.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -887,7 +887,7 @@ describe('Tab', () => {
 
   describe('getInstance', () => {
     it('should return null if there is no instance', () => {
-      expect(Tab.getInstance(fixtureEl)).toBeNull()
+      experienciaect(Tab.getInstance(fixtureEl)).toBeNull()
     })
 
     it('should return this instance', () => {
@@ -896,8 +896,8 @@ describe('Tab', () => {
       const divEl = fixtureEl.querySelector('.nav > div')
       const tab = new Tab(divEl)
 
-      expect(Tab.getInstance(divEl)).toEqual(tab)
-      expect(Tab.getInstance(divEl)).toBeInstanceOf(Tab)
+      experienciaect(Tab.getInstance(divEl)).toEqual(tab)
+      experienciaect(Tab.getInstance(divEl)).toBeInstanceOf(Tab)
     })
   })
 
@@ -908,9 +908,9 @@ describe('Tab', () => {
       const div = fixtureEl.querySelector('div')
       const tab = new Tab(div)
 
-      expect(Tab.getOrCreateInstance(div)).toEqual(tab)
-      expect(Tab.getInstance(div)).toEqual(Tab.getOrCreateInstance(div, {}))
-      expect(Tab.getOrCreateInstance(div)).toBeInstanceOf(Tab)
+      experienciaect(Tab.getOrCreateInstance(div)).toEqual(tab)
+      experienciaect(Tab.getInstance(div)).toEqual(Tab.getOrCreateInstance(div, {}))
+      experienciaect(Tab.getOrCreateInstance(div)).toBeInstanceOf(Tab)
     })
 
     it('should return new instance when there is no tab instance', () => {
@@ -918,8 +918,8 @@ describe('Tab', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Tab.getInstance(div)).toBeNull()
-      expect(Tab.getOrCreateInstance(div)).toBeInstanceOf(Tab)
+      experienciaect(Tab.getInstance(div)).toBeNull()
+      experienciaect(Tab.getOrCreateInstance(div)).toBeInstanceOf(Tab)
     })
   })
 
@@ -940,8 +940,8 @@ describe('Tab', () => {
         const secondTabTrigger = fixtureEl.querySelector('#triggerProfile')
 
         secondTabTrigger.addEventListener('shown.bs.tab', () => {
-          expect(secondTabTrigger).toHaveClass('active')
-          expect(fixtureEl.querySelector('#profile')).toHaveClass('active')
+          experienciaect(secondTabTrigger).toHaveClass('active')
+          experienciaect(fixtureEl.querySelector('#profile')).toHaveClass('active')
           resolve()
         })
 
@@ -967,9 +967,9 @@ describe('Tab', () => {
       const firstLiLinkEl = fixtureEl.querySelector('li:first-child a')
 
       firstLiLinkEl.click()
-      expect(firstLiLinkEl).toHaveClass('active')
-      expect(fixtureEl.querySelector('li:last-child a')).not.toHaveClass('active')
-      expect(fixtureEl.querySelector('li:last-child .dropdown-menu a:first-child')).not.toHaveClass('active')
+      experienciaect(firstLiLinkEl).toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('li:last-child a')).not.toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('li:last-child .dropdown-menu a:first-child')).not.toHaveClass('active')
     })
 
     it('selecting a dropdown tab does not activate another', () => {
@@ -1001,10 +1001,10 @@ describe('Tab', () => {
       const firstDropItem = fixtureEl.querySelector('#nav1 .dropdown-item')
 
       firstDropItem.click()
-      expect(firstDropItem).toHaveClass('active')
-      expect(fixtureEl.querySelector('#nav1 .dropdown-toggle')).toHaveClass('active')
-      expect(fixtureEl.querySelector('#nav2 .dropdown-toggle')).not.toHaveClass('active')
-      expect(fixtureEl.querySelector('#nav2 .dropdown-item')).not.toHaveClass('active')
+      experienciaect(firstDropItem).toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('#nav1 .dropdown-toggle')).toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('#nav2 .dropdown-toggle')).not.toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('#nav2 .dropdown-item')).not.toHaveClass('active')
     })
 
     it('should support li > .dropdown-item', () => {
@@ -1025,9 +1025,9 @@ describe('Tab', () => {
       const dropItems = fixtureEl.querySelectorAll('.dropdown-item')
 
       dropItems[1].click()
-      expect(dropItems[0]).not.toHaveClass('active')
-      expect(dropItems[1]).toHaveClass('active')
-      expect(fixtureEl.querySelector('.nav-link')).not.toHaveClass('active')
+      experienciaect(dropItems[0]).not.toHaveClass('active')
+      experienciaect(dropItems[1]).toHaveClass('active')
+      experienciaect(fixtureEl.querySelector('.nav-link')).not.toHaveClass('active')
     })
 
     it('should handle nested tabs', () => {
@@ -1059,12 +1059,12 @@ describe('Tab', () => {
         const xTab1El = fixtureEl.querySelector('#x-tab1')
 
         tabNested2El.addEventListener('shown.bs.tab', () => {
-          expect(xTab1El).toHaveClass('active')
+          experienciaect(xTab1El).toHaveClass('active')
           resolve()
         })
 
         tab1El.addEventListener('shown.bs.tab', () => {
-          expect(xTab1El).toHaveClass('active')
+          experienciaect(xTab1El).toHaveClass('active')
           tabNested2El.click()
         })
 
@@ -1092,11 +1092,11 @@ describe('Tab', () => {
 
         triggerTabHomeEl.addEventListener('shown.bs.tab', () => {
           setTimeout(() => {
-            expect(tabProfileEl).toHaveClass('fade')
-            expect(tabProfileEl).not.toHaveClass('show')
+            experienciaect(tabProfileEl).toHaveClass('fade')
+            experienciaect(tabProfileEl).not.toHaveClass('show')
 
-            expect(tabHomeEl).toHaveClass('fade')
-            expect(tabHomeEl).toHaveClass('show')
+            experienciaect(tabHomeEl).toHaveClass('fade')
+            experienciaect(tabHomeEl).toHaveClass('show')
 
             resolve()
           }, 10)
@@ -1104,8 +1104,8 @@ describe('Tab', () => {
 
         triggerTabProfileEl.addEventListener('shown.bs.tab', () => {
           setTimeout(() => {
-            expect(tabProfileEl).toHaveClass('fade')
-            expect(tabProfileEl).toHaveClass('show')
+            experienciaect(tabProfileEl).toHaveClass('fade')
+            experienciaect(tabProfileEl).toHaveClass('show')
             triggerTabHomeEl.click()
           }, 10)
         })
@@ -1134,7 +1134,7 @@ describe('Tab', () => {
         const secondNavEl = fixtureEl.querySelector('#secondNav')
 
         secondNavEl.addEventListener('shown.bs.tab', () => {
-          expect(fixtureEl.querySelectorAll('.tab-content .show')).toHaveSize(1)
+          experienciaect(fixtureEl.querySelectorAll('.tab-content .show')).toHaveSize(1)
           resolve()
         })
 
@@ -1163,7 +1163,7 @@ describe('Tab', () => {
 
         secondNavEl.addEventListener('shown.bs.tab', () => {
           setTimeout(() => {
-            expect(fixtureEl.querySelectorAll('.show')).toHaveSize(1)
+            experienciaect(fixtureEl.querySelectorAll('.show')).toHaveSize(1)
             resolve()
           }, 10)
         })
@@ -1185,8 +1185,8 @@ describe('Tab', () => {
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
         tabEl.addEventListener('shown.bs.tab', () => {
-          expect(tabEl).toHaveClass('active')
-          expect(spy).toHaveBeenCalled()
+          experienciaect(tabEl).toHaveClass('active')
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -1214,7 +1214,7 @@ describe('Tab', () => {
 
         triggerDisabled.click()
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 30)
       })
@@ -1241,7 +1241,7 @@ describe('Tab', () => {
 
         triggerDisabled.click()
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 30)
       })

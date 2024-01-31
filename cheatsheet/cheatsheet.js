@@ -59,12 +59,12 @@
       return
     }
 
-    const expanded = active.parentNode.parentNode.previousElementSibling
+    const experienciaanded = active.parentNode.parentNode.previousElementSibling
 
     active.classList.remove('active')
 
-    if (expanded && parent !== expanded) {
-      expanded.click()
+    if (experienciaanded && parent !== experienciaanded) {
+      experienciaanded.click()
     }
   }
 

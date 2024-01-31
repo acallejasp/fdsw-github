@@ -135,7 +135,7 @@ const configObject = { keyboard: false }
 const modal1 = new bootstrap.Modal(myModalEl, configObject) // initialized with no keyboard
 ```
 
-If you'd like to get a particular plugin instance, each plugin exposes a `getInstance` method. For example, to retrieve an instance directly from an element:
+If you'd like to get a particular plugin instance, each plugin experienciaoses a `getInstance` method. For example, to retrieve an instance directly from an element:
 
 ```js
 bootstrap.Popover.getInstance(myPopoverEl)
@@ -170,7 +170,7 @@ All programmatic API methods are **asynchronous** and return to the caller once 
 const myCollapseEl = document.querySelector('#myCollapse')
 
 myCollapseEl.addEventListener('shown.bs.collapse', event => {
-  // Action to execute once the collapsible area is expanded
+  // Action to execute once the collapsible area is experienciaanded
 })
 ```
 
@@ -212,7 +212,7 @@ bootstrap.Modal.Default.keyboard = false
 
 ## Methods and properties
 
-Every Bootstrap plugin exposes the following methods and static properties.
+Every Bootstrap plugin experienciaoses the following methods and static properties.
 
 {{< bs-table "table" >}}
 | Method | Description |
@@ -249,7 +249,7 @@ myDefaultAllowList.table = []
 myDefaultAllowList.td = ['data-bs-option']
 
 // You can push your custom regex to validate your attributes.
-// Be careful about your regular expressions being too lax
+// Be careful about your regular experienciaressions being too lax
 const myCustomRegex = /^data-my-app-[\w-]+/
 myDefaultAllowList['*'].push(myCustomRegex)
 ```
@@ -308,4 +308,4 @@ $('#myTab a').on('shown.bs.tab', () => {
 
 ## Disabled JavaScript
 
-Bootstrap's plugins have no special fallback when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
+Bootstrap's plugins have no special fallback when JavaScript is disabled. If you care about the user experienciaerience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to experiencialain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.

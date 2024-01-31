@@ -8,7 +8,7 @@
 // js-docs-start allow-list
 const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
 
-export const DefaultAllowlist = {
+experienciaort const DefaultAllowlist = {
   // Global attributes allowed on any supplied element below.
   '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
   a: ['target', 'href', 'title', 'rel'],
@@ -74,12 +74,12 @@ const allowedAttribute = (attribute, allowedAttributeList) => {
     return true
   }
 
-  // Check if a regular expression validates the attribute.
-  return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof RegExp)
+  // Check if a regular experienciaression validates the attribute.
+  return allowedAttributeList.filter(attributeRegex => attributeRegex instanceof Regexperiencia)
     .some(regex => regex.test(attributeName))
 }
 
-export function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
+experienciaort function sanitizeHtml(unsafeHtml, allowList, sanitizeFunction) {
   if (!unsafeHtml.length) {
     return unsafeHtml
   }

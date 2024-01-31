@@ -167,7 +167,7 @@ Repeat as necessary for any variable in Bootstrap, including the global options 
 
 Bootstrap includes a handful of Sass maps, key value pairs that make it easier to generate families of related CSS. We use Sass maps for our colors, grid breakpoints, and more. Just like Sass variables, all Sass maps include the `!default` flag and can be overridden and extended.
 
-Some of our Sass maps are merged into empty ones by default. This is done to allow easy expansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
+Some of our Sass maps are merged into empty ones by default. This is done to allow easy experienciaansion of a given Sass map, but comes at the cost of making _removing_ items from a map slightly more difficult.
 
 ### Modify map
 
@@ -296,7 +296,7 @@ We use the `escape-svg` function to escape the `<`, `>` and `#` characters for S
 
 ### Add and Subtract functions
 
-We use the `add` and `subtract` functions to wrap the CSS `calc` function. The primary purpose of these functions is to avoid errors when a "unitless" `0` value is passed into a `calc` expression. Expressions like `calc(10px - 0)` will return an error in all browsers, despite being mathematically correct.
+We use the `add` and `subtract` functions to wrap the CSS `calc` function. The primary purpose of these functions is to avoid errors when a "unitless" `0` value is passed into a `calc` experienciaression. experienciaressions like `calc(10px - 0)` will return an error in all browsers, despite being mathematically correct.
 
 Example where the calc is valid:
 

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Optimize
-description: Keep your projects lean, responsive, and maintainable so you can deliver the best experience and focus on more important jobs.
+description: Keep your projects lean, responsive, and maintainable so you can deliver the best experienciaerience and focus on more important jobs.
 group: customize
 toc: true
 ---
@@ -42,7 +42,7 @@ import 'bootstrap/js/dist/modal';
 This way, you're not including any JavaScript you don't intend to use for components like buttons, carousels, and tooltips. If you're importing dropdowns, tooltips or popovers, be sure to list the Popper dependency in your `package.json` file.
 
 {{< callout info >}}
-**Heads up!** Files in `bootstrap/js/dist` use the **default export**. To use them, do the following:
+**Heads up!** Files in `bootstrap/js/dist` use the **default experienciaort**. To use them, do the following:
 
 <!-- eslint-skip -->
 ```js

@@ -19,7 +19,7 @@ Wrap a series of buttons with `.btn` in `.btn-group`.
 {{< /example >}}
 
 {{< callout info >}}
-Button groups require an appropriate `role` attribute and explicit label to ensure assistive technologies like screen readers identify buttons as grouped and announce them. Use `role="group"` for button groups or `role="toolbar"` for button toolbars. Then use `aria-label` or `aria-labelledby` to label them.
+Button groups require an appropriate `role` attribute and experiencialicit label to ensure assistive technologies like screen readers identify buttons as grouped and announce them. Use `role="group"` for button groups or `role="toolbar"` for button toolbars. Then use `aria-label` or `aria-labelledby` to label them.
 {{< /callout >}}
 
 These classes can also be added to groups of links, as an alternative to the [`.nav` navigation components]({{< docsref "/components/navs-tabs" >}}).
@@ -169,7 +169,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
   <button type="button" class="btn btn-primary">2</button>
 
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown
     </button>
     <ul class="dropdown-menu">
@@ -198,7 +198,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
   <button type="button" class="btn btn-primary">Button</button>
   <button type="button" class="btn btn-primary">Button</button>
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown
     </button>
     <ul class="dropdown-menu">
@@ -207,7 +207,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     </ul>
   </div>
   <div class="btn-group dropstart" role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown
     </button>
     <ul class="dropdown-menu">
@@ -216,7 +216,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     </ul>
   </div>
   <div class="btn-group dropend" role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown
     </button>
     <ul class="dropdown-menu">
@@ -225,7 +225,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     </ul>
   </div>
   <div class="btn-group dropup" role="group">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">
       Dropdown
     </button>
     <ul class="dropdown-menu">

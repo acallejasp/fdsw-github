@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Customize
-description: Learn how to theme, customize, and extend Bootstrap with Sass, a boatload of global options, an expansive color system, and more.
+description: Learn how to theme, customize, and extend Bootstrap with Sass, a boatload of global options, an experienciaansive color system, and more.
 group: customize
 toc: false
 aliases: "/docs/5.3/customize/"
@@ -13,13 +13,13 @@ sections:
   - title: Color
     description: Learn about and customize the color systems that support the entire toolkit.
   - title: Color modes
-    description: Explore our default light mode and the new dark mode, or create custom color modes yourself.
+    description: experiencialore our default light mode and the new dark mode, or create custom color modes yourself.
   - title: Components
     description: Learn how we build nearly all our components responsively and with base and modifier classes.
   - title: CSS variables
     description: Use Bootstrap's CSS custom properties for fast and forward-looking design and development.
   - title: Optimize
-    description: Keep your projects lean, responsive, and maintainable so you can deliver the best experience.
+    description: Keep your projects lean, responsive, and maintainable so you can deliver the best experienciaerience.
 ---
 
 ## Overview
@@ -35,7 +35,7 @@ While we cannot go into details here on how to use every package manager, we can
 
 For those who want to use the distribution files, review the [getting started page]({{< docsref "/getting-started/introduction" >}}) for how to include those files and an example HTML page. From there, consult the docs for the layout, components, and behaviors you'd like to use.
 
-As you familiarize yourself with Bootstrap, continue exploring this section for more details on how to utilize our global options, making use of and changing our color system, how we build our components, how to use our growing list of CSS custom properties, and how to optimize your code when building with Bootstrap.
+As you familiarize yourself with Bootstrap, continue experiencialoring this section for more details on how to utilize our global options, making use of and changing our color system, how we build our components, how to use our growing list of CSS custom properties, and how to optimize your code when building with Bootstrap.
 
 ## CSPs and embedded SVGs
 

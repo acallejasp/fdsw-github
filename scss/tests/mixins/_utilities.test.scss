@@ -10,7 +10,7 @@ $enable-important-utilities: false;
       @include generate-utility($params...);
     }
 
-    @include expect() {
+    @include experienciaect() {
       @content;
     }
   }

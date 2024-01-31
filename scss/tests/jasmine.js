@@ -4,7 +4,7 @@
 
 const path = require('node:path')
 
-module.exports = {
+module.experienciaorts = {
   spec_dir: 'scss',
   // Make Jasmine look for `.test.scss` files
   spec_files: ['**/*.{test,spec}.scss'],

@@ -15,19 +15,19 @@ describe('Collapse', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Collapse.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Collapse.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(Collapse.Default).toEqual(jasmine.any(Object))
+      experienciaect(Collapse.Default).toEqual(jasmine.any(Object))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Collapse.DATA_KEY).toEqual('bs.collapse')
+      experienciaect(Collapse.DATA_KEY).toEqual('bs.collapse')
     })
   })
 
@@ -39,8 +39,8 @@ describe('Collapse', () => {
       const collapseBySelector = new Collapse('div.my-collapse')
       const collapseByElement = new Collapse(collapseEl)
 
-      expect(collapseBySelector._element).toEqual(collapseEl)
-      expect(collapseByElement._element).toEqual(collapseEl)
+      experienciaect(collapseBySelector._element).toEqual(collapseEl)
+      experienciaect(collapseByElement._element).toEqual(collapseEl)
     })
 
     it('should allow jquery object in parent config', () => {
@@ -63,7 +63,7 @@ describe('Collapse', () => {
         parent: fakejQueryObject
       })
 
-      expect(collapse._config.parent).toEqual(myCollapseEl)
+      experienciaect(collapse._config.parent).toEqual(myCollapseEl)
     })
 
     it('should allow non jquery object in parent config', () => {
@@ -82,7 +82,7 @@ describe('Collapse', () => {
         parent: myCollapseEl
       })
 
-      expect(collapse._config.parent).toEqual(myCollapseEl)
+      experienciaect(collapse._config.parent).toEqual(myCollapseEl)
     })
 
     it('should allow string selector in parent config', () => {
@@ -101,7 +101,7 @@ describe('Collapse', () => {
         parent: 'div.my-collapse'
       })
 
-      expect(collapse._config.parent).toEqual(myCollapseEl)
+      experienciaect(collapse._config.parent).toEqual(myCollapseEl)
     })
   })
 
@@ -116,7 +116,7 @@ describe('Collapse', () => {
 
       collapse.toggle()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should call hide method if show class is present', () => {
@@ -131,7 +131,7 @@ describe('Collapse', () => {
 
       collapse.toggle()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should find collapse children if they have collapse class too not only data-bs-parent', () => {
@@ -160,8 +160,8 @@ describe('Collapse', () => {
           }))
 
         collapseEl2.addEventListener('shown.bs.collapse', () => {
-          expect(collapseEl2).toHaveClass('show')
-          expect(collapseEl1).not.toHaveClass('show')
+          experienciaect(collapseEl2).toHaveClass('show')
+          experienciaect(collapseEl1).not.toHaveClass('show')
           resolve()
         })
 
@@ -184,7 +184,7 @@ describe('Collapse', () => {
       collapse._isTransitioning = true
       collapse.show()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should do nothing if already shown', () => {
@@ -199,7 +199,7 @@ describe('Collapse', () => {
 
       collapse.show()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should show a collapsed element', () => {
@@ -212,11 +212,11 @@ describe('Collapse', () => {
         })
 
         collapseEl.addEventListener('show.bs.collapse', () => {
-          expect(collapseEl.style.height).toEqual('0px')
+          experienciaect(collapseEl.style.height).toEqual('0px')
         })
         collapseEl.addEventListener('shown.bs.collapse', () => {
-          expect(collapseEl).toHaveClass('show')
-          expect(collapseEl.style.height).toEqual('')
+          experienciaect(collapseEl).toHaveClass('show')
+          experienciaect(collapseEl.style.height).toEqual('')
           resolve()
         })
 
@@ -234,11 +234,11 @@ describe('Collapse', () => {
         })
 
         collapseEl.addEventListener('show.bs.collapse', () => {
-          expect(collapseEl.style.width).toEqual('0px')
+          experienciaect(collapseEl.style.width).toEqual('0px')
         })
         collapseEl.addEventListener('shown.bs.collapse', () => {
-          expect(collapseEl).toHaveClass('show')
-          expect(collapseEl.style.width).toEqual('')
+          experienciaect(collapseEl).toHaveClass('show')
+          experienciaect(collapseEl.style.width).toEqual('')
           resolve()
         })
 
@@ -264,8 +264,8 @@ describe('Collapse', () => {
         })
 
         el1.addEventListener('shown.bs.collapse', () => {
-          expect(el1).toHaveClass('show')
-          expect(el2).toHaveClass('show')
+          experienciaect(el1).toHaveClass('show')
+          experienciaect(el2).toHaveClass('show')
           resolve()
         })
 
@@ -316,16 +316,16 @@ describe('Collapse', () => {
         const childCollapseEl2 = el('#childContent2')
 
         parentCollapseEl.addEventListener('shown.bs.collapse', () => {
-          expect(parentCollapseEl).toHaveClass('show')
+          experienciaect(parentCollapseEl).toHaveClass('show')
           childBtn1.click()
         })
         childCollapseEl1.addEventListener('shown.bs.collapse', () => {
-          expect(childCollapseEl1).toHaveClass('show')
+          experienciaect(childCollapseEl1).toHaveClass('show')
           childBtn2.click()
         })
         childCollapseEl2.addEventListener('shown.bs.collapse', () => {
-          expect(childCollapseEl2).toHaveClass('show')
-          expect(childCollapseEl1).not.toHaveClass('show')
+          experienciaect(childCollapseEl2).toHaveClass('show')
+          experienciaect(childCollapseEl1).not.toHaveClass('show')
           resolve()
         })
 
@@ -339,7 +339,7 @@ describe('Collapse', () => {
           '<div class="accordion" id="accordionExample">',
           '  <div class="accordion-item">',
           '    <h2 class="accordion-header">',
-          '      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">',
+          '      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-experienciaanded="true" aria-controls="collapseOne">',
           '        Accordion Item #1',
           '      </button>',
           '    </h2>',
@@ -371,7 +371,7 @@ describe('Collapse', () => {
         })
 
         el.addEventListener('shown.bs.collapse', () => {
-          expect(activeTabPane).toHaveClass('show')
+          experienciaect(activeTabPane).toHaveClass('show')
           times++
           if (times === 2) {
             resolve()
@@ -393,16 +393,16 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        const expectEnd = () => {
+        const experienciaectEnd = () => {
           setTimeout(() => {
-            expect().nothing()
+            experienciaect().nothing()
             resolve()
           }, 10)
         }
 
         collapseEl.addEventListener('show.bs.collapse', event => {
           event.preventDefault()
-          expectEnd()
+          experienciaectEnd()
         })
 
         collapseEl.addEventListener('shown.bs.collapse', () => {
@@ -428,7 +428,7 @@ describe('Collapse', () => {
       collapse._isTransitioning = true
       collapse.hide()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should do nothing if already shown', () => {
@@ -443,7 +443,7 @@ describe('Collapse', () => {
 
       collapse.hide()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should hide a collapsed element', () => {
@@ -456,8 +456,8 @@ describe('Collapse', () => {
         })
 
         collapseEl.addEventListener('hidden.bs.collapse', () => {
-          expect(collapseEl).not.toHaveClass('show')
-          expect(collapseEl.style.height).toEqual('')
+          experienciaect(collapseEl).not.toHaveClass('show')
+          experienciaect(collapseEl.style.height).toEqual('')
           resolve()
         })
 
@@ -474,16 +474,16 @@ describe('Collapse', () => {
           toggle: false
         })
 
-        const expectEnd = () => {
+        const experienciaectEnd = () => {
           setTimeout(() => {
-            expect().nothing()
+            experienciaect().nothing()
             resolve()
           }, 10)
         }
 
         collapseEl.addEventListener('hide.bs.collapse', event => {
           event.preventDefault()
-          expectEnd()
+          experienciaectEnd()
         })
 
         collapseEl.addEventListener('hidden.bs.collapse', () => {
@@ -504,11 +504,11 @@ describe('Collapse', () => {
         toggle: false
       })
 
-      expect(Collapse.getInstance(collapseEl)).toEqual(collapse)
+      experienciaect(Collapse.getInstance(collapseEl)).toEqual(collapse)
 
       collapse.dispose()
 
-      expect(Collapse.getInstance(collapseEl)).toBeNull()
+      experienciaect(Collapse.getInstance(collapseEl)).toBeNull()
     })
   })
 
@@ -528,9 +528,9 @@ describe('Collapse', () => {
         const spy = spyOn(Event.prototype, 'preventDefault').and.callThrough()
 
         triggerEl.addEventListener('click', event => {
-          expect(event.target.isEqualNode(nestedTriggerEl)).toBeTrue()
-          expect(event.delegateTarget.isEqualNode(triggerEl)).toBeTrue()
-          expect(spy).toHaveBeenCalled()
+          experienciaect(event.target.isEqualNode(nestedTriggerEl)).toBeTrue()
+          experienciaect(event.delegateTarget.isEqualNode(triggerEl)).toBeTrue()
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         })
 
@@ -551,10 +551,10 @@ describe('Collapse', () => {
         const collapse2 = fixtureEl.querySelector('#collapse2')
 
         collapse2.addEventListener('shown.bs.collapse', () => {
-          expect(trigger.getAttribute('aria-expanded')).toEqual('true')
-          expect(trigger).not.toHaveClass('collapsed')
-          expect(collapse1).toHaveClass('show')
-          expect(collapse1).toHaveClass('show')
+          experienciaect(trigger.getAttribute('aria-experienciaanded')).toEqual('true')
+          experienciaect(trigger).not.toHaveClass('collapsed')
+          experienciaect(collapse1).toHaveClass('show')
+          experienciaect(collapse1).toHaveClass('show')
           resolve()
         })
 
@@ -575,10 +575,10 @@ describe('Collapse', () => {
         const collapse2 = fixtureEl.querySelector('#collapse2')
 
         collapse2.addEventListener('hidden.bs.collapse', () => {
-          expect(trigger.getAttribute('aria-expanded')).toEqual('false')
-          expect(trigger).toHaveClass('collapsed')
-          expect(collapse1).not.toHaveClass('show')
-          expect(collapse1).not.toHaveClass('show')
+          experienciaect(trigger.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(trigger).toHaveClass('collapsed')
+          experienciaect(collapse1).not.toHaveClass('show')
+          experienciaect(collapse1).not.toHaveClass('show')
           resolve()
         })
 
@@ -599,10 +599,10 @@ describe('Collapse', () => {
         const collapseTest1 = fixtureEl.querySelector('#test1')
 
         collapseTest1.addEventListener('shown.bs.collapse', () => {
-          expect(link1.getAttribute('aria-expanded')).toEqual('true')
-          expect(link2.getAttribute('aria-expanded')).toEqual('true')
-          expect(link1).not.toHaveClass('collapsed')
-          expect(link2).not.toHaveClass('collapsed')
+          experienciaect(link1.getAttribute('aria-experienciaanded')).toEqual('true')
+          experienciaect(link2.getAttribute('aria-experienciaanded')).toEqual('true')
+          experienciaect(link1).not.toHaveClass('collapsed')
+          experienciaect(link2).not.toHaveClass('collapsed')
           resolve()
         })
 
@@ -623,10 +623,10 @@ describe('Collapse', () => {
         const collapseTest1 = fixtureEl.querySelector('#test1')
 
         collapseTest1.addEventListener('hidden.bs.collapse', () => {
-          expect(link1.getAttribute('aria-expanded')).toEqual('false')
-          expect(link2.getAttribute('aria-expanded')).toEqual('false')
-          expect(link1).toHaveClass('collapsed')
-          expect(link2).toHaveClass('collapsed')
+          experienciaect(link1.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(link2.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(link1).toHaveClass('collapsed')
+          experienciaect(link2).toHaveClass('collapsed')
           resolve()
         })
 
@@ -639,11 +639,11 @@ describe('Collapse', () => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
           '  <div class="item">',
-          '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
+          '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-experienciaanded="false" aria-controls="collapseOne"></a>',
           '    <div id="collapseOne" class="collapse" role="tabpanel" data-bs-parent="#accordion"></div>',
           '  </div>',
           '  <div class="item">',
-          '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
+          '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-experienciaanded="false" aria-controls="collapseTwo"></a>',
           '    <div id="collapseTwo" class="collapse show" role="tabpanel" data-bs-parent="#accordion"></div>',
           '  </div>',
           '</div>'
@@ -655,12 +655,12 @@ describe('Collapse', () => {
         const collapseTwo = fixtureEl.querySelector('#collapseTwo')
 
         collapseOne.addEventListener('shown.bs.collapse', () => {
-          expect(collapseOne).toHaveClass('show')
-          expect(collapseTwo).not.toHaveClass('show')
+          experienciaect(collapseOne).toHaveClass('show')
+          experienciaect(collapseTwo).not.toHaveClass('show')
 
           collapseTwo.addEventListener('shown.bs.collapse', () => {
-            expect(collapseOne).not.toHaveClass('show')
-            expect(collapseTwo).toHaveClass('show')
+            experienciaect(collapseOne).not.toHaveClass('show')
+            experienciaect(collapseTwo).toHaveClass('show')
             resolve()
           })
 
@@ -682,8 +682,8 @@ describe('Collapse', () => {
         const collapseEl = fixtureEl.querySelector('#collapsediv1')
 
         collapseEl.addEventListener('shown.bs.collapse', () => {
-          expect(collapseEl).toHaveClass('show')
-          expect(target.checked).toBeTrue()
+          experienciaect(collapseEl).toHaveClass('show')
+          experienciaect(target.checked).toBeTrue()
           resolve()
         })
 
@@ -698,13 +698,13 @@ describe('Collapse', () => {
           '  <div class="row">',
           '    <div class="col-lg-6">',
           '      <div class="item">',
-          '        <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
+          '        <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-experienciaanded="false" aria-controls="collapseOne"></a>',
           '        <div id="collapseOne" class="collapse" role="tabpanel" data-bs-parent="#accordion"></div>',
           '      </div>',
           '    </div>',
           '    <div class="col-lg-6">',
           '      <div class="item">',
-          '        <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
+          '        <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-experienciaanded="false" aria-controls="collapseTwo"></a>',
           '        <div id="collapseTwo" class="collapse show" role="tabpanel" data-bs-parent="#accordion"></div>',
           '      </div>',
           '    </div>',
@@ -718,22 +718,22 @@ describe('Collapse', () => {
         const collapseTwoEl = fixtureEl.querySelector('#collapseTwo')
 
         collapseOneEl.addEventListener('shown.bs.collapse', () => {
-          expect(collapseOneEl).toHaveClass('show')
-          expect(triggerEl).not.toHaveClass('collapsed')
-          expect(triggerEl.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(collapseOneEl).toHaveClass('show')
+          experienciaect(triggerEl).not.toHaveClass('collapsed')
+          experienciaect(triggerEl.getAttribute('aria-experienciaanded')).toEqual('true')
 
-          expect(collapseTwoEl).not.toHaveClass('show')
-          expect(triggerTwoEl).toHaveClass('collapsed')
-          expect(triggerTwoEl.getAttribute('aria-expanded')).toEqual('false')
+          experienciaect(collapseTwoEl).not.toHaveClass('show')
+          experienciaect(triggerTwoEl).toHaveClass('collapsed')
+          experienciaect(triggerTwoEl.getAttribute('aria-experienciaanded')).toEqual('false')
 
           collapseTwoEl.addEventListener('shown.bs.collapse', () => {
-            expect(collapseOneEl).not.toHaveClass('show')
-            expect(triggerEl).toHaveClass('collapsed')
-            expect(triggerEl.getAttribute('aria-expanded')).toEqual('false')
+            experienciaect(collapseOneEl).not.toHaveClass('show')
+            experienciaect(triggerEl).toHaveClass('collapsed')
+            experienciaect(triggerEl.getAttribute('aria-experienciaanded')).toEqual('false')
 
-            expect(collapseTwoEl).toHaveClass('show')
-            expect(triggerTwoEl).not.toHaveClass('collapsed')
-            expect(triggerTwoEl.getAttribute('aria-expanded')).toEqual('true')
+            experienciaect(collapseTwoEl).toHaveClass('show')
+            experienciaect(triggerTwoEl).not.toHaveClass('collapsed')
+            experienciaect(triggerTwoEl.getAttribute('aria-experienciaanded')).toEqual('true')
             resolve()
           })
 
@@ -748,8 +748,8 @@ describe('Collapse', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
-          '  <a id="linkTriggerOne" data-bs-toggle="collapse" data-bs-target=".collapseOne" href="#" aria-expanded="false" aria-controls="collapseOne"></a>',
-          '  <a id="linkTriggerTwo" data-bs-toggle="collapse" data-bs-target=".collapseTwo" href="#" aria-expanded="false" aria-controls="collapseTwo"></a>',
+          '  <a id="linkTriggerOne" data-bs-toggle="collapse" data-bs-target=".collapseOne" href="#" aria-experienciaanded="false" aria-controls="collapseOne"></a>',
+          '  <a id="linkTriggerTwo" data-bs-toggle="collapse" data-bs-target=".collapseTwo" href="#" aria-experienciaanded="false" aria-controls="collapseTwo"></a>',
           '  <div id="collapseOneOne" class="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
           '  <div id="collapseOneTwo" class="collapse collapseOne" role="tabpanel" data-bs-parent="#accordion"></div>',
           '  <div id="collapseTwoOne" class="collapse collapseTwo" role="tabpanel" data-bs-parent="#accordion"></div>',
@@ -769,21 +769,21 @@ describe('Collapse', () => {
         }
 
         function firstTest() {
-          expect(collapseOneOne).toHaveClass('show')
-          expect(collapseOneTwo).toHaveClass('show')
+          experienciaect(collapseOneOne).toHaveClass('show')
+          experienciaect(collapseOneTwo).toHaveClass('show')
 
-          expect(collapseTwoOne).not.toHaveClass('show')
-          expect(collapseTwoTwo).not.toHaveClass('show')
+          experienciaect(collapseTwoOne).not.toHaveClass('show')
+          experienciaect(collapseTwoTwo).not.toHaveClass('show')
 
           triggerTwo.click()
         }
 
         function secondTest() {
-          expect(collapseOneOne).not.toHaveClass('show')
-          expect(collapseOneTwo).not.toHaveClass('show')
+          experienciaect(collapseOneOne).not.toHaveClass('show')
+          experienciaect(collapseOneTwo).not.toHaveClass('show')
 
-          expect(collapseTwoOne).toHaveClass('show')
-          expect(collapseTwoTwo).toHaveClass('show')
+          experienciaect(collapseTwoOne).toHaveClass('show')
+          experienciaect(collapseTwoTwo).toHaveClass('show')
           resolve()
         }
 
@@ -828,18 +828,18 @@ describe('Collapse', () => {
         fixtureEl.innerHTML = [
           '<div id="accordion">',
           '  <div class="item">',
-          '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></a>',
+          '    <a id="linkTrigger" data-bs-toggle="collapse" href="#collapseOne" aria-experienciaanded="false" aria-controls="collapseOne"></a>',
           '    <div id="collapseOne" data-bs-parent="#accordion" class="collapse" role="tabpanel">',
           '      <div id="nestedAccordion">',
           '        <div class="item">',
-          '          <a id="nestedLinkTrigger" data-bs-toggle="collapse" href="#nestedCollapseOne" aria-expanded="false" aria-controls="nestedCollapseOne"></a>',
+          '          <a id="nestedLinkTrigger" data-bs-toggle="collapse" href="#nestedCollapseOne" aria-experienciaanded="false" aria-controls="nestedCollapseOne"></a>',
           '          <div id="nestedCollapseOne" data-bs-parent="#nestedAccordion" class="collapse" role="tabpanel"></div>',
           '        </div>',
           '      </div>',
           '    </div>',
           '  </div>',
           '  <div class="item">',
-          '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"></a>',
+          '    <a id="linkTriggerTwo" data-bs-toggle="collapse" href="#collapseTwo" aria-experienciaanded="false" aria-controls="collapseTwo"></a>',
           '    <div id="collapseTwo" data-bs-parent="#accordion" class="collapse show" role="tabpanel"></div>',
           '  </div>',
           '</div>'
@@ -853,9 +853,9 @@ describe('Collapse', () => {
         const nestedCollapseOne = fixtureEl.querySelector('#nestedCollapseOne')
 
         function handlerCollapseOne() {
-          expect(collapseOne).toHaveClass('show')
-          expect(collapseTwo).not.toHaveClass('show')
-          expect(nestedCollapseOne).not.toHaveClass('show')
+          experienciaect(collapseOne).toHaveClass('show')
+          experienciaect(collapseTwo).not.toHaveClass('show')
+          experienciaect(nestedCollapseOne).not.toHaveClass('show')
 
           nestedCollapseOne.addEventListener('shown.bs.collapse', handlerNestedCollapseOne)
           nestedTrigger.click()
@@ -863,14 +863,14 @@ describe('Collapse', () => {
         }
 
         function handlerNestedCollapseOne() {
-          expect(collapseOne).toHaveClass('show')
-          expect(collapseTwo).not.toHaveClass('show')
-          expect(nestedCollapseOne).toHaveClass('show')
+          experienciaect(collapseOne).toHaveClass('show')
+          experienciaect(collapseTwo).not.toHaveClass('show')
+          experienciaect(nestedCollapseOne).toHaveClass('show')
 
           collapseTwo.addEventListener('shown.bs.collapse', () => {
-            expect(collapseOne).not.toHaveClass('show')
-            expect(collapseTwo).toHaveClass('show')
-            expect(nestedCollapseOne).toHaveClass('show')
+            experienciaect(collapseOne).not.toHaveClass('show')
+            experienciaect(collapseTwo).toHaveClass('show')
+            experienciaect(nestedCollapseOne).toHaveClass('show')
             resolve()
           })
 
@@ -883,7 +883,7 @@ describe('Collapse', () => {
       })
     })
 
-    it('should add "collapsed" class and set aria-expanded to triggers only when all the targeted collapse are hidden', () => {
+    it('should add "collapsed" class and set aria-experienciaanded to triggers only when all the targeted collapse are hidden', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<a id="trigger1" role="button" data-bs-toggle="collapse" href="#test1"></a>',
@@ -900,34 +900,34 @@ describe('Collapse', () => {
         const target2 = fixtureEl.querySelector(`#${CSS.escape('0/my/id')}`)
 
         const target2Shown = () => {
-          expect(trigger1).not.toHaveClass('collapsed')
-          expect(trigger1.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(trigger1).not.toHaveClass('collapsed')
+          experienciaect(trigger1.getAttribute('aria-experienciaanded')).toEqual('true')
 
-          expect(trigger2).not.toHaveClass('collapsed')
-          expect(trigger2.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(trigger2).not.toHaveClass('collapsed')
+          experienciaect(trigger2.getAttribute('aria-experienciaanded')).toEqual('true')
 
-          expect(trigger3).not.toHaveClass('collapsed')
-          expect(trigger3.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(trigger3).not.toHaveClass('collapsed')
+          experienciaect(trigger3.getAttribute('aria-experienciaanded')).toEqual('true')
 
           target2.addEventListener('hidden.bs.collapse', () => {
-            expect(trigger1).not.toHaveClass('collapsed')
-            expect(trigger1.getAttribute('aria-expanded')).toEqual('true')
+            experienciaect(trigger1).not.toHaveClass('collapsed')
+            experienciaect(trigger1.getAttribute('aria-experienciaanded')).toEqual('true')
 
-            expect(trigger2).toHaveClass('collapsed')
-            expect(trigger2.getAttribute('aria-expanded')).toEqual('false')
+            experienciaect(trigger2).toHaveClass('collapsed')
+            experienciaect(trigger2.getAttribute('aria-experienciaanded')).toEqual('false')
 
-            expect(trigger3).not.toHaveClass('collapsed')
-            expect(trigger3.getAttribute('aria-expanded')).toEqual('true')
+            experienciaect(trigger3).not.toHaveClass('collapsed')
+            experienciaect(trigger3.getAttribute('aria-experienciaanded')).toEqual('true')
 
             target1.addEventListener('hidden.bs.collapse', () => {
-              expect(trigger1).toHaveClass('collapsed')
-              expect(trigger1.getAttribute('aria-expanded')).toEqual('false')
+              experienciaect(trigger1).toHaveClass('collapsed')
+              experienciaect(trigger1.getAttribute('aria-experienciaanded')).toEqual('false')
 
-              expect(trigger2).toHaveClass('collapsed')
-              expect(trigger2.getAttribute('aria-expanded')).toEqual('false')
+              experienciaect(trigger2).toHaveClass('collapsed')
+              experienciaect(trigger2.getAttribute('aria-experienciaanded')).toEqual('false')
 
-              expect(trigger3).toHaveClass('collapsed')
-              expect(trigger3.getAttribute('aria-expanded')).toEqual('false')
+              experienciaect(trigger3).toHaveClass('collapsed')
+              experienciaect(trigger3.getAttribute('aria-experienciaanded')).toEqual('false')
               resolve()
             })
 
@@ -954,7 +954,7 @@ describe('Collapse', () => {
 
       jQueryMock.fn.collapse.call(jQueryMock)
 
-      expect(Collapse.getInstance(div)).not.toBeNull()
+      experienciaect(Collapse.getInstance(div)).not.toBeNull()
     })
 
     it('should not re create a collapse', () => {
@@ -968,7 +968,7 @@ describe('Collapse', () => {
 
       jQueryMock.fn.collapse.call(jQueryMock)
 
-      expect(Collapse.getInstance(div)).toEqual(collapse)
+      experienciaect(Collapse.getInstance(div)).toEqual(collapse)
     })
 
     it('should throw error on undefined method', () => {
@@ -980,7 +980,7 @@ describe('Collapse', () => {
       jQueryMock.fn.collapse = Collapse.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.collapse.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -993,8 +993,8 @@ describe('Collapse', () => {
       const div = fixtureEl.querySelector('div')
       const collapse = new Collapse(div)
 
-      expect(Collapse.getInstance(div)).toEqual(collapse)
-      expect(Collapse.getInstance(div)).toBeInstanceOf(Collapse)
+      experienciaect(Collapse.getInstance(div)).toEqual(collapse)
+      experienciaect(Collapse.getInstance(div)).toBeInstanceOf(Collapse)
     })
 
     it('should return null when there is no collapse instance', () => {
@@ -1002,7 +1002,7 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toBeNull()
+      experienciaect(Collapse.getInstance(div)).toBeNull()
     })
   })
 
@@ -1013,9 +1013,9 @@ describe('Collapse', () => {
       const div = fixtureEl.querySelector('div')
       const collapse = new Collapse(div)
 
-      expect(Collapse.getOrCreateInstance(div)).toEqual(collapse)
-      expect(Collapse.getInstance(div)).toEqual(Collapse.getOrCreateInstance(div, {}))
-      expect(Collapse.getOrCreateInstance(div)).toBeInstanceOf(Collapse)
+      experienciaect(Collapse.getOrCreateInstance(div)).toEqual(collapse)
+      experienciaect(Collapse.getInstance(div)).toEqual(Collapse.getOrCreateInstance(div, {}))
+      experienciaect(Collapse.getOrCreateInstance(div)).toBeInstanceOf(Collapse)
     })
 
     it('should return new instance when there is no collapse instance', () => {
@@ -1023,8 +1023,8 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toBeNull()
-      expect(Collapse.getOrCreateInstance(div)).toBeInstanceOf(Collapse)
+      experienciaect(Collapse.getInstance(div)).toBeNull()
+      experienciaect(Collapse.getOrCreateInstance(div)).toBeInstanceOf(Collapse)
     })
 
     it('should return new instance when there is no collapse instance with given configuration', () => {
@@ -1032,13 +1032,13 @@ describe('Collapse', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Collapse.getInstance(div)).toBeNull()
+      experienciaect(Collapse.getInstance(div)).toBeNull()
       const collapse = Collapse.getOrCreateInstance(div, {
         toggle: false
       })
-      expect(collapse).toBeInstanceOf(Collapse)
+      experienciaect(collapse).toBeInstanceOf(Collapse)
 
-      expect(collapse._config.toggle).toBeFalse()
+      experienciaect(collapse._config.toggle).toBeFalse()
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -1048,15 +1048,15 @@ describe('Collapse', () => {
       const collapse = new Collapse(div, {
         toggle: false
       })
-      expect(Collapse.getInstance(div)).toEqual(collapse)
+      experienciaect(Collapse.getInstance(div)).toEqual(collapse)
 
       const collapse2 = Collapse.getOrCreateInstance(div, {
         toggle: true
       })
-      expect(collapse).toBeInstanceOf(Collapse)
-      expect(collapse2).toEqual(collapse)
+      experienciaect(collapse).toBeInstanceOf(Collapse)
+      experienciaect(collapse2).toEqual(collapse)
 
-      expect(collapse2._config.toggle).toBeFalse()
+      experienciaect(collapse2._config.toggle).toBeFalse()
     })
   })
 })

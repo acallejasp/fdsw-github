@@ -1,6 +1,6 @@
 const fixtureId = 'fixture'
 
-export const getFixture = () => {
+experienciaort const getFixture = () => {
   let fixtureElement = document.getElementById(fixtureId)
 
   if (!fixtureElement) {
@@ -17,17 +17,17 @@ export const getFixture = () => {
   return fixtureElement
 }
 
-export const clearFixture = () => {
+experienciaort const clearFixture = () => {
   const fixtureElement = getFixture()
 
   fixtureElement.innerHTML = ''
 }
 
-export const createEvent = (eventName, parameters = {}) => {
+experienciaort const createEvent = (eventName, parameters = {}) => {
   return new Event(eventName, parameters)
 }
 
-export const jQueryMock = {
+experienciaort const jQueryMock = {
   elements: undefined,
   fn: {},
   each(fn) {
@@ -37,7 +37,7 @@ export const jQueryMock = {
   }
 }
 
-export const clearBodyAndDocument = () => {
+experienciaort const clearBodyAndDocument = () => {
   const attributes = ['data-bs-padding-right', 'style']
 
   for (const attribute of attributes) {

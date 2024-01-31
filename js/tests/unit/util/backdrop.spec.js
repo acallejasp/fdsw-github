@@ -31,13 +31,13 @@ describe('Backdrop', () => {
         })
         const getElements = () => document.querySelectorAll(CLASS_BACKDROP)
 
-        expect(getElements()).toHaveSize(0)
+        experienciaect(getElements()).toHaveSize(0)
 
         instance.show()
         instance.show(() => {
-          expect(getElements()).toHaveSize(1)
+          experienciaect(getElements()).toHaveSize(1)
           for (const el of getElements()) {
-            expect(el).toHaveClass(CLASS_NAME_SHOW)
+            experienciaect(el).toHaveClass(CLASS_NAME_SHOW)
           }
 
           resolve()
@@ -53,9 +53,9 @@ describe('Backdrop', () => {
         })
         const getElements = () => document.querySelectorAll(CLASS_BACKDROP)
 
-        expect(getElements()).toHaveSize(0)
+        experienciaect(getElements()).toHaveSize(0)
         instance.show(() => {
-          expect(getElements()).toHaveSize(0)
+          experienciaect(getElements()).toHaveSize(0)
           resolve()
         })
       })
@@ -69,12 +69,12 @@ describe('Backdrop', () => {
         })
         const getElements = () => document.querySelectorAll(CLASS_BACKDROP)
 
-        expect(getElements()).toHaveSize(0)
+        experienciaect(getElements()).toHaveSize(0)
 
         instance.show(() => {
-          expect(getElements()).toHaveSize(1)
+          experienciaect(getElements()).toHaveSize(1)
           for (const el of getElements()) {
-            expect(el).toHaveClass(CLASS_NAME_FADE)
+            experienciaect(el).toHaveClass(CLASS_NAME_FADE)
           }
 
           resolve()
@@ -93,11 +93,11 @@ describe('Backdrop', () => {
 
         const getElements = () => document.body.querySelectorAll(CLASS_BACKDROP)
 
-        expect(getElements()).toHaveSize(0)
+        experienciaect(getElements()).toHaveSize(0)
         instance.show(() => {
-          expect(getElements()).toHaveSize(1)
+          experienciaect(getElements()).toHaveSize(1)
           instance.hide(() => {
-            expect(getElements()).toHaveSize(0)
+            experienciaect(getElements()).toHaveSize(0)
             resolve()
           })
         })
@@ -114,7 +114,7 @@ describe('Backdrop', () => {
 
         instance.show()
         instance.hide(() => {
-          expect(elem).not.toHaveClass(CLASS_NAME_SHOW)
+          experienciaect(elem).not.toHaveClass(CLASS_NAME_SHOW)
           resolve()
         })
       })
@@ -129,13 +129,13 @@ describe('Backdrop', () => {
         const getElements = () => document.querySelectorAll(CLASS_BACKDROP)
         const spy = spyOn(instance, 'dispose').and.callThrough()
 
-        expect(getElements()).toHaveSize(0)
-        expect(instance._isAppended).toBeFalse()
+        experienciaect(getElements()).toHaveSize(0)
+        experienciaect(instance._isAppended).toBeFalse()
         instance.show(() => {
           instance.hide(() => {
-            expect(getElements()).toHaveSize(0)
-            expect(spy).not.toHaveBeenCalled()
-            expect(instance._isAppended).toBeFalse()
+            experienciaect(getElements()).toHaveSize(0)
+            experienciaect(spy).not.toHaveBeenCalled()
+            experienciaect(instance._isAppended).toBeFalse()
             resolve()
           })
         })
@@ -158,7 +158,7 @@ describe('Backdrop', () => {
         instance.show(() => {
           wrapper.remove()
           instance.hide(() => {
-            expect(getElements()).toHaveSize(0)
+            experienciaect(getElements()).toHaveSize(0)
             resolve()
           })
         })
@@ -178,7 +178,7 @@ describe('Backdrop', () => {
         })
         const endTest = () => {
           setTimeout(() => {
-            expect(spy).toHaveBeenCalled()
+            experienciaect(spy).toHaveBeenCalled()
             resolve()
           }, 10)
         }
@@ -202,7 +202,7 @@ describe('Backdrop', () => {
 
           const execDone = () => {
             setTimeout(() => {
-              expect(spy2).toHaveBeenCalledTimes(2)
+              experienciaect(spy2).toHaveBeenCalledTimes(2)
               resolve()
             }, 10)
           }
@@ -212,7 +212,7 @@ describe('Backdrop', () => {
             spy2()
             execDone()
           })
-          expect(spy2).not.toHaveBeenCalled()
+          experienciaect(spy2).not.toHaveBeenCalled()
         })
       })
 
@@ -229,8 +229,8 @@ describe('Backdrop', () => {
           instance.hide(spy2)
 
           setTimeout(() => {
-            expect(spy2).toHaveBeenCalled()
-            expect(spy).not.toHaveBeenCalled()
+            experienciaect(spy2).toHaveBeenCalled()
+            experienciaect(spy).not.toHaveBeenCalled()
             resolve()
           }, 10)
         })
@@ -246,7 +246,7 @@ describe('Backdrop', () => {
 
           instance.show()
           instance.hide(() => {
-            expect(spy).not.toHaveBeenCalled()
+            experienciaect(spy).not.toHaveBeenCalled()
             resolve()
           })
         })
@@ -262,7 +262,7 @@ describe('Backdrop', () => {
             })
             const getElement = () => document.querySelector(CLASS_BACKDROP)
             instance.show(() => {
-              expect(getElement().parentElement).toEqual(document.body)
+              experienciaect(getElement().parentElement).toEqual(document.body)
               resolve()
             })
           })
@@ -276,7 +276,7 @@ describe('Backdrop', () => {
             })
             const getElement = () => document.querySelector(CLASS_BACKDROP)
             instance.show(() => {
-              expect(getElement().parentElement).toEqual(document.body)
+              experienciaect(getElement().parentElement).toEqual(document.body)
               resolve()
             })
           })
@@ -293,7 +293,7 @@ describe('Backdrop', () => {
             })
             const getElement = () => document.querySelector(CLASS_BACKDROP)
             instance.show(() => {
-              expect(getElement().parentElement).toEqual(wrapper)
+              experienciaect(getElement().parentElement).toEqual(wrapper)
               resolve()
             })
           })
@@ -309,7 +309,7 @@ describe('Backdrop', () => {
             })
             const getElement = () => document.querySelector('.foo')
             instance.show(() => {
-              expect(getElement()).toEqual(instance._getElement())
+              experienciaect(getElement()).toEqual(instance._getElement())
               instance.dispose()
               resolve()
             })

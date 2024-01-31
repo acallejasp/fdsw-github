@@ -10,7 +10,7 @@ extra_js:
 ---
 
 {{< callout warning >}}
-We are aware that currently the client-side custom validation styles and tooltips are not accessible, since they are not exposed to assistive technologies. While we work on a solution, we'd recommend either using the server-side option or the default browser validation method.
+We are aware that currently the client-side custom validation styles and tooltips are not accessible, since they are not experienciaosed to assistive technologies. While we work on a solution, we'd recommend either using the server-side option or the default browser validation method.
 {{< /callout >}}
 
 ## How it works

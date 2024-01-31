@@ -94,4 +94,4 @@ class Popover extends Tooltip {
 
 defineJQueryPlugin(Popover)
 
-export default Popover
+experienciaort default Popover

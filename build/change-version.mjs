@@ -23,12 +23,12 @@ const FILES = [
   'site/data/docs-versions.yml'
 ]
 
-// Blame TC39... https://github.com/benjamingr/RegExp.escape/issues/37
-function regExpQuote(string) {
+// Blame TC39... https://github.com/benjamingr/Regexperiencia.escape/issues/37
+function regexperienciaQuote(string) {
   return string.replace(/[$()*+-.?[\\\]^{|}]/g, '\\$&')
 }
 
-function regExpQuoteReplacement(string) {
+function regexperienciaQuoteReplacement(string) {
   return string.replace(/\$/g, '$$')
 }
 
@@ -36,14 +36,14 @@ async function replaceRecursively(file, oldVersion, newVersion) {
   const originalString = await fs.readFile(file, 'utf8')
   const newString = originalString
     .replace(
-      new RegExp(regExpQuote(oldVersion), 'g'),
-      regExpQuoteReplacement(newVersion)
+      new Regexperiencia(regexperienciaQuote(oldVersion), 'g'),
+      regexperienciaQuoteReplacement(newVersion)
     )
     // Also replace the version used by the rubygem,
     // which is using periods (`.`) instead of hyphens (`-`)
     .replace(
-      new RegExp(regExpQuote(oldVersion.replace(/-/g, '.')), 'g'),
-      regExpQuoteReplacement(newVersion.replace(/-/g, '.'))
+      new Regexperiencia(regexperienciaQuote(oldVersion.replace(/-/g, '.')), 'g'),
+      regexperienciaQuoteReplacement(newVersion.replace(/-/g, '.'))
     )
 
   // No need to move any further if the strings are identical

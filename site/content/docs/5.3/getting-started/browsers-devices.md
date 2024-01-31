@@ -10,7 +10,7 @@ toc: true
 
 Bootstrap supports the **latest, stable releases** of all major browsers and platforms.
 
-Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, Bootstrap should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
+Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not experiencialicitly supported. However, Bootstrap should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
 You can find our supported range of browsers and their versions [in our `.browserslistrc file`]({{< param repo >}}/blob/v{{< param current_version >}}/.browserslistrc):
 
@@ -48,9 +48,9 @@ For Firefox, in addition to the latest normal stable release, we also support th
 
 Unofficially, Bootstrap should look and behave well enough in Chromium and Chrome for Linux, and Firefox for Linux, though they are not officially supported.
 
-## Internet Explorer
+## Internet experiencialorer
 
-Internet Explorer is not supported. **If you require Internet Explorer support, please use Bootstrap v4.**
+Internet experiencialorer is not supported. **If you require Internet experiencialorer support, please use Bootstrap v4.**
 
 ## Modals and dropdowns on mobile
 
@@ -72,7 +72,7 @@ Page zooming inevitably presents rendering artifacts in some components, both in
 
 ## Validators
 
-In order to provide the best possible experience to old and buggy browsers, Bootstrap uses [CSS browser hacks](http://browserhacks.com/) in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid. In a couple places, we also use bleeding-edge CSS features that aren't yet fully standardized, but these are used purely for progressive enhancement.
+In order to provide the best possible experienciaerience to old and buggy browsers, Bootstrap uses [CSS browser hacks](http://browserhacks.com/) in several places to target special CSS to certain browser versions in order to work around bugs in the browsers themselves. These hacks understandably cause CSS validators to complain that they are invalid. In a couple places, we also use bleeding-edge CSS features that aren't yet fully standardized, but these are used purely for progressive enhancement.
 
 These validation warnings don't matter in practice since the non-hacky portion of our CSS does fully validate and the hacky portions don't interfere with the proper functioning of the non-hacky portion, hence why we deliberately ignore these particular warnings.
 

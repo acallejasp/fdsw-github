@@ -20,17 +20,17 @@ describe('Alert', () => {
     const alertBySelector = new Alert('.alert')
     const alertByElement = new Alert(alertEl)
 
-    expect(alertBySelector._element).toEqual(alertEl)
-    expect(alertByElement._element).toEqual(alertEl)
+    experienciaect(alertBySelector._element).toEqual(alertEl)
+    experienciaect(alertByElement._element).toEqual(alertEl)
   })
 
   it('should return version', () => {
-    expect(Alert.VERSION).toEqual(jasmine.any(String))
+    experienciaect(Alert.VERSION).toEqual(jasmine.any(String))
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Alert.DATA_KEY).toEqual('bs.alert')
+      experienciaect(Alert.DATA_KEY).toEqual('bs.alert')
     })
   })
 
@@ -45,7 +45,7 @@ describe('Alert', () => {
       const button = document.querySelector('button')
 
       button.click()
-      expect(document.querySelectorAll('.alert')).toHaveSize(0)
+      experienciaect(document.querySelectorAll('.alert')).toHaveSize(0)
     })
 
     it('should close an alert without instantiating it manually with the parent selector', () => {
@@ -58,7 +58,7 @@ describe('Alert', () => {
       const button = document.querySelector('button')
 
       button.click()
-      expect(document.querySelectorAll('.alert')).toHaveSize(0)
+      experienciaect(document.querySelectorAll('.alert')).toHaveSize(0)
     })
   })
 
@@ -72,8 +72,8 @@ describe('Alert', () => {
         const alert = new Alert(alertEl)
 
         alertEl.addEventListener('closed.bs.alert', () => {
-          expect(document.querySelectorAll('.alert')).toHaveSize(0)
-          expect(spy).not.toHaveBeenCalled()
+          experienciaect(document.querySelectorAll('.alert')).toHaveSize(0)
+          experienciaect(spy).not.toHaveBeenCalled()
           resolve()
         })
 
@@ -89,11 +89,11 @@ describe('Alert', () => {
         const alert = new Alert(alertEl)
 
         alertEl.addEventListener('transitionend', () => {
-          expect().nothing()
+          experienciaect().nothing()
         })
 
         alertEl.addEventListener('closed.bs.alert', () => {
-          expect(document.querySelectorAll('.alert')).toHaveSize(0)
+          experienciaect(document.querySelectorAll('.alert')).toHaveSize(0)
           resolve()
         })
 
@@ -112,7 +112,7 @@ describe('Alert', () => {
         alertEl.addEventListener('close.bs.alert', event => {
           event.preventDefault()
           setTimeout(() => {
-            expect(getAlert()).not.toBeNull()
+            experienciaect(getAlert()).not.toBeNull()
             resolve()
           }, 10)
         })
@@ -133,11 +133,11 @@ describe('Alert', () => {
       const alertEl = document.querySelector('.alert')
       const alert = new Alert(alertEl)
 
-      expect(Alert.getInstance(alertEl)).not.toBeNull()
+      experienciaect(Alert.getInstance(alertEl)).not.toBeNull()
 
       alert.dispose()
 
-      expect(Alert.getInstance(alertEl)).toBeNull()
+      experienciaect(Alert.getInstance(alertEl)).toBeNull()
     })
   })
 
@@ -155,7 +155,7 @@ describe('Alert', () => {
 
       jQueryMock.fn.alert.call(jQueryMock, 'close')
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should create new alert instance and call close', () => {
@@ -166,10 +166,10 @@ describe('Alert', () => {
       jQueryMock.fn.alert = Alert.jQueryInterface
       jQueryMock.elements = [alertEl]
 
-      expect(Alert.getInstance(alertEl)).toBeNull()
+      experienciaect(Alert.getInstance(alertEl)).toBeNull()
       jQueryMock.fn.alert.call(jQueryMock, 'close')
 
-      expect(fixtureEl.querySelector('.alert')).toBeNull()
+      experienciaect(fixtureEl.querySelector('.alert')).toBeNull()
     })
 
     it('should just create an alert instance without calling close', () => {
@@ -182,8 +182,8 @@ describe('Alert', () => {
 
       jQueryMock.fn.alert.call(jQueryMock)
 
-      expect(Alert.getInstance(alertEl)).not.toBeNull()
-      expect(fixtureEl.querySelector('.alert')).not.toBeNull()
+      experienciaect(Alert.getInstance(alertEl)).not.toBeNull()
+      experienciaect(fixtureEl.querySelector('.alert')).not.toBeNull()
     })
 
     it('should throw an error on undefined method', () => {
@@ -195,7 +195,7 @@ describe('Alert', () => {
       jQueryMock.fn.alert = Alert.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.alert.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -209,7 +209,7 @@ describe('Alert', () => {
       jQueryMock.fn.alert = Alert.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.alert.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -222,8 +222,8 @@ describe('Alert', () => {
       const div = fixtureEl.querySelector('div')
       const alert = new Alert(div)
 
-      expect(Alert.getInstance(div)).toEqual(alert)
-      expect(Alert.getInstance(div)).toBeInstanceOf(Alert)
+      experienciaect(Alert.getInstance(div)).toEqual(alert)
+      experienciaect(Alert.getInstance(div)).toBeInstanceOf(Alert)
     })
 
     it('should return null when there is no alert instance', () => {
@@ -231,7 +231,7 @@ describe('Alert', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Alert.getInstance(div)).toBeNull()
+      experienciaect(Alert.getInstance(div)).toBeNull()
     })
   })
 
@@ -242,9 +242,9 @@ describe('Alert', () => {
       const div = fixtureEl.querySelector('div')
       const alert = new Alert(div)
 
-      expect(Alert.getOrCreateInstance(div)).toEqual(alert)
-      expect(Alert.getInstance(div)).toEqual(Alert.getOrCreateInstance(div, {}))
-      expect(Alert.getOrCreateInstance(div)).toBeInstanceOf(Alert)
+      experienciaect(Alert.getOrCreateInstance(div)).toEqual(alert)
+      experienciaect(Alert.getInstance(div)).toEqual(Alert.getOrCreateInstance(div, {}))
+      experienciaect(Alert.getOrCreateInstance(div)).toBeInstanceOf(Alert)
     })
 
     it('should return new instance when there is no alert instance', () => {
@@ -252,8 +252,8 @@ describe('Alert', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Alert.getInstance(div)).toBeNull()
-      expect(Alert.getOrCreateInstance(div)).toBeInstanceOf(Alert)
+      experienciaect(Alert.getInstance(div)).toBeNull()
+      experienciaect(Alert.getOrCreateInstance(div)).toBeInstanceOf(Alert)
     })
   })
 })

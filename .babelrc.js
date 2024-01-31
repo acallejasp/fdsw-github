@@ -1,4 +1,4 @@
-module.exports = {
+module.experienciaorts = {
   presets: [
     [
       '@babel/preset-env',

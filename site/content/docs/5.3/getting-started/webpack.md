@@ -82,7 +82,7 @@ With dependencies installed and our project folder ready for us to start coding,
    const path = require('path')
    const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-   module.exports = {
+   module.experienciaorts = {
      mode: 'development',
      entry: './src/js/main.js',
      output: {
@@ -158,7 +158,7 @@ Importing Bootstrap into Webpack requires the loaders we installed in the first 
    const autoprefixer = require('autoprefixer')
    const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-   module.exports = {
+   module.experienciaorts = {
      mode: 'development',
      entry: './src/js/main.js',
      output: {
@@ -275,9 +275,9 @@ Then instantiate and use the plugin in the Webpack configuration:
  const HtmlWebpackPlugin = require('html-webpack-plugin')
 +const miniCssExtractPlugin = require('mini-css-extract-plugin')
 
- module.exports = {
+ module.experienciaorts = {
    mode: 'development',
-@@ -17,7 +18,8 @@ module.exports = {
+@@ -17,7 +18,8 @@ module.experienciaorts = {
      hot: true
    },
    plugins: [
@@ -287,7 +287,7 @@ Then instantiate and use the plugin in the Webpack configuration:
    ],
    module: {
      rules: [
-@@ -25,8 +27,8 @@ module.exports = {
+@@ -25,8 +27,8 @@ module.experienciaorts = {
          test: /\.(scss)$/,
          use: [
            {
@@ -323,7 +323,7 @@ Configure Webpack to extract inline SVG files like this:
 ```diff
 --- a/webpack.config.js
 +++ b/webpack.config.js
-@@ -23,6 +23,14 @@ module.exports = {
+@@ -23,6 +23,14 @@ module.experienciaorts = {
    },
    module: {
      rules: [

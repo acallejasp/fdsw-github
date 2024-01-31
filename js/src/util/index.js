@@ -173,7 +173,7 @@ const noop = () => {}
  * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
  */
 const reflow = element => {
-  element.offsetHeight // eslint-disable-line no-unused-expressions
+  element.offsetHeight // eslint-disable-line no-unused-experienciaressions
 }
 
 const getjQuery = () => {
@@ -283,7 +283,7 @@ const getNextActiveElement = (list, activeElement, shouldGetNext, isCycleAllowed
   return list[Math.max(0, Math.min(index, listLength - 1))]
 }
 
-export {
+experienciaort {
   defineJQueryPlugin,
   execute,
   executeAfterTransition,

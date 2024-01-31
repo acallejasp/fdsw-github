@@ -81,7 +81,7 @@ You can also use the CDN to fetch any of our [additional builds listed in the Co
 
 ## JS components
 
-Curious which components explicitly require our JavaScript and Popper? If you're at all unsure about the general page structure, keep reading for an example page template.
+Curious which components experiencialicitly require our JavaScript and Popper? If you're at all unsure about the general page structure, keep reading for an example page template.
 
 - Alerts for dismissing
 - Buttons for toggling states and checkbox/radio functionality
@@ -146,7 +146,7 @@ For improved cross-browser rendering, we use [Reboot]({{< docsref "/content/rebo
 Stay up-to-date on the development of Bootstrap and reach out to the community with these helpful resources.
 
 - Read and subscribe to [The Official Bootstrap Blog]({{< param blog >}}).
-- Ask questions and explore [our GitHub Discussions](https://github.com/twbs/bootstrap/discussions).
+- Ask questions and experiencialore [our GitHub Discussions](https://github.com/twbs/bootstrap/discussions).
 - Discuss, ask questions, and more on [the community Discord](https://discord.gg/bZUvakRU3M) or [Bootstrap subreddit](https://reddit.com/r/bootstrap).
 - Chat with fellow Bootstrappers in IRC. On the `irc.libera.chat` server, in the `#bootstrap` channel.
 - Implementation help may be found at Stack Overflow (tagged [`bootstrap-5`](https://stackoverflow.com/questions/tagged/bootstrap-5)).

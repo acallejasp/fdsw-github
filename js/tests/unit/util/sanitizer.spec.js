@@ -7,7 +7,7 @@ describe('Sanitizer', () => {
 
       const result = sanitizeHtml(empty, DefaultAllowlist, null)
 
-      expect(result).toEqual(empty)
+      experienciaect(result).toEqual(empty)
     })
 
     it('should retain tags with valid URLs', () => {
@@ -44,7 +44,7 @@ describe('Sanitizer', () => {
 
         const result = sanitizeHtml(template, DefaultAllowlist, null)
 
-        expect(result).toContain(`href="${url}"`)
+        experienciaect(result).toContain(`href="${url}"`)
       }
     })
 
@@ -77,7 +77,7 @@ describe('Sanitizer', () => {
 
         const result = sanitizeHtml(template, DefaultAllowlist, null)
 
-        expect(result).not.toContain(`href="${url}"`)
+        experienciaect(result).not.toContain(`href="${url}"`)
       }
     })
 
@@ -94,16 +94,16 @@ describe('Sanitizer', () => {
       let result = sanitizeHtml(template, myDefaultAllowList, null)
 
       // `data-foo` won't be present
-      expect(result).not.toContain('data-foo="bar"')
+      experienciaect(result).not.toContain('data-foo="bar"')
 
       // Add the following regex too
       myDefaultAllowList['*'].push(/^data-foo/)
 
       result = sanitizeHtml(template, myDefaultAllowList, null)
 
-      expect(result).not.toContain('href="javascript:alert(7)') // This is in the default list
-      expect(result).toContain('aria-label="This is a link"') // This is in the default list
-      expect(result).toContain('data-foo="bar"') // We explicitly allow this
+      experienciaect(result).not.toContain('href="javascript:alert(7)') // This is in the default list
+      experienciaect(result).toContain('aria-label="This is a link"') // This is in the default list
+      experienciaect(result).toContain('data-foo="bar"') // We experiencialicitly allow this
     })
 
     it('should allow aria attributes and safe attributes', () => {
@@ -115,8 +115,8 @@ describe('Sanitizer', () => {
 
       const result = sanitizeHtml(template, DefaultAllowlist, null)
 
-      expect(result).toContain('aria-pressed')
-      expect(result).toContain('class="test"')
+      experienciaect(result).toContain('aria-pressed')
+      experienciaect(result).toContain('class="test"')
     })
 
     it('should remove tags not in allowlist', () => {
@@ -128,7 +128,7 @@ describe('Sanitizer', () => {
 
       const result = sanitizeHtml(template, DefaultAllowlist, null)
 
-      expect(result).not.toContain('<script>')
+      experienciaect(result).not.toContain('<script>')
     })
 
     it('should not use native api to sanitize if a custom function passed', () => {
@@ -146,8 +146,8 @@ describe('Sanitizer', () => {
 
       const result = sanitizeHtml(template, DefaultAllowlist, mySanitize)
 
-      expect(result).toEqual(template)
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(result).toEqual(template)
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should allow multiple sanitation passes of the same template', () => {
@@ -156,8 +156,8 @@ describe('Sanitizer', () => {
       const firstResult = sanitizeHtml(template, DefaultAllowlist, null)
       const secondResult = sanitizeHtml(template, DefaultAllowlist, null)
 
-      expect(firstResult).toContain('src')
-      expect(secondResult).toContain('src')
+      experienciaect(firstResult).toContain('src')
+      experienciaect(secondResult).toContain('src')
     })
   })
 })

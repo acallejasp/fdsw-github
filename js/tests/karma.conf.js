@@ -163,7 +163,7 @@ config.frameworks = frameworks
 config.plugins = plugins
 config.reporters = reporters
 
-module.exports = karmaConfig => {
+module.experienciaorts = karmaConfig => {
   config.logLevel = karmaConfig.LOG_ERROR
   karmaConfig.set(config)
 }

@@ -7,7 +7,7 @@ aliases:
   - "/docs/5.3/extend/"
 ---
 
-While the getting started pages provide an introductory tour of the project and what it offers, this document focuses on _why_ we do the things we do in Bootstrap. It explains our philosophy to building on the web so that others can learn from us, contribute with us, and help us improve.
+While the getting started pages provide an introductory tour of the project and what it offers, this document focuses on _why_ we do the things we do in Bootstrap. It experiencialains our philosophy to building on the web so that others can learn from us, contribute with us, and help us improve.
 
 See something that doesn't sound right, or perhaps could be done better? [Open an issue]({{< param repo >}}/issues/new/choose)—we'd love to discuss it with you.
 
@@ -47,7 +47,7 @@ There are two `z-index` scales in Bootstrap—elements within a component and ov
 - Some components in Bootstrap are built with overlapping elements to prevent double borders without modifying the `border` property. For example, button groups, input groups, and pagination.
 - These components share a standard `z-index` scale of `0` through `3`.
 - `0` is default (initial), `1` is `:hover`, `2` is `:active`/`.active`, and `3` is `:focus`.
-- This approach matches our expectations of highest user priority. If an element is focused, it's in view and at the user's attention. Active elements are second highest because they indicate state. Hover is third highest because it indicates user intent, but nearly _anything_ can be hovered.
+- This approach matches our experienciaectations of highest user priority. If an element is focused, it's in view and at the user's attention. Active elements are second highest because they indicate state. Hover is third highest because it indicates user intent, but nearly _anything_ can be hovered.
 
 ### Overlay components
 
@@ -59,7 +59,7 @@ Learn more about this in our [`z-index` layout page]({{< docsref "/layout/z-inde
 
 ## HTML and CSS over JS
 
-Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.
+Whenever possible, we prefer to write HTML and CSS over JavaScript. In general, HTML and CSS are more prolific and accessible to more people of all different experienciaerience levels. HTML and CSS are also faster in your browser than JavaScript, and your browser generally provides a great deal of functionality for you.
 
 This principle is our first-class JavaScript API using `data` attributes. You don't need to write nearly any JavaScript to use our JavaScript plugins; instead, write HTML. Read more about this in [our JavaScript overview page]({{< docsref "/getting-started/javascript#data-attributes" >}}).
 
@@ -69,7 +69,7 @@ The same goes for more complex components. While we _could_ write our own form v
 
 ## Utilities
 
-Utility classes—formerly helpers in Bootstrap 3—are a powerful ally in combating CSS bloat and poor page performance. A utility class is typically a single, immutable property-value pairing expressed as a class (e.g., `.d-block` represents `display: block;`). Their primary appeal is speed of use while writing HTML and limiting the amount of custom CSS you have to write.
+Utility classes—formerly helpers in Bootstrap 3—are a powerful ally in combating CSS bloat and poor page performance. A utility class is typically a single, immutable property-value pairing experienciaressed as a class (e.g., `.d-block` represents `display: block;`). Their primary appeal is speed of use while writing HTML and limiting the amount of custom CSS you have to write.
 
 Specifically regarding custom CSS, utilities can help combat increasing file size by reducing your most commonly repeated property-value pairs into single classes. This can have a dramatic effect at scale in your projects.
 

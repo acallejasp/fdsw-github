@@ -21,19 +21,19 @@ describe('Config', () => {
 
   describe('NAME', () => {
     it('should return plugin NAME', () => {
-      expect(DummyConfigClass.NAME).toEqual(name)
+      experienciaect(DummyConfigClass.NAME).toEqual(name)
     })
   })
 
   describe('DefaultType', () => {
     it('should return plugin default type', () => {
-      expect(DummyConfigClass.DefaultType).toEqual(jasmine.any(Object))
+      experienciaect(DummyConfigClass.DefaultType).toEqual(jasmine.any(Object))
     })
   })
 
   describe('Default', () => {
     it('should return plugin defaults', () => {
-      expect(DummyConfigClass.Default).toEqual(jasmine.any(Object))
+      experienciaect(DummyConfigClass.Default).toEqual(jasmine.any(Object))
     })
   })
 
@@ -50,10 +50,10 @@ describe('Config', () => {
       const instance = new DummyConfigClass()
       const configResult = instance._mergeConfigObj({}, fixtureEl.querySelector('#test'))
 
-      expect(configResult.testBool).toEqual(false)
-      expect(configResult.testString).toEqual('foo')
-      expect(configResult.testString1).toEqual('bar')
-      expect(configResult.testInt).toEqual(8)
+      experienciaect(configResult.testBool).toEqual(false)
+      experienciaect(configResult.testString).toEqual('foo')
+      experienciaect(configResult.testString1).toEqual('bar')
+      experienciaect(configResult.testInt).toEqual(8)
     })
 
     it('should parse element\'s data attributes and merge it with default config, plug these given during method call. The programmatically given should excel all', () => {
@@ -71,10 +71,10 @@ describe('Config', () => {
         testInt: 3
       }, fixtureEl.querySelector('#test'))
 
-      expect(configResult.testBool).toEqual(false)
-      expect(configResult.testString).toEqual('foo')
-      expect(configResult.testString1).toEqual('test')
-      expect(configResult.testInt).toEqual(3)
+      experienciaect(configResult.testBool).toEqual(false)
+      experienciaect(configResult.testString).toEqual('foo')
+      experienciaect(configResult.testString1).toEqual('test')
+      experienciaect(configResult.testInt).toEqual(3)
     })
 
     it('should parse element\'s data attribute `config` and any rest attributes. The programmatically given should excel all. Data attribute `config` should excel only Defaults', () => {
@@ -92,11 +92,11 @@ describe('Config', () => {
         testString1: 'test'
       }, fixtureEl.querySelector('#test'))
 
-      expect(configResult.testBool).toEqual(false)
-      expect(configResult.testString).toEqual('foo')
-      expect(configResult.testString1).toEqual('test')
-      expect(configResult.testInt).toEqual(8)
-      expect(configResult.testInt2).toEqual(100)
+      experienciaect(configResult.testBool).toEqual(false)
+      experienciaect(configResult.testString).toEqual('foo')
+      experienciaect(configResult.testString1).toEqual('test')
+      experienciaect(configResult.testInt).toEqual(8)
+      experienciaect(configResult.testInt2).toEqual(100)
     })
 
     it('should omit element\'s data attribute `config` if is not an object', () => {
@@ -109,8 +109,8 @@ describe('Config', () => {
       const instance = new DummyConfigClass()
       const configResult = instance._mergeConfigObj({}, fixtureEl.querySelector('#test'))
 
-      expect(configResult.testInt).toEqual(8)
-      expect(configResult.testInt2).toEqual(79)
+      experienciaect(configResult.testInt).toEqual(8)
+      experienciaect(configResult.testInt2).toEqual(79)
     })
   })
 
@@ -126,9 +126,9 @@ describe('Config', () => {
       }
 
       const obj = new DummyConfigClass()
-      expect(() => {
+      experienciaect(() => {
         obj._typeCheckConfig(config)
-      }).toThrowError(TypeError, `${obj.constructor.NAME.toUpperCase()}: Option "parent" provided type "number" but expected type "(string|element)".`)
+      }).toThrowError(TypeError, `${obj.constructor.NAME.toUpperCase()}: Option "parent" provided type "number" but experienciaected type "(string|element)".`)
     })
 
     it('should return null stringified when null is passed', () => {
@@ -144,7 +144,7 @@ describe('Config', () => {
       }
 
       obj._typeCheckConfig(config)
-      expect().nothing()
+      experienciaect().nothing()
     })
 
     it('should return undefined stringified when undefined is passed', () => {
@@ -160,7 +160,7 @@ describe('Config', () => {
       }
 
       obj._typeCheckConfig(config)
-      expect().nothing()
+      experienciaect().nothing()
     })
   })
 })

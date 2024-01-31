@@ -219,7 +219,7 @@ Note that for security reasons the `sanitize`, `sanitizeFn`, and `allowList` opt
 {{< callout info >}}
 #### Data attributes for individual tooltips
 
-Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.
+Options for individual tooltips can alternatively be specified through the use of data attributes, as experiencialained above.
 {{< /callout >}}
 
 #### Using function with `popperConfig`

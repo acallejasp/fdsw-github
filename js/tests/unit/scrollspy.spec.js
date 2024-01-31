@@ -55,9 +55,9 @@ describe('ScrollSpy', () => {
         return
       }
 
-      expect(element).toHaveClass('active')
-      expect(scrollSpy._activeTarget).toEqual(element)
-      expect(event.relatedTarget).toEqual(element)
+      experienciaect(element).toHaveClass('active')
+      experienciaect(scrollSpy._activeTarget).toEqual(element)
+      experienciaect(event.relatedTarget).toEqual(element)
       cb()
     })
 
@@ -76,19 +76,19 @@ describe('ScrollSpy', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(ScrollSpy.VERSION).toEqual(jasmine.any(String))
+      experienciaect(ScrollSpy.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(ScrollSpy.Default).toEqual(jasmine.any(Object))
+      experienciaect(ScrollSpy.Default).toEqual(jasmine.any(Object))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(ScrollSpy.DATA_KEY).toEqual('bs.scrollspy')
+      experienciaect(ScrollSpy.DATA_KEY).toEqual('bs.scrollspy')
     })
   })
 
@@ -100,8 +100,8 @@ describe('ScrollSpy', () => {
       const sSpyBySelector = new ScrollSpy('.content')
       const sSpyByElement = new ScrollSpy(sSpyEl)
 
-      expect(sSpyBySelector._element).toEqual(sSpyEl)
-      expect(sSpyByElement._element).toEqual(sSpyEl)
+      experienciaect(sSpyBySelector._element).toEqual(sSpyEl)
+      experienciaect(sSpyByElement._element).toEqual(sSpyEl)
     })
 
     it('should null, if element is not scrollable', () => {
@@ -120,8 +120,8 @@ describe('ScrollSpy', () => {
         target: '#navigation'
       })
 
-      expect(scrollSpy._observer.root).toBeNull()
-      expect(scrollSpy._rootElement).toBeNull()
+      experienciaect(scrollSpy._observer.root).toBeNull()
+      experienciaect(scrollSpy._rootElement).toBeNull()
     })
 
     it('should respect threshold option', () => {
@@ -139,7 +139,7 @@ describe('ScrollSpy', () => {
         threshold: [1]
       })
 
-      expect(scrollSpy._observer.thresholds).toEqual([1])
+      experienciaect(scrollSpy._observer.thresholds).toEqual([1])
     })
 
     it('should respect threshold option markup', () => {
@@ -157,15 +157,15 @@ describe('ScrollSpy', () => {
       })
 
       // See https://stackoverflow.com/a/45592926
-      const expectToBeCloseToArray = (actual, expected) => {
-        expect(actual.length).toBe(expected.length)
+      const experienciaectToBeCloseToArray = (actual, experienciaected) => {
+        experienciaect(actual.length).toBe(experienciaected.length)
         for (const x of actual) {
           const i = actual.indexOf(x)
-          expect(x).withContext(`[${i}]`).toBeCloseTo(expected[i])
+          experienciaect(x).withContext(`[${i}]`).toBeCloseTo(experienciaected[i])
         }
       }
 
-      expectToBeCloseToArray(scrollSpy._observer.thresholds, [0, 0.2, 1])
+      experienciaectToBeCloseToArray(scrollSpy._observer.thresholds, [0, 0.2, 1])
     })
 
     it('should not take count to not visible sections', () => {
@@ -188,8 +188,8 @@ describe('ScrollSpy', () => {
         target: '#navigation'
       })
 
-      expect(scrollSpy._observableSections.size).toBe(1)
-      expect(scrollSpy._targetLinks.size).toBe(1)
+      experienciaect(scrollSpy._observableSections.size).toBe(1)
+      experienciaect(scrollSpy._targetLinks.size).toBe(1)
     })
 
     it('should not process element without target', () => {
@@ -211,7 +211,7 @@ describe('ScrollSpy', () => {
         target: '#navigation'
       })
 
-      expect(scrollSpy._targetLinks).toHaveSize(2)
+      experienciaect(scrollSpy._targetLinks).toHaveSize(2)
     })
 
     it('should only switch "active" class on current target', () => {
@@ -244,8 +244,8 @@ describe('ScrollSpy', () => {
         const spy = spyOn(scrollSpy, '_process').and.callThrough()
 
         onScrollStop(() => {
-          expect(rootEl).toHaveClass('active')
-          expect(spy).toHaveBeenCalled()
+          experienciaect(rootEl).toHaveClass('active')
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         }, scrollSpyEl)
 
@@ -286,7 +286,7 @@ describe('ScrollSpy', () => {
         })
 
         setTimeout(() => {
-          expect(triggerSpy).not.toHaveBeenCalled()
+          experienciaect(triggerSpy).not.toHaveBeenCalled()
           resolve()
         }, 100)
       })
@@ -322,9 +322,9 @@ describe('ScrollSpy', () => {
         const spy = spyOn(scrollSpy, '_process').and.callThrough()
 
         onScrollStop(() => {
-          expect(rootEl).toHaveClass('active')
-          expect(scrollSpy._activeTarget).toEqual(fixtureEl.querySelector('[href="#detail"]'))
-          expect(spy).toHaveBeenCalled()
+          experienciaect(rootEl).toHaveClass('active')
+          experienciaect(scrollSpy._activeTarget).toEqual(fixtureEl.querySelector('[href="#detail"]'))
+          experienciaect(spy).toHaveBeenCalled()
           resolve()
         }, scrollSpyEl)
 
@@ -478,12 +478,12 @@ describe('ScrollSpy', () => {
 
         onScrollStop(() => {
           const active = () => fixtureEl.querySelector('.active')
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
 
-          expect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
-          expect(active().getAttribute('id')).toEqual('two-link')
+          experienciaect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
+          experienciaect(active().getAttribute('id')).toEqual('two-link')
           onScrollStop(() => {
-            expect(active()).toBeNull()
+            experienciaect(active()).toBeNull()
             resolve()
           }, contentEl)
           scrollTo(contentEl, 0)
@@ -524,13 +524,13 @@ describe('ScrollSpy', () => {
         onScrollStop(() => {
           const activeId = () => fixtureEl.querySelector('.active').getAttribute('id')
 
-          expect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
-          expect(activeId()).toEqual('two-link')
+          experienciaect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
+          experienciaect(activeId()).toEqual('two-link')
           scrollTo(contentEl, negativeHeight)
 
           onScrollStop(() => {
-            expect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
-            expect(activeId()).toEqual('one-link')
+            experienciaect(fixtureEl.querySelectorAll('.active')).toHaveSize(1)
+            experienciaect(activeId()).toEqual('one-link')
             resolve()
           }, contentEl)
 
@@ -627,7 +627,7 @@ describe('ScrollSpy', () => {
 
       scrollSpy.refresh()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -638,11 +638,11 @@ describe('ScrollSpy', () => {
       const el = fixtureEl.querySelector('.content')
       const scrollSpy = new ScrollSpy(el)
 
-      expect(ScrollSpy.getInstance(el)).not.toBeNull()
+      experienciaect(ScrollSpy.getInstance(el)).not.toBeNull()
 
       scrollSpy.dispose()
 
-      expect(ScrollSpy.getInstance(el)).toBeNull()
+      experienciaect(ScrollSpy.getInstance(el)).toBeNull()
     })
   })
 
@@ -657,7 +657,7 @@ describe('ScrollSpy', () => {
 
       jQueryMock.fn.scrollspy.call(jQueryMock, { target: '#navBar' })
 
-      expect(ScrollSpy.getInstance(div)).not.toBeNull()
+      experienciaect(ScrollSpy.getInstance(div)).not.toBeNull()
     })
 
     it('should create a scrollspy with given config', () => {
@@ -670,11 +670,11 @@ describe('ScrollSpy', () => {
 
       jQueryMock.fn.scrollspy.call(jQueryMock, { rootMargin: '100px' })
       const spy = spyOn(ScrollSpy.prototype, 'constructor')
-      expect(spy).not.toHaveBeenCalledWith(div, { rootMargin: '100px' })
+      experienciaect(spy).not.toHaveBeenCalledWith(div, { rootMargin: '100px' })
 
       const scrollspy = ScrollSpy.getInstance(div)
-      expect(scrollspy).not.toBeNull()
-      expect(scrollspy._config.rootMargin).toEqual('100px')
+      experienciaect(scrollspy).not.toBeNull()
+      experienciaect(scrollspy._config.rootMargin).toEqual('100px')
     })
 
     it('should not re create a scrollspy', () => {
@@ -688,7 +688,7 @@ describe('ScrollSpy', () => {
 
       jQueryMock.fn.scrollspy.call(jQueryMock)
 
-      expect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
+      experienciaect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
     })
 
     it('should call a scrollspy method', () => {
@@ -704,8 +704,8 @@ describe('ScrollSpy', () => {
 
       jQueryMock.fn.scrollspy.call(jQueryMock, 'refresh')
 
-      expect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should throw error on undefined method', () => {
@@ -717,7 +717,7 @@ describe('ScrollSpy', () => {
       jQueryMock.fn.scrollspy = ScrollSpy.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.scrollspy.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -731,7 +731,7 @@ describe('ScrollSpy', () => {
       jQueryMock.fn.scrollspy = ScrollSpy.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.scrollspy.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -745,7 +745,7 @@ describe('ScrollSpy', () => {
       jQueryMock.fn.scrollspy = ScrollSpy.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.scrollspy.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -758,15 +758,15 @@ describe('ScrollSpy', () => {
       const div = fixtureEl.querySelector('.content')
       const scrollSpy = new ScrollSpy(div, { target: fixtureEl.querySelector('#navBar') })
 
-      expect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
-      expect(ScrollSpy.getInstance(div)).toBeInstanceOf(ScrollSpy)
+      experienciaect(ScrollSpy.getInstance(div)).toEqual(scrollSpy)
+      experienciaect(ScrollSpy.getInstance(div)).toBeInstanceOf(ScrollSpy)
     })
 
     it('should return null if there is no instance', () => {
       fixtureEl.innerHTML = getDummyFixture()
 
       const div = fixtureEl.querySelector('.content')
-      expect(ScrollSpy.getInstance(div)).toBeNull()
+      experienciaect(ScrollSpy.getInstance(div)).toBeNull()
     })
   })
 
@@ -777,9 +777,9 @@ describe('ScrollSpy', () => {
       const div = fixtureEl.querySelector('.content')
       const scrollspy = new ScrollSpy(div)
 
-      expect(ScrollSpy.getOrCreateInstance(div)).toEqual(scrollspy)
-      expect(ScrollSpy.getInstance(div)).toEqual(ScrollSpy.getOrCreateInstance(div, {}))
-      expect(ScrollSpy.getOrCreateInstance(div)).toBeInstanceOf(ScrollSpy)
+      experienciaect(ScrollSpy.getOrCreateInstance(div)).toEqual(scrollspy)
+      experienciaect(ScrollSpy.getInstance(div)).toEqual(ScrollSpy.getOrCreateInstance(div, {}))
+      experienciaect(ScrollSpy.getOrCreateInstance(div)).toBeInstanceOf(ScrollSpy)
     })
 
     it('should return new instance when there is no scrollspy instance', () => {
@@ -787,8 +787,8 @@ describe('ScrollSpy', () => {
 
       const div = fixtureEl.querySelector('.content')
 
-      expect(ScrollSpy.getInstance(div)).toBeNull()
-      expect(ScrollSpy.getOrCreateInstance(div)).toBeInstanceOf(ScrollSpy)
+      experienciaect(ScrollSpy.getInstance(div)).toBeNull()
+      experienciaect(ScrollSpy.getOrCreateInstance(div)).toBeInstanceOf(ScrollSpy)
     })
 
     it('should return new instance when there is no scrollspy instance with given configuration', () => {
@@ -796,13 +796,13 @@ describe('ScrollSpy', () => {
 
       const div = fixtureEl.querySelector('.content')
 
-      expect(ScrollSpy.getInstance(div)).toBeNull()
+      experienciaect(ScrollSpy.getInstance(div)).toBeNull()
       const scrollspy = ScrollSpy.getOrCreateInstance(div, {
         offset: 1
       })
-      expect(scrollspy).toBeInstanceOf(ScrollSpy)
+      experienciaect(scrollspy).toBeInstanceOf(ScrollSpy)
 
-      expect(scrollspy._config.offset).toEqual(1)
+      experienciaect(scrollspy._config.offset).toEqual(1)
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -812,15 +812,15 @@ describe('ScrollSpy', () => {
       const scrollspy = new ScrollSpy(div, {
         offset: 1
       })
-      expect(ScrollSpy.getInstance(div)).toEqual(scrollspy)
+      experienciaect(ScrollSpy.getInstance(div)).toEqual(scrollspy)
 
       const scrollspy2 = ScrollSpy.getOrCreateInstance(div, {
         offset: 2
       })
-      expect(scrollspy).toBeInstanceOf(ScrollSpy)
-      expect(scrollspy2).toEqual(scrollspy)
+      experienciaect(scrollspy).toBeInstanceOf(ScrollSpy)
+      experienciaect(scrollspy2).toEqual(scrollspy)
 
-      expect(scrollspy2._config.offset).toEqual(1)
+      experienciaect(scrollspy2._config.offset).toEqual(1)
     })
   })
 
@@ -835,7 +835,7 @@ describe('ScrollSpy', () => {
 
       window.dispatchEvent(createEvent('load'))
 
-      expect(ScrollSpy.getInstance(scrollSpyEl)).not.toBeNull()
+      experienciaect(ScrollSpy.getInstance(scrollSpyEl)).not.toBeNull()
     })
   })
 
@@ -852,8 +852,8 @@ describe('ScrollSpy', () => {
         offset: 1
       })
 
-      expect(offSpy).not.toHaveBeenCalledWith(target, 'click.bs.scrollspy')
-      expect(onSpy).not.toHaveBeenCalledWith(target, 'click.bs.scrollspy')
+      experienciaect(offSpy).not.toHaveBeenCalledWith(target, 'click.bs.scrollspy')
+      experienciaect(onSpy).not.toHaveBeenCalledWith(target, 'click.bs.scrollspy')
     })
 
     it('should enable smoothScroll', () => {
@@ -869,8 +869,8 @@ describe('ScrollSpy', () => {
         smoothScroll: true
       })
 
-      expect(offSpy).toHaveBeenCalledWith(target, 'click.bs.scrollspy')
-      expect(onSpy).toHaveBeenCalledWith(target, 'click.bs.scrollspy', '[href]', jasmine.any(Function))
+      experienciaect(offSpy).toHaveBeenCalledWith(target, 'click.bs.scrollspy')
+      experienciaect(onSpy).toHaveBeenCalledWith(target, 'click.bs.scrollspy', '[href]', jasmine.any(Function))
     })
 
     it('should not smoothScroll to element if it not handles a scrollspy section', () => {
@@ -896,7 +896,7 @@ describe('ScrollSpy', () => {
       const clickSpy = getElementScrollSpy(div)
 
       fixtureEl.querySelector('#anchor-2').click()
-      expect(clickSpy).not.toHaveBeenCalled()
+      experienciaect(clickSpy).not.toHaveBeenCalled()
     })
 
     it('should call `scrollTop` if element doesn\'t not support `scrollTo`', () => {
@@ -913,7 +913,7 @@ describe('ScrollSpy', () => {
       })
 
       link.click()
-      expect(clickSpy).toHaveBeenCalled()
+      experienciaect(clickSpy).toHaveBeenCalled()
     })
 
     it('should smoothScroll to the proper observable element on anchor click', done => {
@@ -931,9 +931,9 @@ describe('ScrollSpy', () => {
 
       setTimeout(() => {
         if (div.scrollTo) {
-          expect(clickSpy).toHaveBeenCalledWith({ top: observable.offsetTop - div.offsetTop, behavior: 'smooth' })
+          experienciaect(clickSpy).toHaveBeenCalledWith({ top: observable.offsetTop - div.offsetTop, behavior: 'smooth' })
         } else {
-          expect(clickSpy).toHaveBeenCalledWith(observable.offsetTop - div.offsetTop)
+          experienciaect(clickSpy).toHaveBeenCalledWith(observable.offsetTop - div.offsetTop)
         }
 
         done()
@@ -965,9 +965,9 @@ describe('ScrollSpy', () => {
 
       setTimeout(() => {
         if (div.scrollTo) {
-          expect(clickSpy).toHaveBeenCalledWith({ top: observable.offsetTop - div.offsetTop, behavior: 'smooth' })
+          experienciaect(clickSpy).toHaveBeenCalledWith({ top: observable.offsetTop - div.offsetTop, behavior: 'smooth' })
         } else {
-          expect(clickSpy).toHaveBeenCalledWith(observable.offsetTop - div.offsetTop)
+          experienciaect(clickSpy).toHaveBeenCalledWith(observable.offsetTop - div.offsetTop)
         }
 
         done()

@@ -36,7 +36,7 @@ $utilities: ();
         @import "../../utilities/api";
       }
 
-      @include expect() {
+      @include experienciaect() {
         // margin is not set to responsive
         .margin-auto {
           margin: auto !important;

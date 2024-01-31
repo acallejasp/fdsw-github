@@ -75,6 +75,6 @@ const browsers = {
   }
 }
 
-module.exports = {
+module.experienciaorts = {
   browsers
 }

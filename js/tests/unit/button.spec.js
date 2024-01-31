@@ -18,19 +18,19 @@ describe('Button', () => {
     const buttonBySelector = new Button('[data-bs-toggle="button"]')
     const buttonByElement = new Button(buttonEl)
 
-    expect(buttonBySelector._element).toEqual(buttonEl)
-    expect(buttonByElement._element).toEqual(buttonEl)
+    experienciaect(buttonBySelector._element).toEqual(buttonEl)
+    experienciaect(buttonByElement._element).toEqual(buttonEl)
   })
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Button.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Button.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Button.DATA_KEY).toEqual('bs.button')
+      experienciaect(Button.DATA_KEY).toEqual('bs.button')
     })
   })
 
@@ -45,19 +45,19 @@ describe('Button', () => {
       const divTest = fixtureEl.querySelector('.test')
       const btnTestParent = fixtureEl.querySelector('.testParent')
 
-      expect(btn).not.toHaveClass('active')
+      experienciaect(btn).not.toHaveClass('active')
 
       btn.click()
 
-      expect(btn).toHaveClass('active')
+      experienciaect(btn).toHaveClass('active')
 
       btn.click()
 
-      expect(btn).not.toHaveClass('active')
+      experienciaect(btn).not.toHaveClass('active')
 
       divTest.click()
 
-      expect(btnTestParent).toHaveClass('active')
+      experienciaect(btnTestParent).toHaveClass('active')
     })
   })
 
@@ -68,13 +68,13 @@ describe('Button', () => {
       const btnEl = fixtureEl.querySelector('.btn')
       const button = new Button(btnEl)
 
-      expect(btnEl.getAttribute('aria-pressed')).toEqual('false')
-      expect(btnEl).not.toHaveClass('active')
+      experienciaect(btnEl.getAttribute('aria-pressed')).toEqual('false')
+      experienciaect(btnEl).not.toHaveClass('active')
 
       button.toggle()
 
-      expect(btnEl.getAttribute('aria-pressed')).toEqual('true')
-      expect(btnEl).toHaveClass('active')
+      experienciaect(btnEl.getAttribute('aria-pressed')).toEqual('true')
+      experienciaect(btnEl).toHaveClass('active')
     })
   })
 
@@ -85,11 +85,11 @@ describe('Button', () => {
       const btnEl = fixtureEl.querySelector('.btn')
       const button = new Button(btnEl)
 
-      expect(Button.getInstance(btnEl)).not.toBeNull()
+      experienciaect(Button.getInstance(btnEl)).not.toBeNull()
 
       button.dispose()
 
-      expect(Button.getInstance(btnEl)).toBeNull()
+      experienciaect(Button.getInstance(btnEl)).toBeNull()
     })
   })
 
@@ -107,7 +107,7 @@ describe('Button', () => {
 
       jQueryMock.fn.button.call(jQueryMock, 'toggle')
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should create new button instance and call toggle', () => {
@@ -120,8 +120,8 @@ describe('Button', () => {
 
       jQueryMock.fn.button.call(jQueryMock, 'toggle')
 
-      expect(Button.getInstance(btnEl)).not.toBeNull()
-      expect(btnEl).toHaveClass('active')
+      experienciaect(Button.getInstance(btnEl)).not.toBeNull()
+      experienciaect(btnEl).toHaveClass('active')
     })
 
     it('should just create a button instance without calling toggle', () => {
@@ -134,8 +134,8 @@ describe('Button', () => {
 
       jQueryMock.fn.button.call(jQueryMock)
 
-      expect(Button.getInstance(btnEl)).not.toBeNull()
-      expect(btnEl).not.toHaveClass('active')
+      experienciaect(Button.getInstance(btnEl)).not.toBeNull()
+      experienciaect(btnEl).not.toHaveClass('active')
     })
   })
 
@@ -146,8 +146,8 @@ describe('Button', () => {
       const div = fixtureEl.querySelector('div')
       const button = new Button(div)
 
-      expect(Button.getInstance(div)).toEqual(button)
-      expect(Button.getInstance(div)).toBeInstanceOf(Button)
+      experienciaect(Button.getInstance(div)).toEqual(button)
+      experienciaect(Button.getInstance(div)).toBeInstanceOf(Button)
     })
 
     it('should return null when there is no button instance', () => {
@@ -155,7 +155,7 @@ describe('Button', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Button.getInstance(div)).toBeNull()
+      experienciaect(Button.getInstance(div)).toBeNull()
     })
   })
 
@@ -166,9 +166,9 @@ describe('Button', () => {
       const div = fixtureEl.querySelector('div')
       const button = new Button(div)
 
-      expect(Button.getOrCreateInstance(div)).toEqual(button)
-      expect(Button.getInstance(div)).toEqual(Button.getOrCreateInstance(div, {}))
-      expect(Button.getOrCreateInstance(div)).toBeInstanceOf(Button)
+      experienciaect(Button.getOrCreateInstance(div)).toEqual(button)
+      experienciaect(Button.getInstance(div)).toEqual(Button.getOrCreateInstance(div, {}))
+      experienciaect(Button.getOrCreateInstance(div)).toBeInstanceOf(Button)
     })
 
     it('should return new instance when there is no button instance', () => {
@@ -176,8 +176,8 @@ describe('Button', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Button.getInstance(div)).toBeNull()
-      expect(Button.getOrCreateInstance(div)).toBeInstanceOf(Button)
+      experienciaect(Button.getInstance(div)).toBeNull()
+      experienciaect(Button.getOrCreateInstance(div)).toBeInstanceOf(Button)
     })
   })
 })

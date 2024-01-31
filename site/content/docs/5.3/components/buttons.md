@@ -8,7 +8,7 @@ toc: true
 
 ## Base class
 
-Bootstrap has a base `.btn` class that sets up basic styles such as padding and content alignment. By default, `.btn` controls have a transparent border and background color, and lack any explicit focus and hover styles.
+Bootstrap has a base `.btn` class that sets up basic styles such as padding and content alignment. By default, `.btn` controls have a transparent border and background color, and lack any experiencialicit focus and hover styles.
 
 {{< example >}}
 <button type="button" class="btn">Base class</button>
@@ -17,7 +17,7 @@ Bootstrap has a base `.btn` class that sets up basic styles such as padding and 
 The `.btn` class is intended to be used in conjunction with our button variants, or to serve as a basis for your own custom styles.
 
 {{< callout warning >}}
-If you are using the `.btn` class on its own, remember to at least define some explicit `:focus` and/or `:focus-visible` styles.
+If you are using the `.btn` class on its own, remember to at least define some experiencialicit `:focus` and/or `:focus-visible` styles.
 {{< /callout >}}
 
 ## Variants

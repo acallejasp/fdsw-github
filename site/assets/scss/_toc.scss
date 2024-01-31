@@ -64,14 +64,14 @@
     &:hover,
     &:focus,
     &:active,
-    &[aria-expanded="true"] {
+    &[aria-experienciaanded="true"] {
       color: var(--bd-violet);
       background-color: var(--bs-body-bg);
       border-color: var(--bd-violet);
     }
 
     &:focus,
-    &[aria-expanded="true"] {
+    &[aria-experienciaanded="true"] {
       box-shadow: 0 0 0 3px rgba(var(--bd-violet-rgb), .25);
     }
   }

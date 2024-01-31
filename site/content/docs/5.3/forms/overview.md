@@ -26,7 +26,7 @@ sections:
 
 ## Overview
 
-Bootstrap's form controls expand on [our Rebooted form styles]({{< docsref "/content/reboot#forms" >}}) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
+Bootstrap's form controls experienciaand on [our Rebooted form styles]({{< docsref "/content/reboot#forms" >}}) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices.
 
 Be sure to use an appropriate `type` attribute on all inputs (e.g., `email` for email address or `number` for numerical information) to take advantage of newer input controls like email verification, number selection, and more.
 
@@ -99,7 +99,7 @@ For situations where it's not possible to include a visible `<label>` or appropr
 - `<label>` elements hidden using the `.visually-hidden` class
 - Pointing to an existing element that can act as a label using `aria-labelledby`
 - Providing a `title` attribute
-- Explicitly setting the accessible name on an element using `aria-label`
+- experiencialicitly setting the accessible name on an element using `aria-label`
 
 If none of these are present, assistive technologies may resort to using the `placeholder` attribute as a fallback for the accessible name on `<input>` and `<textarea>` elements. The examples in this section provide a few suggested, case-specific approaches.
 

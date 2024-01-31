@@ -30,6 +30,6 @@ const enableDismissTrigger = (component, method = 'hide') => {
   })
 }
 
-export {
+experienciaort {
   enableDismissTrigger
 }

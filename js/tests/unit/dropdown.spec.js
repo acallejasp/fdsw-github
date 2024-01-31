@@ -16,25 +16,25 @@ describe('Dropdown', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Dropdown.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Dropdown.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(Dropdown.Default).toEqual(jasmine.any(Object))
+      experienciaect(Dropdown.Default).toEqual(jasmine.any(Object))
     })
   })
 
   describe('DefaultType', () => {
     it('should return plugin default type config', () => {
-      expect(Dropdown.DefaultType).toEqual(jasmine.any(Object))
+      experienciaect(Dropdown.DefaultType).toEqual(jasmine.any(Object))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Dropdown.DATA_KEY).toEqual('bs.dropdown')
+      experienciaect(Dropdown.DATA_KEY).toEqual('bs.dropdown')
     })
   })
 
@@ -53,8 +53,8 @@ describe('Dropdown', () => {
       const dropdownBySelector = new Dropdown('[data-bs-toggle="dropdown"]')
       const dropdownByElement = new Dropdown(btnDropdown)
 
-      expect(dropdownBySelector._element).toEqual(btnDropdown)
-      expect(dropdownByElement._element).toEqual(btnDropdown)
+      experienciaect(dropdownBySelector._element).toEqual(btnDropdown)
+      experienciaect(dropdownByElement._element).toEqual(btnDropdown)
     })
 
     it('should work on invalid markup', () => {
@@ -75,7 +75,7 @@ describe('Dropdown', () => {
           resolve()
         })
 
-        expect().nothing()
+        experienciaect().nothing()
         dropdown.show()
       })
     })
@@ -97,7 +97,7 @@ describe('Dropdown', () => {
           offset: getOffset,
           popperConfig: {
             onFirstUpdate(state) {
-              expect(getOffset).toHaveBeenCalledWith({
+              experienciaect(getOffset).toHaveBeenCalledWith({
                 popper: state.rects.popper,
                 reference: state.rects.reference,
                 placement: state.placement
@@ -108,7 +108,7 @@ describe('Dropdown', () => {
         })
         const offset = dropdown._getOffset()
 
-        expect(typeof offset).toEqual('function')
+        experienciaect(typeof offset).toEqual('function')
 
         dropdown.show()
       })
@@ -127,7 +127,7 @@ describe('Dropdown', () => {
       const btnDropdown = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
       const dropdown = new Dropdown(btnDropdown)
 
-      expect(dropdown._getOffset()).toEqual([10, 20])
+      experienciaect(dropdown._getOffset()).toEqual([10, 20])
     })
 
     it('should allow to pass config to Popper with `popperConfig`', () => {
@@ -149,7 +149,7 @@ describe('Dropdown', () => {
 
       const popperConfig = dropdown._getPopperConfig()
 
-      expect(popperConfig.placement).toEqual('left')
+      experienciaect(popperConfig.placement).toEqual('left')
     })
 
     it('should allow to pass config to Popper with `popperConfig` as a function', () => {
@@ -170,8 +170,8 @@ describe('Dropdown', () => {
 
       const popperConfig = dropdown._getPopperConfig()
 
-      expect(getPopperConfig).toHaveBeenCalled()
-      expect(popperConfig.placement).toEqual('left')
+      experienciaect(getPopperConfig).toHaveBeenCalled()
+      experienciaect(popperConfig.placement).toEqual('left')
     })
   })
 
@@ -180,7 +180,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -191,8 +191,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -204,13 +204,13 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="first dropdown">',
-          '  <button class="firstBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="firstBtn btn" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
           '</div>',
           '<div class="second dropdown">',
-          '  <button class="secondBtn btn" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="secondBtn btn" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -224,13 +224,13 @@ describe('Dropdown', () => {
         const dropdown1 = new Dropdown(btnDropdown1)
 
         firstDropdownEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown1).toHaveClass('show')
+          experienciaect(btnDropdown1).toHaveClass('show')
           spyOn(dropdown1._popper, 'destroy')
           btnDropdown2.click()
         })
 
         secondDropdownEl.addEventListener('shown.bs.dropdown', () => setTimeout(() => {
-          expect(dropdown1._popper.destroy).toHaveBeenCalled()
+          experienciaect(dropdown1._popper.destroy).toHaveBeenCalled()
           resolve()
         }))
 
@@ -242,7 +242,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -258,17 +258,17 @@ describe('Dropdown', () => {
         const spyOff = spyOn(EventHandler, 'off')
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
-          expect(spy).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
+          experienciaect(spy).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
 
           dropdown.toggle()
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(btnDropdown).not.toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('false')
-          expect(spyOff).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
+          experienciaect(btnDropdown).not.toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(spyOff).toHaveBeenCalledWith(jasmine.any(Object), 'mouseover', noop)
 
           document.documentElement.ontouchstart = defaultValueOnTouchStart
           resolve()
@@ -282,7 +282,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu dropdown-menu-end">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -293,8 +293,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -306,7 +306,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown-center">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -317,8 +317,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -330,7 +330,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropup">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -342,8 +342,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         dropupEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -355,7 +355,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropup-center">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -367,8 +367,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         dropupEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -380,7 +380,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropup">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu dropdown-menu-end">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -392,8 +392,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         dropupEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -405,7 +405,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropend">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -417,8 +417,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         dropendEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -430,7 +430,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropstart">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -442,8 +442,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         dropstartEl.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -455,7 +455,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -468,8 +468,8 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -481,7 +481,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -494,8 +494,8 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -507,7 +507,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -520,8 +520,8 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
           resolve()
         })
 
@@ -533,7 +533,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle visually-hidden" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle visually-hidden" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -555,11 +555,11 @@ describe('Dropdown', () => {
           }
         }
 
-        expect(() => new Dropdown(btnDropdown, {
+        experienciaect(() => new Dropdown(btnDropdown, {
           reference: {}
         })).toThrowError(TypeError, 'DROPDOWN: Option "reference" provided type "object" without a required "getBoundingClientRect" method.')
 
-        expect(() => new Dropdown(btnDropdown, {
+        experienciaect(() => new Dropdown(btnDropdown, {
           reference: {
             getBoundingClientRect: 'not-a-function'
           }
@@ -570,9 +570,9 @@ describe('Dropdown', () => {
           reference: virtualElement,
           popperConfig: {
             onFirstUpdate() {
-              expect(spy).toHaveBeenCalled()
-              expect(btnDropdown).toHaveClass('show')
-              expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+              experienciaect(spy).toHaveBeenCalled()
+              experienciaect(btnDropdown).toHaveClass('show')
+              experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
               resolve()
             }
           }
@@ -605,7 +605,7 @@ describe('Dropdown', () => {
         dropdown.toggle()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
       })
@@ -632,7 +632,7 @@ describe('Dropdown', () => {
         dropdown.toggle()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
       })
@@ -659,7 +659,7 @@ describe('Dropdown', () => {
         dropdown.toggle()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
       })
@@ -690,7 +690,7 @@ describe('Dropdown', () => {
         dropdown.toggle()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
       })
@@ -713,7 +713,7 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown).toHaveClass('show')
           resolve()
         })
 
@@ -742,7 +742,7 @@ describe('Dropdown', () => {
         dropdown.show()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 10)
       })
@@ -769,7 +769,7 @@ describe('Dropdown', () => {
         dropdown.show()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 10)
       })
@@ -796,7 +796,7 @@ describe('Dropdown', () => {
         dropdown.show()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 10)
       })
@@ -827,7 +827,7 @@ describe('Dropdown', () => {
         dropdown.show()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 10)
       })
@@ -839,7 +839,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="true">Dropdown</button>',
           '  <div class="dropdown-menu show">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -851,8 +851,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(dropdownMenu).not.toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('false')
+          experienciaect(dropdownMenu).not.toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('false')
           resolve()
         })
 
@@ -880,7 +880,7 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(dropdown._popper.destroy).toHaveBeenCalled()
+          experienciaect(dropdown._popper.destroy).toHaveBeenCalled()
           resolve()
         })
 
@@ -910,7 +910,7 @@ describe('Dropdown', () => {
         dropdown.hide()
 
         setTimeout(() => {
-          expect(dropdownMenu).toHaveClass('show')
+          experienciaect(dropdownMenu).toHaveClass('show')
           resolve()
         }, 10)
       })
@@ -938,7 +938,7 @@ describe('Dropdown', () => {
         dropdown.hide()
 
         setTimeout(() => {
-          expect(dropdownMenu).toHaveClass('show')
+          experienciaect(dropdownMenu).toHaveClass('show')
           resolve()
         }, 10)
       })
@@ -965,7 +965,7 @@ describe('Dropdown', () => {
         dropdown.hide()
 
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 10)
       })
@@ -997,7 +997,7 @@ describe('Dropdown', () => {
         dropdown.hide()
 
         setTimeout(() => {
-          expect(dropdownMenu).toHaveClass('show')
+          experienciaect(dropdownMenu).toHaveClass('show')
           resolve()
         })
       })
@@ -1026,9 +1026,9 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(btnDropdown).not.toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('false')
-          expect(spy).toHaveBeenCalled()
+          experienciaect(btnDropdown).not.toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(spy).toHaveBeenCalled()
 
           document.documentElement.ontouchstart = defaultValueOnTouchStart
           resolve()
@@ -1054,16 +1054,16 @@ describe('Dropdown', () => {
 
       const dropdown = new Dropdown(btnDropdown)
 
-      expect(dropdown._popper).toBeNull()
-      expect(dropdown._menu).not.toBeNull()
-      expect(dropdown._element).not.toBeNull()
+      experienciaect(dropdown._popper).toBeNull()
+      experienciaect(dropdown._menu).not.toBeNull()
+      experienciaect(dropdown._element).not.toBeNull()
       const spy = spyOn(EventHandler, 'off')
 
       dropdown.dispose()
 
-      expect(dropdown._menu).toBeNull()
-      expect(dropdown._element).toBeNull()
-      expect(spy).toHaveBeenCalledWith(btnDropdown, Dropdown.EVENT_KEY)
+      experienciaect(dropdown._menu).toBeNull()
+      experienciaect(dropdown._element).toBeNull()
+      experienciaect(spy).toHaveBeenCalledWith(btnDropdown, Dropdown.EVENT_KEY)
     })
 
     it('should dispose dropdown with Popper', () => {
@@ -1081,15 +1081,15 @@ describe('Dropdown', () => {
 
       dropdown.toggle()
 
-      expect(dropdown._popper).not.toBeNull()
-      expect(dropdown._menu).not.toBeNull()
-      expect(dropdown._element).not.toBeNull()
+      experienciaect(dropdown._popper).not.toBeNull()
+      experienciaect(dropdown._menu).not.toBeNull()
+      experienciaect(dropdown._element).not.toBeNull()
 
       dropdown.dispose()
 
-      expect(dropdown._popper).toBeNull()
-      expect(dropdown._menu).toBeNull()
-      expect(dropdown._element).toBeNull()
+      experienciaect(dropdown._popper).toBeNull()
+      experienciaect(dropdown._menu).toBeNull()
+      experienciaect(dropdown._element).toBeNull()
     })
   })
 
@@ -1109,15 +1109,15 @@ describe('Dropdown', () => {
 
       dropdown.toggle()
 
-      expect(dropdown._popper).not.toBeNull()
+      experienciaect(dropdown._popper).not.toBeNull()
 
       const spyUpdate = spyOn(dropdown._popper, 'update')
       const spyDetect = spyOn(dropdown, '_detectNavbar')
 
       dropdown.update()
 
-      expect(spyUpdate).toHaveBeenCalled()
-      expect(spyDetect).toHaveBeenCalled()
+      experienciaect(spyUpdate).toHaveBeenCalled()
+      experienciaect(spyDetect).toHaveBeenCalled()
     })
 
     it('should just detect navbar on update', () => {
@@ -1137,8 +1137,8 @@ describe('Dropdown', () => {
 
       dropdown.update()
 
-      expect(dropdown._popper).toBeNull()
-      expect(spy).toHaveBeenCalled()
+      experienciaect(dropdown._popper).toBeNull()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -1147,7 +1147,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <a class="dropdown-item" href="#">Secondary link</a>',
           '  </div>',
@@ -1163,10 +1163,10 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('shown.bs.dropdown', event => setTimeout(() => {
-          expect(btnDropdown).toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
-          expect(showEventTriggered).toBeTrue()
-          expect(event.relatedTarget).toEqual(btnDropdown)
+          experienciaect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
+          experienciaect(showEventTriggered).toBeTrue()
+          experienciaect(event.relatedTarget).toEqual(btnDropdown)
           document.body.click()
         }))
 
@@ -1175,10 +1175,10 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', event => {
-          expect(btnDropdown).not.toHaveClass('show')
-          expect(btnDropdown.getAttribute('aria-expanded')).toEqual('false')
-          expect(hideEventTriggered).toBeTrue()
-          expect(event.relatedTarget).toEqual(btnDropdown)
+          experienciaect(btnDropdown).not.toHaveClass('show')
+          experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('false')
+          experienciaect(hideEventTriggered).toBeTrue()
+          experienciaect(event.relatedTarget).toEqual(btnDropdown)
           resolve()
         })
 
@@ -1189,9 +1189,9 @@ describe('Dropdown', () => {
     it('should not use "static" Popper in navbar', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar navbar-expand-md bg-light">',
+          '<nav class="navbar navbar-experienciaand-md bg-light">',
           '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '    <div class="dropdown-menu">',
           '      <a class="dropdown-item" href="#">Secondary link</a>',
           '    </div>',
@@ -1204,8 +1204,8 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(dropdown._popper).not.toBeNull()
-          expect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
+          experienciaect(dropdown._popper).not.toBeNull()
+          experienciaect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
           resolve()
         })
 
@@ -1217,7 +1217,7 @@ describe('Dropdown', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
           '<div class="dropdown">',
-          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '  <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '  <div class="dropdown-menu">',
           '    <select>',
           '      <option selected>Open this select menu</option>',
@@ -1242,12 +1242,12 @@ describe('Dropdown', () => {
         })
 
         dropdownMenu.addEventListener('click', event => {
-          expect(event.target.tagName).toMatch(/select|option/i)
+          experienciaect(event.target.tagName).toMatch(/select|option/i)
 
           Dropdown.clearMenus(event)
 
           setTimeout(() => {
-            expect(hideSpy).not.toHaveBeenCalled()
+            experienciaect(hideSpy).not.toHaveBeenCalled()
             resolve()
           }, 10)
         })
@@ -1259,9 +1259,9 @@ describe('Dropdown', () => {
     it('should manage bs attribute `data-bs-popper`="static" when dropdown is in navbar', () => {
       return new Promise(resolve => {
         fixtureEl.innerHTML = [
-          '<nav class="navbar navbar-expand-md bg-light">',
+          '<nav class="navbar navbar-experienciaand-md bg-light">',
           '  <div class="dropdown">',
-          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>',
+          '    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-experienciaanded="false">Dropdown</button>',
           '    <div class="dropdown-menu">',
           '      <a class="dropdown-item" href="#">Secondary link</a>',
           '    </div>',
@@ -1274,12 +1274,12 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
+          experienciaect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
           dropdown.hide()
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(dropdownMenu.getAttribute('data-bs-popper')).toBeNull()
+          experienciaect(dropdownMenu.getAttribute('data-bs-popper')).toBeNull()
           resolve()
         })
 
@@ -1303,7 +1303,7 @@ describe('Dropdown', () => {
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
           // Popper adds this attribute when we use it
-          expect(dropdownMenu.getAttribute('data-popper-placement')).toBeNull()
+          experienciaect(dropdownMenu.getAttribute('data-popper-placement')).toBeNull()
           resolve()
         })
 
@@ -1327,12 +1327,12 @@ describe('Dropdown', () => {
         const dropdown = new Dropdown(btnDropdown)
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
+          experienciaect(dropdownMenu.getAttribute('data-bs-popper')).toEqual('static')
           dropdown.hide()
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(dropdownMenu.getAttribute('data-bs-popper')).toBeNull()
+          experienciaect(dropdownMenu.getAttribute('data-bs-popper')).toBeNull()
           resolve()
         })
 
@@ -1354,7 +1354,7 @@ describe('Dropdown', () => {
         const btnDropdown = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
 
         btnDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(btnDropdown).toHaveClass('show')
+          experienciaect(btnDropdown).toHaveClass('show')
 
           const keyup = createEvent('keyup')
 
@@ -1363,7 +1363,7 @@ describe('Dropdown', () => {
         })
 
         btnDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect(btnDropdown).not.toHaveClass('show')
+          experienciaect(btnDropdown).not.toHaveClass('show')
           resolve()
         })
 
@@ -1393,29 +1393,29 @@ describe('Dropdown', () => {
 
         const triggerDropdownList = fixtureEl.querySelectorAll('[data-bs-toggle="dropdown"]')
 
-        expect(triggerDropdownList).toHaveSize(2)
+        experienciaect(triggerDropdownList).toHaveSize(2)
 
         const [triggerDropdownFirst, triggerDropdownLast] = triggerDropdownList
 
         triggerDropdownFirst.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdownFirst).toHaveClass('show')
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
+          experienciaect(triggerDropdownFirst).toHaveClass('show')
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
           document.body.click()
         })
 
         triggerDropdownFirst.addEventListener('hidden.bs.dropdown', () => {
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
           triggerDropdownLast.click()
         })
 
         triggerDropdownLast.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdownLast).toHaveClass('show')
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
+          experienciaect(triggerDropdownLast).toHaveClass('show')
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
           document.body.click()
         })
 
         triggerDropdownLast.addEventListener('hidden.bs.dropdown', () => {
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
           resolve()
         })
 
@@ -1443,13 +1443,13 @@ describe('Dropdown', () => {
 
         const triggerDropdownList = fixtureEl.querySelectorAll('[data-bs-toggle="dropdown"]')
 
-        expect(triggerDropdownList).toHaveSize(2)
+        experienciaect(triggerDropdownList).toHaveSize(2)
 
         const [triggerDropdownFirst, triggerDropdownLast] = triggerDropdownList
 
         triggerDropdownFirst.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdownFirst).toHaveClass('show')
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
+          experienciaect(triggerDropdownFirst).toHaveClass('show')
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
 
           const keyup = createEvent('keyup')
           keyup.key = 'Tab'
@@ -1458,13 +1458,13 @@ describe('Dropdown', () => {
         })
 
         triggerDropdownFirst.addEventListener('hidden.bs.dropdown', () => {
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
           triggerDropdownLast.click()
         })
 
         triggerDropdownLast.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdownLast).toHaveClass('show')
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
+          experienciaect(triggerDropdownLast).toHaveClass('show')
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(1)
 
           const keyup = createEvent('keyup')
           keyup.key = 'Tab'
@@ -1473,7 +1473,7 @@ describe('Dropdown', () => {
         })
 
         triggerDropdownLast.addEventListener('hidden.bs.dropdown', () => {
-          expect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
+          experienciaect(fixtureEl.querySelectorAll('.dropdown-menu.show')).toHaveSize(0)
           resolve()
         })
 
@@ -1502,16 +1502,16 @@ describe('Dropdown', () => {
       const spy = spyOn(Dropdown, 'getOrCreateInstance').and.callThrough()
 
       dropdownToggle1.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle1)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle1)
 
       dropdownToggle2.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle2)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle2)
 
       dropdownMenu1.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle1)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle1)
 
       dropdownMenu2.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle2)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle2)
     })
 
     it('should be able to show the proper menu, even with multiple dropdowns in the same tag', () => {
@@ -1534,12 +1534,12 @@ describe('Dropdown', () => {
       const dropdownMenu2 = fixtureEl.querySelector('#menu2')
 
       dropdownToggle1.click()
-      expect(dropdownMenu1).toHaveClass('show')
-      expect(dropdownMenu2).not.toHaveClass('show')
+      experienciaect(dropdownMenu1).toHaveClass('show')
+      experienciaect(dropdownMenu2).not.toHaveClass('show')
 
       dropdownToggle2.click()
-      expect(dropdownMenu1).not.toHaveClass('show')
-      expect(dropdownMenu2).toHaveClass('show')
+      experienciaect(dropdownMenu1).not.toHaveClass('show')
+      experienciaect(dropdownMenu2).toHaveClass('show')
     })
 
     it('should fire hide and hidden event without a clickEvent if event type is not click', () => {
@@ -1556,11 +1556,11 @@ describe('Dropdown', () => {
         const triggerDropdown = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
 
         triggerDropdown.addEventListener('hide.bs.dropdown', event => {
-          expect(event.clickEvent).toBeUndefined()
+          experienciaect(event.clickEvent).toBeUndefined()
         })
 
         triggerDropdown.addEventListener('hidden.bs.dropdown', event => {
-          expect(event.clickEvent).toBeUndefined()
+          experienciaect(event.clickEvent).toBeUndefined()
           resolve()
         })
 
@@ -1603,9 +1603,9 @@ describe('Dropdown', () => {
         dropdownParent.addEventListener('hide.bs.dropdown', hideFunction)
 
         dropdownParent.addEventListener('hidden.bs.dropdown', () => {
-          expect(showFunction).toHaveBeenCalled()
-          expect(shownFunction).toHaveBeenCalled()
-          expect(hideFunction).toHaveBeenCalled()
+          experienciaect(showFunction).toHaveBeenCalled()
+          experienciaect(shownFunction).toHaveBeenCalled()
+          experienciaect(hideFunction).toHaveBeenCalled()
           resolve()
         })
 
@@ -1637,12 +1637,12 @@ describe('Dropdown', () => {
           keydown.key = 'ArrowUp'
           input.dispatchEvent(keydown)
 
-          expect(document.activeElement).toEqual(input, 'input still focused')
+          experienciaect(document.activeElement).toEqual(input, 'input still focused')
 
           textarea.focus()
           textarea.dispatchEvent(keydown)
 
-          expect(document.activeElement).toEqual(textarea, 'textarea still focused')
+          experienciaect(document.activeElement).toEqual(textarea, 'textarea still focused')
           resolve()
         })
 
@@ -1672,8 +1672,8 @@ describe('Dropdown', () => {
           triggerDropdown.dispatchEvent(keydown)
           triggerDropdown.dispatchEvent(keydown)
 
-          expect(document.activeElement).not.toHaveClass('disabled')
-          expect(document.activeElement.hasAttribute('disabled')).toBeFalse()
+          experienciaect(document.activeElement).not.toHaveClass('disabled')
+          experienciaect(document.activeElement.hasAttribute('disabled')).toBeFalse()
           resolve()
         })
 
@@ -1708,9 +1708,9 @@ describe('Dropdown', () => {
 
           triggerDropdown.dispatchEvent(keydown)
 
-          expect(document.activeElement).not.toHaveClass('d-none')
-          expect(document.activeElement.style.display).not.toEqual('none')
-          expect(document.activeElement.style.visibility).not.toEqual('hidden')
+          experienciaect(document.activeElement).not.toHaveClass('d-none')
+          experienciaect(document.activeElement.style.display).not.toEqual('none')
+          experienciaect(document.activeElement.style.visibility).not.toEqual('hidden')
 
           resolve()
         })
@@ -1740,16 +1740,16 @@ describe('Dropdown', () => {
           keydownArrowDown.key = 'ArrowDown'
 
           triggerDropdown.dispatchEvent(keydownArrowDown)
-          expect(document.activeElement).toEqual(item1, 'item1 is focused')
+          experienciaect(document.activeElement).toEqual(item1, 'item1 is focused')
 
           document.activeElement.dispatchEvent(keydownArrowDown)
-          expect(document.activeElement).toEqual(item2, 'item2 is focused')
+          experienciaect(document.activeElement).toEqual(item2, 'item2 is focused')
 
           const keydownArrowUp = createEvent('keydown')
           keydownArrowUp.key = 'ArrowUp'
 
           document.activeElement.dispatchEvent(keydownArrowUp)
-          expect(document.activeElement).toEqual(item1, 'item1 is focused')
+          experienciaect(document.activeElement).toEqual(item1, 'item1 is focused')
 
           resolve()
         })
@@ -1775,7 +1775,7 @@ describe('Dropdown', () => {
 
         triggerDropdown.addEventListener('shown.bs.dropdown', () => {
           setTimeout(() => {
-            expect(document.activeElement).toEqual(lastItem, 'item2 is focused')
+            experienciaect(document.activeElement).toEqual(lastItem, 'item2 is focused')
             resolve()
           })
         })
@@ -1803,7 +1803,7 @@ describe('Dropdown', () => {
 
         triggerDropdown.addEventListener('shown.bs.dropdown', () => {
           setTimeout(() => {
-            expect(document.activeElement).toEqual(firstItem, 'item1 is focused')
+            experienciaect(document.activeElement).toEqual(firstItem, 'item1 is focused')
             resolve()
           })
         })
@@ -1829,12 +1829,12 @@ describe('Dropdown', () => {
         const input = fixtureEl.querySelector('input')
 
         input.addEventListener('click', () => {
-          expect(triggerDropdown).toHaveClass('show')
+          experienciaect(triggerDropdown).toHaveClass('show')
           resolve()
         })
 
         triggerDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdown).toHaveClass('show')
+          experienciaect(triggerDropdown).toHaveClass('show')
           input.dispatchEvent(createEvent('click'))
         })
 
@@ -1857,12 +1857,12 @@ describe('Dropdown', () => {
         const textarea = fixtureEl.querySelector('textarea')
 
         textarea.addEventListener('click', () => {
-          expect(triggerDropdown).toHaveClass('show')
+          experienciaect(triggerDropdown).toHaveClass('show')
           resolve()
         })
 
         triggerDropdown.addEventListener('shown.bs.dropdown', () => {
-          expect(triggerDropdown).toHaveClass('show')
+          experienciaect(triggerDropdown).toHaveClass('show')
           textarea.dispatchEvent(createEvent('click'))
         })
 
@@ -1885,7 +1885,7 @@ describe('Dropdown', () => {
         const input = fixtureEl.querySelector('input')
 
         triggerDropdown.addEventListener('hidden.bs.dropdown', () => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
 
@@ -1921,7 +1921,7 @@ describe('Dropdown', () => {
           event.key = eventKey
           elementToDispatch.focus()
           elementToDispatch.dispatchEvent(event)
-          expect(document.activeElement).toEqual(elementToDispatch, `${elementToDispatch.tagName} still focused`)
+          experienciaect(document.activeElement).toEqual(elementToDispatch, `${elementToDispatch.tagName} still focused`)
         }
 
         const keydownEscape = createEvent('keydown')
@@ -1947,7 +1947,7 @@ describe('Dropdown', () => {
           input.focus()
           input.dispatchEvent(keydownEscape)
 
-          expect(triggerDropdown).not.toHaveClass('show')
+          experienciaect(triggerDropdown).not.toHaveClass('show')
           resolve()
         })
 
@@ -1985,8 +1985,8 @@ describe('Dropdown', () => {
         button.dispatchEvent(keydownEscape)
 
         setTimeout(() => {
-          expect(spy).not.toHaveBeenCalled()
-          expect(triggerDropdown).not.toHaveClass('show')
+          experienciaect(spy).not.toHaveBeenCalled()
+          experienciaect(triggerDropdown).not.toHaveClass('show')
           resolve()
         }, 20)
       })
@@ -2012,7 +2012,7 @@ describe('Dropdown', () => {
 
         parent.addEventListener('keydown', parentKeyHandler)
         parent.addEventListener('keyup', () => {
-          expect(parentKeyHandler).toHaveBeenCalled()
+          experienciaect(parentKeyHandler).toHaveBeenCalled()
           resolve()
         })
 
@@ -2047,7 +2047,7 @@ describe('Dropdown', () => {
 
         parent.addEventListener('keydown', parentKeyHandler)
         parent.addEventListener('keyup', () => {
-          expect(parentKeyHandler).not.toHaveBeenCalled()
+          experienciaect(parentKeyHandler).not.toHaveBeenCalled()
           resolve()
         })
 
@@ -2084,7 +2084,7 @@ describe('Dropdown', () => {
         })
 
         toggle.addEventListener('hidden.bs.dropdown', () => setTimeout(() => {
-          expect(document.activeElement).toEqual(toggle)
+          experienciaect(document.activeElement).toEqual(toggle)
           resolve()
         }))
 
@@ -2106,18 +2106,18 @@ describe('Dropdown', () => {
         const dropdownToggle = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
         const dropdownMenu = fixtureEl.querySelector('.dropdown-menu')
 
-        const expectDropdownToBeOpened = () => setTimeout(() => {
-          expect(dropdownToggle).toHaveClass('show')
+        const experienciaectDropdownToBeOpened = () => setTimeout(() => {
+          experienciaect(dropdownToggle).toHaveClass('show')
           dropdownMenu.click()
         }, 150)
 
         dropdownToggle.addEventListener('shown.bs.dropdown', () => {
           document.documentElement.click()
-          expectDropdownToBeOpened()
+          experienciaectDropdownToBeOpened()
         })
 
         dropdownToggle.addEventListener('hidden.bs.dropdown', () => setTimeout(() => {
-          expect(dropdownToggle).not.toHaveClass('show')
+          experienciaect(dropdownToggle).not.toHaveClass('show')
           resolve()
         }))
 
@@ -2139,18 +2139,18 @@ describe('Dropdown', () => {
         const dropdownToggle = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
         const dropdownMenu = fixtureEl.querySelector('.dropdown-menu')
 
-        const expectDropdownToBeOpened = () => setTimeout(() => {
-          expect(dropdownToggle).toHaveClass('show')
+        const experienciaectDropdownToBeOpened = () => setTimeout(() => {
+          experienciaect(dropdownToggle).toHaveClass('show')
           document.documentElement.click()
         }, 150)
 
         dropdownToggle.addEventListener('shown.bs.dropdown', () => {
           dropdownMenu.click()
-          expectDropdownToBeOpened()
+          experienciaectDropdownToBeOpened()
         })
 
         dropdownToggle.addEventListener('hidden.bs.dropdown', () => {
-          expect(dropdownToggle).not.toHaveClass('show')
+          experienciaect(dropdownToggle).not.toHaveClass('show')
           resolve()
         })
 
@@ -2172,20 +2172,20 @@ describe('Dropdown', () => {
         const dropdownToggle = fixtureEl.querySelector('[data-bs-toggle="dropdown"]')
         const dropdownMenu = fixtureEl.querySelector('.dropdown-menu')
 
-        const expectDropdownToBeOpened = (shouldTriggerClick = true) => setTimeout(() => {
-          expect(dropdownToggle).toHaveClass('show')
+        const experienciaectDropdownToBeOpened = (shouldTriggerClick = true) => setTimeout(() => {
+          experienciaect(dropdownToggle).toHaveClass('show')
           if (shouldTriggerClick) {
             document.documentElement.click()
           } else {
             resolve()
           }
 
-          expectDropdownToBeOpened(false)
+          experienciaectDropdownToBeOpened(false)
         }, 150)
 
         dropdownToggle.addEventListener('shown.bs.dropdown', () => {
           dropdownMenu.click()
-          expectDropdownToBeOpened()
+          experienciaectDropdownToBeOpened()
         })
 
         dropdownToggle.click()
@@ -2207,9 +2207,9 @@ describe('Dropdown', () => {
       const spy = spyOn(Dropdown, 'getOrCreateInstance').and.callThrough()
 
       dropdownToggle.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle)
       dropdownMenu.click()
-      expect(spy).toHaveBeenCalledWith(dropdownToggle)
+      experienciaect(spy).toHaveBeenCalledWith(dropdownToggle)
     })
   })
 
@@ -2224,7 +2224,7 @@ describe('Dropdown', () => {
 
       jQueryMock.fn.dropdown.call(jQueryMock)
 
-      expect(Dropdown.getInstance(div)).not.toBeNull()
+      experienciaect(Dropdown.getInstance(div)).not.toBeNull()
     })
 
     it('should not re create a dropdown', () => {
@@ -2238,7 +2238,7 @@ describe('Dropdown', () => {
 
       jQueryMock.fn.dropdown.call(jQueryMock)
 
-      expect(Dropdown.getInstance(div)).toEqual(dropdown)
+      experienciaect(Dropdown.getInstance(div)).toEqual(dropdown)
     })
 
     it('should throw error on undefined method', () => {
@@ -2250,7 +2250,7 @@ describe('Dropdown', () => {
       jQueryMock.fn.dropdown = Dropdown.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.dropdown.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -2263,8 +2263,8 @@ describe('Dropdown', () => {
       const div = fixtureEl.querySelector('div')
       const dropdown = new Dropdown(div)
 
-      expect(Dropdown.getInstance(div)).toEqual(dropdown)
-      expect(Dropdown.getInstance(div)).toBeInstanceOf(Dropdown)
+      experienciaect(Dropdown.getInstance(div)).toEqual(dropdown)
+      experienciaect(Dropdown.getInstance(div)).toBeInstanceOf(Dropdown)
     })
 
     it('should return null when there is no dropdown instance', () => {
@@ -2272,7 +2272,7 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toBeNull()
+      experienciaect(Dropdown.getInstance(div)).toBeNull()
     })
   })
 
@@ -2283,9 +2283,9 @@ describe('Dropdown', () => {
       const div = fixtureEl.querySelector('div')
       const dropdown = new Dropdown(div)
 
-      expect(Dropdown.getOrCreateInstance(div)).toEqual(dropdown)
-      expect(Dropdown.getInstance(div)).toEqual(Dropdown.getOrCreateInstance(div, {}))
-      expect(Dropdown.getOrCreateInstance(div)).toBeInstanceOf(Dropdown)
+      experienciaect(Dropdown.getOrCreateInstance(div)).toEqual(dropdown)
+      experienciaect(Dropdown.getInstance(div)).toEqual(Dropdown.getOrCreateInstance(div, {}))
+      experienciaect(Dropdown.getOrCreateInstance(div)).toBeInstanceOf(Dropdown)
     })
 
     it('should return new instance when there is no dropdown instance', () => {
@@ -2293,8 +2293,8 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toBeNull()
-      expect(Dropdown.getOrCreateInstance(div)).toBeInstanceOf(Dropdown)
+      experienciaect(Dropdown.getInstance(div)).toBeNull()
+      experienciaect(Dropdown.getOrCreateInstance(div)).toBeInstanceOf(Dropdown)
     })
 
     it('should return new instance when there is no dropdown instance with given configuration', () => {
@@ -2302,13 +2302,13 @@ describe('Dropdown', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Dropdown.getInstance(div)).toBeNull()
+      experienciaect(Dropdown.getInstance(div)).toBeNull()
       const dropdown = Dropdown.getOrCreateInstance(div, {
         display: 'dynamic'
       })
-      expect(dropdown).toBeInstanceOf(Dropdown)
+      experienciaect(dropdown).toBeInstanceOf(Dropdown)
 
-      expect(dropdown._config.display).toEqual('dynamic')
+      experienciaect(dropdown._config.display).toEqual('dynamic')
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -2318,15 +2318,15 @@ describe('Dropdown', () => {
       const dropdown = new Dropdown(div, {
         display: 'dynamic'
       })
-      expect(Dropdown.getInstance(div)).toEqual(dropdown)
+      experienciaect(Dropdown.getInstance(div)).toEqual(dropdown)
 
       const dropdown2 = Dropdown.getOrCreateInstance(div, {
         display: 'static'
       })
-      expect(dropdown).toBeInstanceOf(Dropdown)
-      expect(dropdown2).toEqual(dropdown)
+      experienciaect(dropdown).toBeInstanceOf(Dropdown)
+      experienciaect(dropdown2).toEqual(dropdown)
 
-      expect(dropdown2._config.display).toEqual('dynamic')
+      experienciaect(dropdown2._config.display).toEqual('dynamic')
     })
   })
 
@@ -2353,8 +2353,8 @@ describe('Dropdown', () => {
       keyup.key = 'ArrowUp'
 
       const handleArrowDown = () => {
-        expect(triggerDropdown).toHaveClass('show')
-        expect(triggerDropdown.getAttribute('aria-expanded')).toEqual('true')
+        experienciaect(triggerDropdown).toHaveClass('show')
+        experienciaect(triggerDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
         setTimeout(() => {
           dropdown.hide()
           keydown.key = 'ArrowUp'
@@ -2363,8 +2363,8 @@ describe('Dropdown', () => {
       }
 
       const handleArrowUp = () => {
-        expect(triggerDropdown).toHaveClass('show')
-        expect(triggerDropdown.getAttribute('aria-expanded')).toEqual('true')
+        experienciaect(triggerDropdown).toHaveClass('show')
+        experienciaect(triggerDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
         resolve()
       }
 
@@ -2399,8 +2399,8 @@ describe('Dropdown', () => {
 
     btnDropdown.click()
 
-    expect(clickListener).toHaveBeenCalled()
-    expect(delegatedClickListener).toHaveBeenCalled()
+    experienciaect(clickListener).toHaveBeenCalled()
+    experienciaect(delegatedClickListener).toHaveBeenCalled()
   })
 
   it('should open the dropdown when clicking the child element inside `data-bs-toggle="dropdown"`', () => {
@@ -2420,8 +2420,8 @@ describe('Dropdown', () => {
       const childElement = fixtureEl.querySelector('#childElement')
 
       btnDropdown.addEventListener('shown.bs.dropdown', () => setTimeout(() => {
-        expect(btnDropdown).toHaveClass('show')
-        expect(btnDropdown.getAttribute('aria-expanded')).toEqual('true')
+        experienciaect(btnDropdown).toHaveClass('show')
+        experienciaect(btnDropdown.getAttribute('aria-experienciaanded')).toEqual('true')
         resolve()
       }))
 

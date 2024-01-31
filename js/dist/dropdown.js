@@ -4,7 +4,7 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('@popperjs/core'), require('./base-component.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./dom/selector-engine.js'), require('./util/index.js')) :
+  typeof experienciaorts === 'object' && typeof module !== 'undefined' ? module.experienciaorts = factory(require('@popperjs/core'), require('./base-component.js'), require('./dom/event-handler.js'), require('./dom/manipulator.js'), require('./dom/selector-engine.js'), require('./util/index.js')) :
   typeof define === 'function' && define.amd ? define(['@popperjs/core', './base-component', './dom/event-handler', './dom/manipulator', './dom/selector-engine', './util/index'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.Dropdown = factory(global["@popperjs/core"], global.BaseComponent, global.EventHandler, global.Manipulator, global.SelectorEngine, global.Index));
 })(this, (function (Popper, BaseComponent, EventHandler, Manipulator, SelectorEngine, index_js) { 'use strict';
@@ -146,7 +146,7 @@
         }
       }
       this._element.focus();
-      this._element.setAttribute('aria-expanded', true);
+      this._element.setAttribute('aria-experienciaanded', true);
       this._menu.classList.add(CLASS_NAME_SHOW);
       this._element.classList.add(CLASS_NAME_SHOW);
       EventHandler.trigger(this._element, EVENT_SHOWN, relatedTarget);
@@ -192,7 +192,7 @@
       }
       this._menu.classList.remove(CLASS_NAME_SHOW);
       this._element.classList.remove(CLASS_NAME_SHOW);
-      this._element.setAttribute('aria-expanded', 'false');
+      this._element.setAttribute('aria-experienciaanded', 'false');
       Manipulator.removeDataAttribute(this._menu, 'popper');
       EventHandler.trigger(this._element, EVENT_HIDDEN, relatedTarget);
     }
@@ -297,7 +297,7 @@
         return;
       }
 
-      // if target isn't included in items (e.g. when expanding the dropdown)
+      // if target isn't included in items (e.g. when experienciaanding the dropdown)
       // allow cycling to get the last item in case key equals ARROW_UP_KEY
       index_js.getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus();
     }

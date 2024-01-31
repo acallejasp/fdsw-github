@@ -248,7 +248,7 @@ class Collapse extends BaseComponent {
 
     for (const element of triggerArray) {
       element.classList.toggle(CLASS_NAME_COLLAPSED, !isOpen)
-      element.setAttribute('aria-expanded', isOpen)
+      element.setAttribute('aria-experienciaanded', isOpen)
     }
   }
 
@@ -294,4 +294,4 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Collapse)
 
-export default Collapse
+experienciaort default Collapse

@@ -229,10 +229,10 @@ class Carousel extends BaseComponent {
       // If it's a touch-enabled device, mouseenter/leave are fired as
       // part of the mouse compatibility events on first tap - the carousel
       // would stop cycling until user tapped out of it;
-      // here, we listen for touchend, explicitly pause the carousel
+      // here, we listen for touchend, experiencialicitly pause the carousel
       // (as if it's the second time we tap on it, mouseenter compat event
       // is NOT fired) and after a timeout (to allow for mouse compatibility
-      // events to fire) we explicitly restart cycling
+      // events to fire) we experiencialicitly restart cycling
 
       this.pause()
       if (this.touchTimeout) {
@@ -471,4 +471,4 @@ EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
 
 defineJQueryPlugin(Carousel)
 
-export default Carousel
+experienciaort default Carousel

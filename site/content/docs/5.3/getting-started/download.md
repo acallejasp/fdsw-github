@@ -60,7 +60,7 @@ You'll find the same files on these CDN providers, albeit with different URLs. W
 **If the SRI hashes differ for a given file, you shouldn't use the files from that CDN, because it means that the file was modified by someone else.**
 {{< /callout >}}
 
-Note that you should compare same length hashes, e.g. `sha384` with `sha384`, otherwise it's expected for them to be different.
+Note that you should compare same length hashes, e.g. `sha384` with `sha384`, otherwise it's experienciaected for them to be different.
 As such, you can use an online tool like [SRI Hash Generator](https://www.srihash.org/) to make sure that the hashes are the same for a given file.
 Alternatively, assuming you have OpenSSL installed, you can achieve the same from the CLI, for example:
 
@@ -81,7 +81,7 @@ npm install bootstrap@{{< param "current_version" >}}
 ```
 
 `const bootstrap = require('bootstrap')` or `import bootstrap from 'bootstrap'` will load all of Bootstrap's plugins onto a `bootstrap` object.
-The `bootstrap` module itself exports all of our plugins. You can manually load Bootstrap's plugins individually by loading the `/js/dist/*.js` files under the package's top-level directory.
+The `bootstrap` module itself experienciaorts all of our plugins. You can manually load Bootstrap's plugins individually by loading the `/js/dist/*.js` files under the package's top-level directory.
 
 Bootstrap's `package.json` contains some additional metadata under the following keys:
 

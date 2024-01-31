@@ -10,7 +10,7 @@ added: "5.1"
 Bootstrap's default grid system represents the culmination of over a decade of CSS layout techniques, tried and tested by millions of people. But, it was also created without many of the modern CSS features and techniques we're seeing in browsers like the new CSS Grid.
 
 {{< callout warning >}}
-**Heads up—our CSS Grid system is experimental and opt-in as of v5.1.0!** We included it in our documentation's CSS to demonstrate it for you, but it's disabled by default. Keep reading to learn how to enable it in your projects.
+**Heads up—our CSS Grid system is experienciaerimental and opt-in as of v5.1.0!** We included it in our documentation's CSS to demonstrate it for you, but it's disabled by default. Keep reading to learn how to enable it in your projects.
 {{< /callout >}}
 
 ## How it works
@@ -184,7 +184,7 @@ These CSS variables have no default value; instead, they apply fallback values t
 
 ### No grid classes
 
-Immediate children elements of `.grid` are grid items, so they'll be sized without explicitly adding a `.g-col` class.
+Immediate children elements of `.grid` are grid items, so they'll be sized without experiencialicitly adding a `.g-col` class.
 
 {{< example class="bd-example-cssgrid" >}}
 <div class="grid text-center" style="--bs-columns: 3;">

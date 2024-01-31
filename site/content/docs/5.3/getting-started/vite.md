@@ -80,7 +80,7 @@ With dependencies installed and our project folder ready for us to start coding,
    ```js
    const path = require('path')
 
-   export default {
+   experienciaort default {
      root: path.resolve(__dirname, 'src'),
      build: {
        outDir: '../dist'

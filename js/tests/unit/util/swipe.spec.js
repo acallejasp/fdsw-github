@@ -64,7 +64,7 @@ describe('Swipe', () => {
 
       spyOn(Swipe.prototype, '_initEvents').and.callThrough()
       const swipe = new Swipe(swipeEl)
-      expect(swipe._initEvents).toHaveBeenCalled()
+      experienciaect(swipe._initEvents).toHaveBeenCalled()
     })
 
     it('should not add touch event listeners if touch is not supported', () => {
@@ -73,7 +73,7 @@ describe('Swipe', () => {
       spyOn(Swipe.prototype, '_initEvents').and.callThrough()
       const swipe = new Swipe(swipeEl)
 
-      expect(swipe._initEvents).not.toHaveBeenCalled()
+      experienciaect(swipe._initEvents).not.toHaveBeenCalled()
     })
   })
 
@@ -86,7 +86,7 @@ describe('Swipe', () => {
         // eslint-disable-next-line no-new
         new Swipe(swipeEl, {
           leftCallback() {
-            expect(spyRight).not.toHaveBeenCalled()
+            experienciaect(spyRight).not.toHaveBeenCalled()
             restorePointerEvents()
             resolve()
           },
@@ -108,7 +108,7 @@ describe('Swipe', () => {
         // eslint-disable-next-line no-new
         new Swipe(swipeEl, {
           rightCallback() {
-            expect(spyLeft).not.toHaveBeenCalled()
+            experienciaect(spyLeft).not.toHaveBeenCalled()
             restorePointerEvents()
             resolve()
           },
@@ -134,7 +134,7 @@ describe('Swipe', () => {
             return
           }
 
-          expect().nothing()
+          experienciaect().nothing()
           restorePointerEvents()
           resolve()
         }
@@ -173,13 +173,13 @@ describe('Swipe', () => {
       })
 
       restorePointerEvents()
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should allow swipeRight and call "rightCallback" with pointer events', () => {
       return new Promise(resolve => {
         if (!supportPointerEvent) {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
           return
         }
@@ -192,7 +192,7 @@ describe('Swipe', () => {
         new Swipe(swipeEl, {
           rightCallback() {
             deleteDocumentElementOntouchstart()
-            expect().nothing()
+            experienciaect().nothing()
             resolve()
           }
         })
@@ -204,7 +204,7 @@ describe('Swipe', () => {
     it('should allow swipeLeft and call "leftCallback" with pointer events', () => {
       return new Promise(resolve => {
         if (!supportPointerEvent) {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
           return
         }
@@ -216,7 +216,7 @@ describe('Swipe', () => {
         // eslint-disable-next-line no-new
         new Swipe(swipeEl, {
           leftCallback() {
-            expect().nothing()
+            experienciaect().nothing()
             deleteDocumentElementOntouchstart()
             resolve()
           }
@@ -237,7 +237,7 @@ describe('Swipe', () => {
       const swipe = new Swipe(swipeEl)
 
       swipe.dispose()
-      expect(EventHandler.off).toHaveBeenCalledWith(swipeEl, '.bs.swipe')
+      experienciaect(EventHandler.off).toHaveBeenCalledWith(swipeEl, '.bs.swipe')
     })
 
     it('should destroy', () => {
@@ -247,7 +247,7 @@ describe('Swipe', () => {
 
       const swipe = new Swipe(fixtureEl)
 
-      const expectedArgs =
+      const experienciaectedArgs =
         swipe._supportPointerEvents ?
           [
             ['pointerdown', jasmine.any(Function), jasmine.any(Boolean)],
@@ -259,11 +259,11 @@ describe('Swipe', () => {
             ['touchend', jasmine.any(Function), jasmine.any(Boolean)]
           ]
 
-      expect(addEventSpy.calls.allArgs()).toEqual(expectedArgs)
+      experienciaect(addEventSpy.calls.allArgs()).toEqual(experienciaectedArgs)
 
       swipe.dispose()
 
-      expect(removeEventSpy).toHaveBeenCalledWith(fixtureEl, '.bs.swipe')
+      experienciaect(removeEventSpy).toHaveBeenCalledWith(fixtureEl, '.bs.swipe')
       deleteDocumentElementOntouchstart()
     })
   })
@@ -273,7 +273,7 @@ describe('Swipe', () => {
       Object.defineProperty(window.navigator, 'maxTouchPoints', () => 0)
       defineDocumentElementOntouchstart()
 
-      expect(Swipe.isSupported()).toBeTrue()
+      experienciaect(Swipe.isSupported()).toBeTrue()
     })
 
     it('should return "false" if "touchstart" not exists in document element and "navigator.maxTouchPoints" are zero (0)', () => {
@@ -281,11 +281,11 @@ describe('Swipe', () => {
       deleteDocumentElementOntouchstart()
 
       if ('ontouchstart' in document.documentElement) {
-        expect().nothing()
+        experienciaect().nothing()
         return
       }
 
-      expect(Swipe.isSupported()).toBeFalse()
+      experienciaect(Swipe.isSupported()).toBeFalse()
     })
   })
 })

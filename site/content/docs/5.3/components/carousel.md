@@ -10,9 +10,9 @@ toc: true
 
 - The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a bit of JavaScript. It works with a series of images, text, or custom markup. It also includes support for previous/next controls and indicators.
 
-- For performance reasons, **carousels must be manually initialized** using the [carousel constructor method](#methods). Without initialization, some of the event listeners (specifically, the events needed touch/swipe support) will not be registered until a user has explicitly activated a control or indicator.
+- For performance reasons, **carousels must be manually initialized** using the [carousel constructor method](#methods). Without initialization, some of the event listeners (specifically, the events needed touch/swipe support) will not be registered until a user has experiencialicitly activated a control or indicator.
 
-  The only exception are [autoplaying carousels](#autoplaying-carousels) with the `data-bs-ride="carousel"` attribute as these are initialized automatically on page load. If you're using autoplaying carousels with the data attribute, **don't explicitly initialize the same carousels with the constructor method.**
+  The only exception are [autoplaying carousels](#autoplaying-carousels) with the `data-bs-ride="carousel"` attribute as these are initialized automatically on page load. If you're using autoplaying carousels with the data attribute, **don't experiencialicitly initialize the same carousels with the constructor method.**
 
 - Nested carousels are not supported. You should also be aware that carousels in general can often cause usability and accessibility challenges.
 
@@ -48,7 +48,7 @@ Here is a basic example of a carousel with three slides. Note the previous/next 
 </div>
 {{< /example >}}
 
-Carousels don't automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content. While carousels support previous/next controls and indicators, they're not explicitly required. Add and customize as you see fit.
+Carousels don't automatically normalize slide dimensions. As such, you may need to use additional utilities or custom styles to appropriately size content. While carousels support previous/next controls and indicators, they're not experiencialicitly required. Add and customize as you see fit.
 
 **You must add the `.active` class to one of the slides**, otherwise the carousel will not be visible. Also be sure to set a unique `id` on the `.carousel` for optional controls, especially if you're using multiple carousels on a single page. Control and indicator elements must have a `data-bs-target` attribute (or `href` for links) that matches the `id` of the `.carousel` element.
 
@@ -163,7 +163,7 @@ Add `.carousel-fade` to your carousel to animate slides with a fade transition i
 You can make your carousels autoplay on page load by setting the `ride` option to `carousel`. Autoplaying carousels automatically pause while hovered with the mouse. This behavior can be controlled with the `pause` option. In browsers that support the [Page Visibility API](https://www.w3.org/TR/page-visibility/), the carousel will stop cycling when the webpage is not visible to the user (such as when the browser tab is inactive, or when the browser window is minimized).
 
 {{< callout info >}}
-For accessibility reasons, we recommend avoiding the use of autoplaying carousels. If your page does include an autoplaying carousel, we recommend providing an additional button or control to explicitly pause/stop the carousel.
+For accessibility reasons, we recommend avoiding the use of autoplaying carousels. If your page does include an autoplaying carousel, we recommend providing an additional button or control to experiencialicitly pause/stop the carousel.
 
 See [WCAG 2.1 Success Criterion 2.2.2 Pause, Stop, Hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide).
 {{< /callout >}}
@@ -423,7 +423,7 @@ const carousel = new bootstrap.Carousel(myCarouselElement, {
 
 ### Events
 
-Bootstrap's carousel class exposes two events for hooking into carousel functionality. Both events have the following additional properties:
+Bootstrap's carousel class experienciaoses two events for hooking into carousel functionality. Both events have the following additional properties:
 
 - `direction`: The direction in which the carousel is sliding (either `"left"` or `"right"`).
 - `relatedTarget`: The DOM element that is being slid into place as the active item.

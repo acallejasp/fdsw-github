@@ -14,13 +14,13 @@ describe('Toast', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Toast.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Toast.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Toast.DATA_KEY).toEqual('bs.toast')
+      experienciaect(Toast.DATA_KEY).toEqual('bs.toast')
     })
   })
 
@@ -32,8 +32,8 @@ describe('Toast', () => {
       const toastBySelector = new Toast('.toast')
       const toastByElement = new Toast(toastEl)
 
-      expect(toastBySelector._element).toEqual(toastEl)
-      expect(toastByElement._element).toEqual(toastEl)
+      experienciaect(toastBySelector._element).toEqual(toastEl)
+      experienciaect(toastByElement._element).toEqual(toastEl)
     })
 
     it('should allow to config in js', () => {
@@ -52,7 +52,7 @@ describe('Toast', () => {
         })
 
         toastEl.addEventListener('shown.bs.toast', () => {
-          expect(toastEl).toHaveClass('show')
+          experienciaect(toastEl).toHaveClass('show')
           resolve()
         })
 
@@ -72,7 +72,7 @@ describe('Toast', () => {
         const toast = new Toast(toastEl)
 
         toastEl.addEventListener('shown.bs.toast', () => {
-          expect(toastEl).toHaveClass('show')
+          experienciaect(toastEl).toHaveClass('show')
 
           const button = toastEl.querySelector('.btn-close')
 
@@ -80,7 +80,7 @@ describe('Toast', () => {
         })
 
         toastEl.addEventListener('hidden.bs.toast', () => {
-          expect(toastEl).not.toHaveClass('show')
+          experienciaect(toastEl).not.toHaveClass('show')
           resolve()
         })
 
@@ -90,7 +90,7 @@ describe('Toast', () => {
   })
 
   describe('Default', () => {
-    it('should expose default setting to allow to override them', () => {
+    it('should experienciaose default setting to allow to override them', () => {
       const defaultDelay = 1000
 
       Toast.Default.delay = defaultDelay
@@ -104,13 +104,13 @@ describe('Toast', () => {
       const toastEl = fixtureEl.querySelector('div')
       const toast = new Toast(toastEl)
 
-      expect(toast._config.delay).toEqual(defaultDelay)
+      experienciaect(toast._config.delay).toEqual(defaultDelay)
     })
   })
 
   describe('DefaultType', () => {
-    it('should expose default setting types for read', () => {
-      expect(Toast.DefaultType).toEqual(jasmine.any(Object))
+    it('should experienciaose default setting types for read', () => {
+      experienciaect(Toast.DefaultType).toEqual(jasmine.any(Object))
     })
   })
 
@@ -129,7 +129,7 @@ describe('Toast', () => {
         const toast = new Toast(toastEl)
 
         toastEl.addEventListener('hidden.bs.toast', () => {
-          expect(toastEl).not.toHaveClass('show')
+          experienciaect(toastEl).not.toHaveClass('show')
           resolve()
         })
 
@@ -151,7 +151,7 @@ describe('Toast', () => {
         const toast = new Toast(toastEl)
 
         toastEl.addEventListener('shown.bs.toast', () => {
-          expect(toastEl).not.toHaveClass('fade')
+          experienciaect(toastEl).not.toHaveClass('fade')
           resolve()
         })
 
@@ -174,7 +174,7 @@ describe('Toast', () => {
 
         const assertDone = () => {
           setTimeout(() => {
-            expect(toastEl).not.toHaveClass('show')
+            experienciaect(toastEl).not.toHaveClass('show')
             resolve()
           }, 20)
         }
@@ -208,8 +208,8 @@ describe('Toast', () => {
         setTimeout(() => {
           toast._config.autohide = false
           toastEl.addEventListener('shown.bs.toast', () => {
-            expect(spy).toHaveBeenCalled()
-            expect(toast._timeout).toBeNull()
+            experienciaect(spy).toHaveBeenCalled()
+            experienciaect(toast._timeout).toBeNull()
             resolve()
           })
           toast.show()
@@ -239,8 +239,8 @@ describe('Toast', () => {
           spy.calls.reset()
 
           toastEl.addEventListener('mouseover', () => {
-            expect(toast._clearTimeout).toHaveBeenCalledTimes(1)
-            expect(toast._timeout).toBeNull()
+            experienciaect(toast._clearTimeout).toHaveBeenCalledTimes(1)
+            experienciaect(toast._timeout).toBeNull()
             resolve()
           })
 
@@ -272,8 +272,8 @@ describe('Toast', () => {
           spy.calls.reset()
 
           toastEl.addEventListener('focusin', () => {
-            expect(toast._clearTimeout).toHaveBeenCalledTimes(1)
-            expect(toast._timeout).toBeNull()
+            experienciaect(toast._clearTimeout).toHaveBeenCalledTimes(1)
+            experienciaect(toast._timeout).toBeNull()
             resolve()
           })
 
@@ -317,7 +317,7 @@ describe('Toast', () => {
           })
 
           toastEl.addEventListener('focusout', () => {
-            expect(toast._timeout).not.toBeNull()
+            experienciaect(toast._timeout).not.toBeNull()
             resolve()
           })
 
@@ -356,7 +356,7 @@ describe('Toast', () => {
           })
 
           toastEl.addEventListener('focusout', () => {
-            expect(toast._timeout).toBeNull()
+            experienciaect(toast._timeout).toBeNull()
             resolve()
           })
 
@@ -395,7 +395,7 @@ describe('Toast', () => {
           })
 
           toastEl.addEventListener('mouseout', () => {
-            expect(toast._timeout).toBeNull()
+            experienciaect(toast._timeout).toBeNull()
             resolve()
           })
 
@@ -427,7 +427,7 @@ describe('Toast', () => {
         })
 
         toastEl.addEventListener('hidden.bs.toast', () => {
-          expect(toastEl).not.toHaveClass('show')
+          experienciaect(toastEl).not.toHaveClass('show')
           resolve()
         })
 
@@ -445,7 +445,7 @@ describe('Toast', () => {
 
       toast.hide()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should not trigger hidden if hide is prevented', () => {
@@ -463,7 +463,7 @@ describe('Toast', () => {
 
         const assertDone = () => {
           setTimeout(() => {
-            expect(toastEl).toHaveClass('show')
+            experienciaect(toastEl).toHaveClass('show')
             resolve()
           }, 20)
         }
@@ -494,11 +494,11 @@ describe('Toast', () => {
 
       const toast = new Toast(toastEl)
 
-      expect(Toast.getInstance(toastEl)).not.toBeNull()
+      experienciaect(Toast.getInstance(toastEl)).not.toBeNull()
 
       toast.dispose()
 
-      expect(Toast.getInstance(toastEl)).toBeNull()
+      experienciaect(Toast.getInstance(toastEl)).toBeNull()
     })
 
     it('should allow to destroy toast and hide it before that', () => {
@@ -513,20 +513,20 @@ describe('Toast', () => {
 
         const toastEl = fixtureEl.querySelector('div')
         const toast = new Toast(toastEl)
-        const expected = () => {
-          expect(toastEl).toHaveClass('show')
-          expect(Toast.getInstance(toastEl)).not.toBeNull()
+        const experienciaected = () => {
+          experienciaect(toastEl).toHaveClass('show')
+          experienciaect(Toast.getInstance(toastEl)).not.toBeNull()
 
           toast.dispose()
 
-          expect(Toast.getInstance(toastEl)).toBeNull()
-          expect(toastEl).not.toHaveClass('show')
+          experienciaect(Toast.getInstance(toastEl)).toBeNull()
+          experienciaect(toastEl).not.toHaveClass('show')
 
           resolve()
         }
 
         toastEl.addEventListener('shown.bs.toast', () => {
-          setTimeout(expected, 1)
+          setTimeout(experienciaected, 1)
         })
 
         toast.show()
@@ -545,7 +545,7 @@ describe('Toast', () => {
 
       jQueryMock.fn.toast.call(jQueryMock)
 
-      expect(Toast.getInstance(div)).not.toBeNull()
+      experienciaect(Toast.getInstance(div)).not.toBeNull()
     })
 
     it('should not re create a toast', () => {
@@ -559,7 +559,7 @@ describe('Toast', () => {
 
       jQueryMock.fn.toast.call(jQueryMock)
 
-      expect(Toast.getInstance(div)).toEqual(toast)
+      experienciaect(Toast.getInstance(div)).toEqual(toast)
     })
 
     it('should call a toast method', () => {
@@ -575,8 +575,8 @@ describe('Toast', () => {
 
       jQueryMock.fn.toast.call(jQueryMock, 'show')
 
-      expect(Toast.getInstance(div)).toEqual(toast)
-      expect(spy).toHaveBeenCalled()
+      experienciaect(Toast.getInstance(div)).toEqual(toast)
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('should throw error on undefined method', () => {
@@ -588,7 +588,7 @@ describe('Toast', () => {
       jQueryMock.fn.toast = Toast.jQueryInterface
       jQueryMock.elements = [div]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.toast.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -601,8 +601,8 @@ describe('Toast', () => {
       const div = fixtureEl.querySelector('div')
       const toast = new Toast(div)
 
-      expect(Toast.getInstance(div)).toEqual(toast)
-      expect(Toast.getInstance(div)).toBeInstanceOf(Toast)
+      experienciaect(Toast.getInstance(div)).toEqual(toast)
+      experienciaect(Toast.getInstance(div)).toBeInstanceOf(Toast)
     })
 
     it('should return null when there is no toast instance', () => {
@@ -610,7 +610,7 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toBeNull()
+      experienciaect(Toast.getInstance(div)).toBeNull()
     })
   })
 
@@ -621,9 +621,9 @@ describe('Toast', () => {
       const div = fixtureEl.querySelector('div')
       const toast = new Toast(div)
 
-      expect(Toast.getOrCreateInstance(div)).toEqual(toast)
-      expect(Toast.getInstance(div)).toEqual(Toast.getOrCreateInstance(div, {}))
-      expect(Toast.getOrCreateInstance(div)).toBeInstanceOf(Toast)
+      experienciaect(Toast.getOrCreateInstance(div)).toEqual(toast)
+      experienciaect(Toast.getInstance(div)).toEqual(Toast.getOrCreateInstance(div, {}))
+      experienciaect(Toast.getOrCreateInstance(div)).toBeInstanceOf(Toast)
     })
 
     it('should return new instance when there is no toast instance', () => {
@@ -631,8 +631,8 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toBeNull()
-      expect(Toast.getOrCreateInstance(div)).toBeInstanceOf(Toast)
+      experienciaect(Toast.getInstance(div)).toBeNull()
+      experienciaect(Toast.getOrCreateInstance(div)).toBeInstanceOf(Toast)
     })
 
     it('should return new instance when there is no toast instance with given configuration', () => {
@@ -640,13 +640,13 @@ describe('Toast', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Toast.getInstance(div)).toBeNull()
+      experienciaect(Toast.getInstance(div)).toBeNull()
       const toast = Toast.getOrCreateInstance(div, {
         delay: 1
       })
-      expect(toast).toBeInstanceOf(Toast)
+      experienciaect(toast).toBeInstanceOf(Toast)
 
-      expect(toast._config.delay).toEqual(1)
+      experienciaect(toast._config.delay).toEqual(1)
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -656,15 +656,15 @@ describe('Toast', () => {
       const toast = new Toast(div, {
         delay: 1
       })
-      expect(Toast.getInstance(div)).toEqual(toast)
+      experienciaect(Toast.getInstance(div)).toEqual(toast)
 
       const toast2 = Toast.getOrCreateInstance(div, {
         delay: 2
       })
-      expect(toast).toBeInstanceOf(Toast)
-      expect(toast2).toEqual(toast)
+      experienciaect(toast).toBeInstanceOf(Toast)
+      experienciaect(toast2).toEqual(toast)
 
-      expect(toast2._config.delay).toEqual(1)
+      experienciaect(toast2._config.delay).toEqual(1)
     })
   })
 })

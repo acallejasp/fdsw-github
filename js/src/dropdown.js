@@ -149,7 +149,7 @@ class Dropdown extends BaseComponent {
     }
 
     this._element.focus()
-    this._element.setAttribute('aria-expanded', true)
+    this._element.setAttribute('aria-experienciaanded', true)
 
     this._menu.classList.add(CLASS_NAME_SHOW)
     this._element.classList.add(CLASS_NAME_SHOW)
@@ -204,7 +204,7 @@ class Dropdown extends BaseComponent {
 
     this._menu.classList.remove(CLASS_NAME_SHOW)
     this._element.classList.remove(CLASS_NAME_SHOW)
-    this._element.setAttribute('aria-expanded', 'false')
+    this._element.setAttribute('aria-experienciaanded', 'false')
     Manipulator.removeDataAttribute(this._menu, 'popper')
     EventHandler.trigger(this._element, EVENT_HIDDEN, relatedTarget)
   }
@@ -331,7 +331,7 @@ class Dropdown extends BaseComponent {
       return
     }
 
-    // if target isn't included in items (e.g. when expanding the dropdown)
+    // if target isn't included in items (e.g. when experienciaanding the dropdown)
     // allow cycling to get the last item in case key equals ARROW_UP_KEY
     getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus()
   }
@@ -452,4 +452,4 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (
 
 defineJQueryPlugin(Dropdown)
 
-export default Dropdown
+experienciaort default Dropdown

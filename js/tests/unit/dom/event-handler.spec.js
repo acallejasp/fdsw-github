@@ -22,7 +22,7 @@ describe('EventHandler', () => {
       EventHandler.on(div, null, noop)
       EventHandler.on(null, 'click', noop)
 
-      expect().nothing()
+      experienciaect().nothing()
     })
 
     it('should add event listener', () => {
@@ -32,7 +32,7 @@ describe('EventHandler', () => {
         const div = fixtureEl.querySelector('div')
 
         EventHandler.on(div, 'click', () => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
 
@@ -47,7 +47,7 @@ describe('EventHandler', () => {
         const div = fixtureEl.querySelector('div')
 
         EventHandler.on(div, 'bs.namespace', () => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
 
@@ -62,7 +62,7 @@ describe('EventHandler', () => {
         const div = fixtureEl.querySelector('div')
 
         EventHandler.on(div, 'click.namespace', () => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
 
@@ -73,7 +73,7 @@ describe('EventHandler', () => {
     it('should handle event delegation', () => {
       return new Promise(resolve => {
         EventHandler.on(document, 'click', '.test', () => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         })
 
@@ -115,10 +115,10 @@ describe('EventHandler', () => {
         EventHandler.on(outer, 'mouseleave', '.inner', delegateLeaveSpy)
 
         EventHandler.on(sibling, 'mouseenter', () => {
-          expect(enterSpy.calls.count()).toEqual(2)
-          expect(leaveSpy.calls.count()).toEqual(2)
-          expect(delegateEnterSpy.calls.count()).toEqual(2)
-          expect(delegateLeaveSpy.calls.count()).toEqual(2)
+          experienciaect(enterSpy.calls.count()).toEqual(2)
+          experienciaect(leaveSpy.calls.count()).toEqual(2)
+          experienciaect(delegateEnterSpy.calls.count()).toEqual(2)
+          experienciaect(delegateLeaveSpy.calls.count()).toEqual(2)
           resolve()
         })
 
@@ -143,10 +143,10 @@ describe('EventHandler', () => {
         moveMouse(inner, outer)
 
         setTimeout(() => {
-          expect(enterSpy.calls.count()).toEqual(1)
-          expect(leaveSpy.calls.count()).toEqual(1)
-          expect(delegateEnterSpy.calls.count()).toEqual(1)
-          expect(delegateLeaveSpy.calls.count()).toEqual(1)
+          experienciaect(enterSpy.calls.count()).toEqual(1)
+          experienciaect(leaveSpy.calls.count()).toEqual(1)
+          experienciaect(delegateEnterSpy.calls.count()).toEqual(1)
+          experienciaect(delegateLeaveSpy.calls.count()).toEqual(1)
 
           // from outer to inner to sibling (adjacent)
           moveMouse(outer, inner)
@@ -175,7 +175,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'bootstrap')
 
         setTimeout(() => {
-          expect(called).toEqual(1)
+          experienciaect(called).toEqual(1)
           resolve()
         }, 20)
       })
@@ -199,7 +199,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'bootstrap')
 
         setTimeout(() => {
-          expect(called).toEqual(1)
+          experienciaect(called).toEqual(1)
           resolve()
         }, 20)
       })
@@ -213,7 +213,7 @@ describe('EventHandler', () => {
 
       EventHandler.off(div, null, noop)
       EventHandler.off(null, 'click', noop)
-      expect().nothing()
+      experienciaect().nothing()
     })
 
     it('should remove a listener', () => {
@@ -233,7 +233,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'foobar')
 
         setTimeout(() => {
-          expect(called).toEqual(1)
+          experienciaect(called).toEqual(1)
           resolve()
         }, 20)
       })
@@ -258,7 +258,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'foobar')
 
         setTimeout(() => {
-          expect(called).toEqual(2)
+          experienciaect(called).toEqual(2)
           resolve()
         }, 20)
       })
@@ -285,7 +285,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'foofoo.namespace')
 
         setTimeout(() => {
-          expect(called).toEqual(2)
+          experienciaect(called).toEqual(2)
           resolve()
         }, 20)
       })
@@ -313,8 +313,8 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'foofoo.namespace')
 
         setTimeout(() => {
-          expect(calledCallback1).toEqual(1)
-          expect(calledCallback2).toEqual(1)
+          experienciaect(calledCallback1).toEqual(1)
+          experienciaect(calledCallback2).toEqual(1)
           resolve()
         }, 20)
       })
@@ -339,7 +339,7 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'click')
 
         setTimeout(() => {
-          expect(called).toEqual(2)
+          experienciaect(called).toEqual(2)
           resolve()
         }, 20)
       })
@@ -365,8 +365,8 @@ describe('EventHandler', () => {
         EventHandler.trigger(div, 'click')
 
         setTimeout(() => {
-          expect(called1).toEqual(1)
-          expect(called2).toEqual(2)
+          experienciaect(called1).toEqual(1)
+          experienciaect(called2).toEqual(2)
           resolve()
         }, 20)
       })
@@ -386,7 +386,7 @@ describe('EventHandler', () => {
 
         EventHandler.trigger(div, 'foobar')
         setTimeout(() => {
-          expect().nothing()
+          experienciaect().nothing()
           resolve()
         }, 20)
       })
@@ -414,31 +414,31 @@ describe('EventHandler', () => {
       EventHandler.trigger(subelement, 'click')
 
       // first listeners called
-      expect(i).toEqual(2)
+      experienciaect(i).toEqual(2)
 
       EventHandler.off(element, 'click', 'span', handler)
       EventHandler.trigger(subelement, 'click')
 
       // removed listener not called
-      expect(i).toEqual(2)
+      experienciaect(i).toEqual(2)
 
       EventHandler.trigger(anchor, 'click')
 
       // not removed listener called
-      expect(i).toEqual(3)
+      experienciaect(i).toEqual(3)
 
       EventHandler.on(element, 'click', 'span', handler)
       EventHandler.trigger(anchor, 'click')
       EventHandler.trigger(subelement, 'click')
 
       // listener re-registered
-      expect(i).toEqual(5)
+      experienciaect(i).toEqual(5)
 
       EventHandler.off(element, 'click', 'span')
       EventHandler.trigger(subelement, 'click')
 
       // listener removed again
-      expect(i).toEqual(5)
+      experienciaect(i).toEqual(5)
     })
   })
 
@@ -456,9 +456,9 @@ describe('EventHandler', () => {
         const div2 = fixtureEl.querySelector('#div2')
 
         EventHandler.on(div1, 'click', event => {
-          expect(event.currentTarget).toBe(div2)
-          expect(event.delegateTarget).toBe(div1)
-          expect(event.originalTarget).toBeNull()
+          experienciaect(event.currentTarget).toBe(div2)
+          experienciaect(event.delegateTarget).toBe(div1)
+          experienciaect(event.originalTarget).toBeNull()
 
           Object.defineProperty(event, 'currentTarget', {
             configurable: true,
@@ -467,11 +467,11 @@ describe('EventHandler', () => {
             }
           })
 
-          expect(event.currentTarget).toBe(div1)
+          experienciaect(event.currentTarget).toBe(div1)
           resolve()
         })
 
-        expect(() => {
+        experienciaect(() => {
           EventHandler.trigger(div1, 'click', { originalTarget: null, currentTarget: div2 })
         }).not.toThrowError(TypeError)
       })

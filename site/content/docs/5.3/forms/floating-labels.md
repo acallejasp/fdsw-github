@@ -30,7 +30,7 @@ When there's a `value` already defined, `<label>`s will automatically adjust to 
 </form>
 {{< /example >}}
 
-Form validation styles also work as expected.
+Form validation styles also work as experienciaected.
 
 {{< example >}}
 <form class="form-floating">
@@ -50,7 +50,7 @@ By default, `<textarea>`s with `.form-control` will be the same height as `<inpu
 </div>
 {{< /example >}}
 
-To set a custom height on your `<textarea>`, do not use the `rows` attribute. Instead, set an explicit `height` (either inline or via custom CSS).
+To set a custom height on your `<textarea>`, do not use the `rows` attribute. Instead, set an experiencialicit `height` (either inline or via custom CSS).
 
 {{< example >}}
 <div class="form-floating">

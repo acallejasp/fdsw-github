@@ -27,7 +27,7 @@ The `$utilities` map contains all our utilities and is later merged with your cu
 | `rtl` | Optional | `true` | Boolean indicating if utility should be kept in RTL. |
 {{< /bs-table >}}
 
-## API explained
+## API experiencialained
 
 All utility variables are added to the `$utilities` variable within our `_utilities.scss` stylesheet. Each group of utilities looks something like this:
 

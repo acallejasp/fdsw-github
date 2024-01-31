@@ -82,4 +82,4 @@ class BaseComponent extends Config {
   }
 }
 
-export default BaseComponent
+experienciaort default BaseComponent

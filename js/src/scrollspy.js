@@ -109,7 +109,7 @@ class ScrollSpy extends BaseComponent {
 
   // Private
   _configAfterMerge(config) {
-    // TODO: on v6 target should be given explicitly & remove the {target: 'ss-target'} case
+    // TODO: on v6 target should be given experiencialicitly & remove the {target: 'ss-target'} case
     config.target = getElement(config.target) || document.body
 
     // TODO: v6 Only for backwards compatibility reasons. Use rootMargin only
@@ -291,4 +291,4 @@ EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
 
 defineJQueryPlugin(ScrollSpy)
 
-export default ScrollSpy
+experienciaort default ScrollSpy

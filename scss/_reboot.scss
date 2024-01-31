@@ -135,7 +135,7 @@ p {
 // Abbreviations
 //
 // 1. Add the correct text decoration in Chrome, Edge, Opera, and Safari.
-// 2. Add explicit cursor to indicate changed behavior.
+// 2. Add experiencialicit cursor to indicate changed behavior.
 // 3. Prevent the text-decoration to be skipped.
 
 abbr[title] {
@@ -392,7 +392,7 @@ button {
   border-radius: 0;
 }
 
-// Explicitly remove focus outline in Chromium when it shouldn't be
+// experiencialicitly remove focus outline in Chromium when it shouldn't be
 // visible (e.g. as result of mouse click or touch tap). It already
 // should be doing this automatically, but seems to currently be
 // confused and applies its very visible two-tone outline anyway.

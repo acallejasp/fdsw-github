@@ -14,13 +14,13 @@ describe('TemplateFactory', () => {
 
   describe('NAME', () => {
     it('should return plugin NAME', () => {
-      expect(TemplateFactory.NAME).toEqual('TemplateFactory')
+      experienciaect(TemplateFactory.NAME).toEqual('TemplateFactory')
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(TemplateFactory.Default).toEqual(jasmine.any(Object))
+      experienciaect(TemplateFactory.Default).toEqual(jasmine.any(Object))
     })
   })
 
@@ -33,8 +33,8 @@ describe('TemplateFactory', () => {
         })
         const spy = spyOn(factory, '_maybeSanitize').and.callThrough()
 
-        expect(factory.toHtml().innerHTML).not.toContain('href="javascript:alert(7)')
-        expect(spy).toHaveBeenCalled()
+        experienciaect(factory.toHtml().innerHTML).not.toContain('href="javascript:alert(7)')
+        experienciaect(spy).toHaveBeenCalled()
       })
 
       it('should not sanitize template', () => {
@@ -44,8 +44,8 @@ describe('TemplateFactory', () => {
         })
         const spy = spyOn(factory, '_maybeSanitize').and.callThrough()
 
-        expect(factory.toHtml().innerHTML).toContain('href="javascript:alert(7)')
-        expect(spy).toHaveBeenCalled()
+        experienciaect(factory.toHtml().innerHTML).toContain('href="javascript:alert(7)')
+        experienciaect(spy).toHaveBeenCalled()
       })
 
       it('should use "sanitizeHtml" to sanitize content', () => {
@@ -55,7 +55,7 @@ describe('TemplateFactory', () => {
           template: '<div id="foo"></div>',
           content: { '#foo': '<a href="javascript:alert(7)">Click me</a>' }
         })
-        expect(factory.toHtml().innerHTML).not.toContain('href="javascript:alert(7)')
+        experienciaect(factory.toHtml().innerHTML).not.toContain('href="javascript:alert(7)')
       })
 
       it('should not sanitize content', () => {
@@ -65,7 +65,7 @@ describe('TemplateFactory', () => {
           template: '<div id="foo"></div>',
           content: { '#foo': '<a href="javascript:alert(7)">Click me</a>' }
         })
-        expect(factory.toHtml().innerHTML).toContain('href="javascript:alert(7)')
+        experienciaect(factory.toHtml().innerHTML).toContain('href="javascript:alert(7)')
       })
 
       it('should sanitize content only if "config.html" is enabled', () => {
@@ -77,7 +77,7 @@ describe('TemplateFactory', () => {
         })
         const spy = spyOn(factory, '_maybeSanitize').and.callThrough()
 
-        expect(spy).not.toHaveBeenCalled()
+        experienciaect(spy).not.toHaveBeenCalled()
       })
     })
 
@@ -86,26 +86,26 @@ describe('TemplateFactory', () => {
         const factory = new TemplateFactory({
           extraClass: 'testClass'
         })
-        expect(factory.toHtml()).toHaveClass('testClass')
+        experienciaect(factory.toHtml()).toHaveClass('testClass')
       })
 
       it('should add extra classes', () => {
         const factory = new TemplateFactory({
           extraClass: 'testClass testClass2'
         })
-        expect(factory.toHtml()).toHaveClass('testClass')
-        expect(factory.toHtml()).toHaveClass('testClass2')
+        experienciaect(factory.toHtml()).toHaveClass('testClass')
+        experienciaect(factory.toHtml()).toHaveClass('testClass2')
       })
 
       it('should resolve class if function is given', () => {
         const factory = new TemplateFactory({
           extraClass(arg) {
-            expect(arg).toEqual(factory)
+            experienciaect(arg).toEqual(factory)
             return 'testClass'
           }
         })
 
-        expect(factory.toHtml()).toHaveClass('testClass')
+        experienciaect(factory.toHtml()).toHaveClass('testClass')
       })
     })
   })
@@ -128,8 +128,8 @@ describe('TemplateFactory', () => {
       })
 
       const html = factory.toHtml()
-      expect(html.querySelector('.foo').textContent).toEqual('bar')
-      expect(html.querySelector('.foo2').textContent).toEqual('bar2')
+      experienciaect(html.querySelector('.foo').textContent).toEqual('bar')
+      experienciaect(html.querySelector('.foo2').textContent).toEqual('bar2')
     })
 
     it('should not fill template if selector not exists', () => {
@@ -140,7 +140,7 @@ describe('TemplateFactory', () => {
         content: { '#bar': 'test' }
       })
 
-      expect(factory.toHtml().outerHTML).toEqual('<div id="foo"></div>')
+      experienciaect(factory.toHtml().outerHTML).toEqual('<div id="foo"></div>')
     })
 
     it('should remove template selector, if content is null', () => {
@@ -151,7 +151,7 @@ describe('TemplateFactory', () => {
         content: { '#foo': null }
       })
 
-      expect(factory.toHtml().outerHTML).toEqual('<div></div>')
+      experienciaect(factory.toHtml().outerHTML).toEqual('<div></div>')
     })
 
     it('should resolve content if is function', () => {
@@ -162,7 +162,7 @@ describe('TemplateFactory', () => {
         content: { '#foo': () => null }
       })
 
-      expect(factory.toHtml().outerHTML).toEqual('<div></div>')
+      experienciaect(factory.toHtml().outerHTML).toEqual('<div></div>')
     })
 
     it('if content is element and "config.html=false", should put content\'s textContent', () => {
@@ -176,9 +176,9 @@ describe('TemplateFactory', () => {
       })
 
       const fooEl = factory.toHtml().querySelector('#foo')
-      expect(fooEl.innerHTML).not.toEqual(contentElement.innerHTML)
-      expect(fooEl.textContent).toEqual(contentElement.textContent)
-      expect(fooEl.textContent).toEqual('foobar')
+      experienciaect(fooEl.innerHTML).not.toEqual(contentElement.innerHTML)
+      experienciaect(fooEl.textContent).toEqual(contentElement.textContent)
+      experienciaect(fooEl.textContent).toEqual('foobar')
     })
 
     it('if content is element and "config.html=true", should put content\'s outerHtml as child', () => {
@@ -192,8 +192,8 @@ describe('TemplateFactory', () => {
       })
 
       const fooEl = factory.toHtml().querySelector('#foo')
-      expect(fooEl.innerHTML).toEqual(contentElement.outerHTML)
-      expect(fooEl.textContent).toEqual(contentElement.textContent)
+      experienciaect(fooEl.innerHTML).toEqual(contentElement.outerHTML)
+      experienciaect(fooEl.textContent).toEqual(contentElement.textContent)
     })
   })
 
@@ -205,7 +205,7 @@ describe('TemplateFactory', () => {
           '.foo2': 'bar2'
         }
       })
-      expect(factory.getContent()).toEqual(['bar', 'bar2'])
+      experienciaect(factory.getContent()).toEqual(['bar', 'bar2'])
     })
 
     it('should filter empties', () => {
@@ -218,7 +218,7 @@ describe('TemplateFactory', () => {
           '.foo5': () => null
         }
       })
-      expect(factory.getContent()).toEqual(['bar', 2])
+      experienciaect(factory.getContent()).toEqual(['bar', 2])
     })
   })
 
@@ -231,7 +231,7 @@ describe('TemplateFactory', () => {
           '.foo3': ''
         }
       })
-      expect(factory.hasContent()).toBeTrue()
+      experienciaect(factory.hasContent()).toBeTrue()
     })
 
     it('should return false, if filtered content is empty', () => {
@@ -242,7 +242,7 @@ describe('TemplateFactory', () => {
           '.foo4': () => null
         }
       })
-      expect(factory.hasContent()).toBeFalse()
+      experienciaect(factory.hasContent()).toBeFalse()
     })
   })
 
@@ -264,15 +264,15 @@ describe('TemplateFactory', () => {
       })
 
       const html = selector => factory.toHtml().querySelector(selector).textContent
-      expect(html('.foo')).toEqual('bar')
-      expect(html('.foo2')).toEqual('bar2')
+      experienciaect(html('.foo')).toEqual('bar')
+      experienciaect(html('.foo2')).toEqual('bar2')
       factory.changeContent({
         '.foo': 'test',
         '.foo2': 'test2'
       })
 
-      expect(html('.foo')).toEqual('test')
-      expect(html('.foo2')).toEqual('test2')
+      experienciaect(html('.foo')).toEqual('test')
+      experienciaect(html('.foo2')).toEqual('test2')
     })
 
     it('should change only the given, content', () => {
@@ -292,15 +292,15 @@ describe('TemplateFactory', () => {
       })
 
       const html = selector => factory.toHtml().querySelector(selector).textContent
-      expect(html('.foo')).toEqual('bar')
-      expect(html('.foo2')).toEqual('bar2')
+      experienciaect(html('.foo')).toEqual('bar')
+      experienciaect(html('.foo2')).toEqual('bar2')
       factory.changeContent({
         '.foo': 'test',
         '.wrong': 'wrong'
       })
 
-      expect(html('.foo')).toEqual('test')
-      expect(html('.foo2')).toEqual('bar2')
+      experienciaect(html('.foo')).toEqual('test')
+      experienciaect(html('.foo2')).toEqual('bar2')
     })
   })
 })

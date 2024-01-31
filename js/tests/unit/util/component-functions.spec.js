@@ -44,8 +44,8 @@ describe('Plugin functions', () => {
       enableDismissTrigger(DummyClass2, 'testMethod')
       btnClose.dispatchEvent(event)
 
-      expect(spyGet).toHaveBeenCalledWith(componentWrapper)
-      expect(spyTest).toHaveBeenCalled()
+      experienciaect(spyGet).toHaveBeenCalledWith(componentWrapper)
+      experienciaect(spyTest).toHaveBeenCalled()
     })
 
     it('if data-bs-dismiss="PluginName" hasn\'t got "data-bs-target", "getOrCreateInstance" has to be initialized by closest "plugin.Name" class', () => {
@@ -64,8 +64,8 @@ describe('Plugin functions', () => {
       enableDismissTrigger(DummyClass2)
       btnClose.dispatchEvent(event)
 
-      expect(spyGet).toHaveBeenCalledWith(componentWrapper)
-      expect(spyHide).toHaveBeenCalled()
+      experienciaect(spyGet).toHaveBeenCalledWith(componentWrapper)
+      experienciaect(spyHide).toHaveBeenCalled()
     })
 
     it('if data-bs-dismiss="PluginName" is disabled, must not trigger function', () => {
@@ -82,7 +82,7 @@ describe('Plugin functions', () => {
       enableDismissTrigger(DummyClass2)
       btnClose.dispatchEvent(event)
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should prevent default when the trigger is <a> or <area>', () => {
@@ -100,7 +100,7 @@ describe('Plugin functions', () => {
 
       btnClose.dispatchEvent(event)
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 })

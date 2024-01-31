@@ -11,7 +11,7 @@ toc: true
 
 ## How it works
 
-The accordion uses [collapse]({{< docsref "/components/collapse" >}}) internally to make it collapsible. To render an accordion that's expanded, add the `.open` class on the `.accordion`.
+The accordion uses [collapse]({{< docsref "/components/collapse" >}}) internally to make it collapsible. To render an accordion that's experienciaanded, add the `.open` class on the `.accordion`.
 
 {{< callout info >}}
 {{< partial "callouts/info-prefersreducedmotion.md" >}}
@@ -19,13 +19,13 @@ The accordion uses [collapse]({{< docsref "/components/collapse" >}}) internally
 
 ## Example
 
-Click the accordions below to expand/collapse the accordion content.
+Click the accordions below to experienciaand/collapse the accordion content.
 
 {{< example >}}
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-experienciaanded="true" aria-controls="collapseOne">
         Accordion Item #1
       </button>
     </h2>
@@ -37,7 +37,7 @@ Click the accordions below to expand/collapse the accordion content.
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-experienciaanded="false" aria-controls="collapseTwo">
         Accordion Item #2
       </button>
     </h2>
@@ -49,7 +49,7 @@ Click the accordions below to expand/collapse the accordion content.
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-experienciaanded="false" aria-controls="collapseThree">
         Accordion Item #3
       </button>
     </h2>
@@ -70,7 +70,7 @@ Add `.accordion-flush` to remove some borders and rounded corners to render acco
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-experienciaanded="false" aria-controls="flush-collapseOne">
         Accordion Item #1
       </button>
     </h2>
@@ -80,7 +80,7 @@ Add `.accordion-flush` to remove some borders and rounded corners to render acco
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-experienciaanded="false" aria-controls="flush-collapseTwo">
         Accordion Item #2
       </button>
     </h2>
@@ -90,7 +90,7 @@ Add `.accordion-flush` to remove some borders and rounded corners to render acco
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-experienciaanded="false" aria-controls="flush-collapseThree">
         Accordion Item #3
       </button>
     </h2>
@@ -109,7 +109,7 @@ Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accord
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-experienciaanded="true" aria-controls="panelsStayOpen-collapseOne">
         Accordion Item #1
       </button>
     </h2>
@@ -121,7 +121,7 @@ Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accord
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-experienciaanded="false" aria-controls="panelsStayOpen-collapseTwo">
         Accordion Item #2
       </button>
     </h2>
@@ -133,7 +133,7 @@ Omit the `data-bs-parent` attribute on each `.accordion-collapse` to make accord
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-experienciaanded="false" aria-controls="panelsStayOpen-collapseThree">
         Accordion Item #3
       </button>
     </h2>

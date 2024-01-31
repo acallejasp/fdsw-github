@@ -21,37 +21,37 @@ describe('Popover', () => {
 
   describe('VERSION', () => {
     it('should return plugin version', () => {
-      expect(Popover.VERSION).toEqual(jasmine.any(String))
+      experienciaect(Popover.VERSION).toEqual(jasmine.any(String))
     })
   })
 
   describe('Default', () => {
     it('should return plugin default config', () => {
-      expect(Popover.Default).toEqual(jasmine.any(Object))
+      experienciaect(Popover.Default).toEqual(jasmine.any(Object))
     })
   })
 
   describe('NAME', () => {
     it('should return plugin name', () => {
-      expect(Popover.NAME).toEqual(jasmine.any(String))
+      experienciaect(Popover.NAME).toEqual(jasmine.any(String))
     })
   })
 
   describe('DATA_KEY', () => {
     it('should return plugin data key', () => {
-      expect(Popover.DATA_KEY).toEqual('bs.popover')
+      experienciaect(Popover.DATA_KEY).toEqual('bs.popover')
     })
   })
 
   describe('EVENT_KEY', () => {
     it('should return plugin event key', () => {
-      expect(Popover.EVENT_KEY).toEqual('.bs.popover')
+      experienciaect(Popover.EVENT_KEY).toEqual('.bs.popover')
     })
   })
 
   describe('DefaultType', () => {
     it('should return plugin default type', () => {
-      expect(Popover.DefaultType).toEqual(jasmine.any(Object))
+      experienciaect(Popover.DefaultType).toEqual(jasmine.any(Object))
     })
   })
 
@@ -64,7 +64,7 @@ describe('Popover', () => {
         const popover = new Popover(popoverEl)
 
         popoverEl.addEventListener('shown.bs.popover', () => {
-          expect(document.querySelector('.popover')).not.toBeNull()
+          experienciaect(document.querySelector('.popover')).not.toBeNull()
           resolve()
         })
 
@@ -85,9 +85,9 @@ describe('Popover', () => {
         popoverEl.addEventListener('shown.bs.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
-          expect(popoverDisplayed).not.toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Bootstrap')
-          expect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('loves writing tests （╯°□°）╯︵ ┻━┻')
+          experienciaect(popoverDisplayed).not.toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Bootstrap')
+          experienciaect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('loves writing tests （╯°□°）╯︵ ┻━┻')
           resolve()
         })
 
@@ -107,9 +107,9 @@ describe('Popover', () => {
         popoverEl.addEventListener('shown.bs.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
-          expect(popoverDisplayed).not.toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-header')).toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('Some beautiful content :)')
+          experienciaect(popoverDisplayed).not.toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-header')).toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('Some beautiful content :)')
           resolve()
         })
 
@@ -129,9 +129,9 @@ describe('Popover', () => {
         popoverEl.addEventListener('shown.bs.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
-          expect(popoverDisplayed).not.toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-body')).toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Title which does not require content')
+          experienciaect(popoverDisplayed).not.toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-body')).toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Title which does not require content')
           resolve()
         })
 
@@ -149,9 +149,9 @@ describe('Popover', () => {
         popoverEl.addEventListener('shown.bs.popover', () => {
           const popoverDisplayed = document.querySelector('.popover')
 
-          expect(popoverDisplayed).not.toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-body')).toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Title which does not require content')
+          experienciaect(popoverDisplayed).not.toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-body')).toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-header').textContent).toEqual('Title which does not require content')
           resolve()
         })
 
@@ -168,8 +168,8 @@ describe('Popover', () => {
 
       popover.show()
 
-      expect(spy).not.toHaveBeenCalledWith(popoverEl, Popover.eventName('show'))
-      expect(document.querySelector('.popover')).toBeNull()
+      experienciaect(spy).not.toHaveBeenCalledWith(popoverEl, Popover.eventName('show'))
+      experienciaect(document.querySelector('.popover')).toBeNull()
     })
 
     it('"setContent" should keep the initial template', () => {
@@ -181,11 +181,11 @@ describe('Popover', () => {
       popover.setContent({ '.tooltip-inner': 'foo' })
       const tip = popover._getTipElement()
 
-      expect(tip).toHaveClass('popover')
-      expect(tip).toHaveClass('bs-popover-auto')
-      expect(tip.querySelector('.popover-arrow')).not.toBeNull()
-      expect(tip.querySelector('.popover-header')).not.toBeNull()
-      expect(tip.querySelector('.popover-body')).not.toBeNull()
+      experienciaect(tip).toHaveClass('popover')
+      experienciaect(tip).toHaveClass('bs-popover-auto')
+      experienciaect(tip.querySelector('.popover-arrow')).not.toBeNull()
+      experienciaect(tip.querySelector('.popover-header')).not.toBeNull()
+      experienciaect(tip.querySelector('.popover-body')).not.toBeNull()
     })
 
     it('should call setContent once', () => {
@@ -196,7 +196,7 @@ describe('Popover', () => {
         const popover = new Popover(popoverEl, {
           content: 'Popover content'
         })
-        expect(popover._templateFactory).toBeNull()
+        experienciaect(popover._templateFactory).toBeNull()
         let spy = null
         let times = 1
 
@@ -208,9 +208,9 @@ describe('Popover', () => {
           spy = spy || spyOn(popover._templateFactory, 'constructor').and.callThrough()
           const popoverDisplayed = document.querySelector('.popover')
 
-          expect(popoverDisplayed).not.toBeNull()
-          expect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('Popover content')
-          expect(spy).toHaveBeenCalledTimes(0)
+          experienciaect(popoverDisplayed).not.toBeNull()
+          experienciaect(popoverDisplayed.querySelector('.popover-body').textContent).toEqual('Popover content')
+          experienciaect(spy).toHaveBeenCalledTimes(0)
           if (times > 1) {
             resolve()
           }
@@ -231,8 +231,8 @@ describe('Popover', () => {
 
         popoverEl.addEventListener('shown.bs.popover', () => {
           const tip = document.querySelector('.popover')
-          expect(tip).not.toBeNull()
-          expect(tip).toHaveClass('custom-class')
+          experienciaect(tip).not.toBeNull()
+          experienciaect(tip).toHaveClass('custom-class')
           resolve()
         })
 
@@ -254,7 +254,7 @@ describe('Popover', () => {
         })
 
         popoverEl.addEventListener('hidden.bs.popover', () => {
-          expect(document.querySelector('.popover')).toBeNull()
+          experienciaect(document.querySelector('.popover')).toBeNull()
           resolve()
         })
 
@@ -274,7 +274,7 @@ describe('Popover', () => {
 
       jQueryMock.fn.popover.call(jQueryMock)
 
-      expect(Popover.getInstance(popoverEl)).not.toBeNull()
+      experienciaect(Popover.getInstance(popoverEl)).not.toBeNull()
     })
 
     it('should create a popover with a config object', () => {
@@ -289,7 +289,7 @@ describe('Popover', () => {
         content: 'Popover content'
       })
 
-      expect(Popover.getInstance(popoverEl)).not.toBeNull()
+      experienciaect(Popover.getInstance(popoverEl)).not.toBeNull()
     })
 
     it('should not re create a popover', () => {
@@ -303,7 +303,7 @@ describe('Popover', () => {
 
       jQueryMock.fn.popover.call(jQueryMock)
 
-      expect(Popover.getInstance(popoverEl)).toEqual(popover)
+      experienciaect(Popover.getInstance(popoverEl)).toEqual(popover)
     })
 
     it('should throw error on undefined method', () => {
@@ -315,7 +315,7 @@ describe('Popover', () => {
       jQueryMock.fn.popover = Popover.jQueryInterface
       jQueryMock.elements = [popoverEl]
 
-      expect(() => {
+      experienciaect(() => {
         jQueryMock.fn.popover.call(jQueryMock, action)
       }).toThrowError(TypeError, `No method named "${action}"`)
     })
@@ -333,7 +333,7 @@ describe('Popover', () => {
 
       jQueryMock.fn.popover.call(jQueryMock, 'show')
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
   })
 
@@ -344,8 +344,8 @@ describe('Popover', () => {
       const popoverEl = fixtureEl.querySelector('a')
       const popover = new Popover(popoverEl)
 
-      expect(Popover.getInstance(popoverEl)).toEqual(popover)
-      expect(Popover.getInstance(popoverEl)).toBeInstanceOf(Popover)
+      experienciaect(Popover.getInstance(popoverEl)).toEqual(popover)
+      experienciaect(Popover.getInstance(popoverEl)).toBeInstanceOf(Popover)
     })
 
     it('should return null when there is no popover instance', () => {
@@ -353,7 +353,7 @@ describe('Popover', () => {
 
       const popoverEl = fixtureEl.querySelector('a')
 
-      expect(Popover.getInstance(popoverEl)).toBeNull()
+      experienciaect(Popover.getInstance(popoverEl)).toBeNull()
     })
   })
 
@@ -364,9 +364,9 @@ describe('Popover', () => {
       const div = fixtureEl.querySelector('div')
       const popover = new Popover(div)
 
-      expect(Popover.getOrCreateInstance(div)).toEqual(popover)
-      expect(Popover.getInstance(div)).toEqual(Popover.getOrCreateInstance(div, {}))
-      expect(Popover.getOrCreateInstance(div)).toBeInstanceOf(Popover)
+      experienciaect(Popover.getOrCreateInstance(div)).toEqual(popover)
+      experienciaect(Popover.getInstance(div)).toEqual(Popover.getOrCreateInstance(div, {}))
+      experienciaect(Popover.getOrCreateInstance(div)).toBeInstanceOf(Popover)
     })
 
     it('should return new instance when there is no popover instance', () => {
@@ -374,8 +374,8 @@ describe('Popover', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Popover.getInstance(div)).toBeNull()
-      expect(Popover.getOrCreateInstance(div)).toBeInstanceOf(Popover)
+      experienciaect(Popover.getInstance(div)).toBeNull()
+      experienciaect(Popover.getOrCreateInstance(div)).toBeInstanceOf(Popover)
     })
 
     it('should return new instance when there is no popover instance with given configuration', () => {
@@ -383,13 +383,13 @@ describe('Popover', () => {
 
       const div = fixtureEl.querySelector('div')
 
-      expect(Popover.getInstance(div)).toBeNull()
+      experienciaect(Popover.getInstance(div)).toBeNull()
       const popover = Popover.getOrCreateInstance(div, {
         placement: 'top'
       })
-      expect(popover).toBeInstanceOf(Popover)
+      experienciaect(popover).toBeInstanceOf(Popover)
 
-      expect(popover._config.placement).toEqual('top')
+      experienciaect(popover._config.placement).toEqual('top')
     })
 
     it('should return the instance when exists without given configuration', () => {
@@ -399,15 +399,15 @@ describe('Popover', () => {
       const popover = new Popover(div, {
         placement: 'top'
       })
-      expect(Popover.getInstance(div)).toEqual(popover)
+      experienciaect(Popover.getInstance(div)).toEqual(popover)
 
       const popover2 = Popover.getOrCreateInstance(div, {
         placement: 'bottom'
       })
-      expect(popover).toBeInstanceOf(Popover)
-      expect(popover2).toEqual(popover)
+      experienciaect(popover).toBeInstanceOf(Popover)
+      experienciaect(popover2).toEqual(popover)
 
-      expect(popover2._config.placement).toEqual('top')
+      experienciaect(popover2._config.placement).toEqual('top')
     })
   })
 })

@@ -25,7 +25,7 @@ describe('FocusTrap', () => {
       const focustrap = new FocusTrap({ trapElement })
       focustrap.activate()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('if configured not to autofocus, should not autofocus itself', () => {
@@ -38,7 +38,7 @@ describe('FocusTrap', () => {
       const focustrap = new FocusTrap({ trapElement, autofocus: false })
       focustrap.activate()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
 
     it('should force focus inside focus trap if it can', () => {
@@ -57,7 +57,7 @@ describe('FocusTrap', () => {
         const inside = document.getElementById('inside')
 
         const focusInListener = () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           document.removeEventListener('focusin', focusInListener)
           resolve()
         }
@@ -100,7 +100,7 @@ describe('FocusTrap', () => {
         const spy = spyOn(first, 'focus').and.callThrough()
 
         const focusInListener = () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           first.removeEventListener('focusin', focusInListener)
           resolve()
         }
@@ -139,7 +139,7 @@ describe('FocusTrap', () => {
         const spy = spyOn(last, 'focus').and.callThrough()
 
         const focusInListener = () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           last.removeEventListener('focusin', focusInListener)
           resolve()
         }
@@ -167,7 +167,7 @@ describe('FocusTrap', () => {
         focustrap.activate()
 
         const focusInListener = () => {
-          expect(spy).toHaveBeenCalled()
+          experienciaect(spy).toHaveBeenCalled()
           document.removeEventListener('focusin', focusInListener)
           resolve()
         }
@@ -190,10 +190,10 @@ describe('FocusTrap', () => {
     it('should flag itself as no longer active', () => {
       const focustrap = new FocusTrap({ trapElement: fixtureEl })
       focustrap.activate()
-      expect(focustrap._isActive).toBeTrue()
+      experienciaect(focustrap._isActive).toBeTrue()
 
       focustrap.deactivate()
-      expect(focustrap._isActive).toBeFalse()
+      experienciaect(focustrap._isActive).toBeFalse()
     })
 
     it('should remove all event listeners', () => {
@@ -203,7 +203,7 @@ describe('FocusTrap', () => {
       const spy = spyOn(EventHandler, 'off')
       focustrap.deactivate()
 
-      expect(spy).toHaveBeenCalled()
+      experienciaect(spy).toHaveBeenCalled()
     })
 
     it('doesn\'t try removing event listeners unless it needs to (in case it hasn\'t been activated)', () => {
@@ -212,7 +212,7 @@ describe('FocusTrap', () => {
       const spy = spyOn(EventHandler, 'off')
       focustrap.deactivate()
 
-      expect(spy).not.toHaveBeenCalled()
+      experienciaect(spy).not.toHaveBeenCalled()
     })
   })
 })
